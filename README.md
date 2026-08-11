@@ -104,8 +104,10 @@ die Landingpage bleibt unverändert.
 und einem einfachen In-Memory-Rate-Limit pro IP. Erfolg und Fehler werden inline
 ausgegeben, es gibt keinen Redirect und keinen Alert.
 
-Ohne `RESEND_API_KEY` läuft die Action in einen sauberen Fehlerzustand und
-protokolliert die Anfrage im Server-Log, statt zu crashen.
+Ohne gesetzte Umgebungsvariablen läuft die Action in einen sauberen
+Fehlerzustand, statt zu crashen. Protokolliert wird nur, dass die
+Konfiguration fehlt — keine personenbezogenen Daten. Das heißt aber auch:
+**bis die Variablen gesetzt sind, kommt keine einzige Anfrage an.**
 
 Das In-Memory-Rate-Limit gilt pro Serverinstanz. Auf Vercel mit mehreren
 Instanzen ist es eine Bremse, keine harte Grenze. Für mehr braucht es einen

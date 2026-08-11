@@ -97,8 +97,10 @@ juristischen Person prüfen lassen.
 - `KONTAKT_ABSENDER` (Domain muss bei Resend verifiziert sein)
 - `KONTAKT_EMPFAENGER`
 
-Ohne Key läuft das Formular in einen sauberen Fehlerzustand und schreibt die
-Anfrage ins Server-Log, statt zu crashen.
+Ohne diese Variablen zeigt das Formular eine saubere Fehlermeldung, statt zu
+crashen. Es werden bewusst **keine** personenbezogenen Daten ins Server-Log
+geschrieben. Das heißt: bis die Variablen gesetzt sind, kommt keine Anfrage an.
+Das ist der wichtigste offene Punkt vor dem Livegang.
 
 ---
 
