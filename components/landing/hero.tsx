@@ -12,7 +12,7 @@ export function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover grayscale"
+        className="object-cover bild-ton"
       />
 
       {/*

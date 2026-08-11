@@ -200,6 +200,15 @@
     );
   }
 
+  /*
+    Bildton der Seite. Nicht ganz entsättigt — die Bilder dürfen etwas Farbe
+    behalten. Ein Wert, an dem sich der Look aller Fotos gemeinsam regeln
+    lässt: 0 ist volle Farbe, 1 ist reines Schwarzweiß.
+  */
+  .bild-ton {
+    filter: grayscale(0.55);
+  }
+
   /* Leichter Bild-Zoom auf Tiles und editorialen Bildern */
   .img-zoom {
     transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);

@@ -1,14 +1,13 @@
 /**
  * Datenquelle für das Referenzen-Marquee.
  *
- * Solange kein `logo` gesetzt ist, rendert das Marquee den `name` als
- * Wortmarke. Sobald Logo und Freigabe des Betriebs vorliegen, reicht es,
- * pro Eintrag `logo`, `breite` und `hoehe` zu ergänzen und den Namen zu
- * korrigieren — an der Komponente muss nichts geändert werden.
+ * Die Logos sind von Marcel freigegeben. Ein Eintrag ohne `logo` fällt
+ * automatisch auf die Wortmarke zurück, so lassen sich Betriebe ergänzen,
+ * deren Logo noch fehlt.
  *
- * Die sechs echten Logos liegen bereits unter
- * public/img/brand/referenzen/, sind aber bewusst noch nicht eingebunden:
- * die schriftlichen Freigaben fehlen. Siehe TODO.md, Punkt 2.
+ * Die Dateien sind JPEG/WebP mit weißem Hintergrund. Im Marquee liegt
+ * deshalb `mix-blend-multiply` darauf, damit das Weiß in der Fläche
+ * verschwindet. Sobald es SVG oder PNG mit Transparenz gibt, kann das raus.
  */
 
 export type Referenz = {
@@ -23,17 +22,41 @@ export type Referenz = {
 
 export const referenzenLabel = "Referenzen";
 
-/**
- * Neutrale Platzhalter ohne echte Betriebsnamen. Bewusst als solche erkennbar,
- * damit nichts Erfundenes online geht.
- */
 export const referenzen: Referenz[] = [
-  { name: "Referenz 01" },
-  { name: "Referenz 02" },
-  { name: "Referenz 03" },
-  { name: "Referenz 04" },
-  { name: "Referenz 05" },
-  { name: "Referenz 06" },
-  { name: "Referenz 07" },
-  { name: "Referenz 08" },
+  {
+    name: "IMLAUER Palais Mirabell",
+    logo: "/img/brand/referenzen/imlauer-palais-mirabell.webp",
+    breite: 1920,
+    hoehe: 1080,
+  },
+  {
+    name: "IMLAUER Hotel Pitter Salzburg",
+    logo: "/img/brand/referenzen/imlauer-hotel-pitter.jpg",
+    breite: 400,
+    hoehe: 366,
+  },
+  {
+    name: "Hotel Zum Hirschen",
+    logo: "/img/brand/referenzen/hotel-zum-hirschen.webp",
+    breite: 574,
+    hoehe: 1024,
+  },
+  {
+    name: "Laschensky Hof",
+    logo: "/img/brand/referenzen/laschensky-hof.jpeg",
+    breite: 447,
+    hoehe: 447,
+  },
+  {
+    name: "Fontana",
+    logo: "/img/brand/referenzen/fontana.jpeg",
+    breite: 2048,
+    hoehe: 1448,
+  },
+  {
+    name: "Gabriel-Glas",
+    logo: "/img/brand/referenzen/gabriel-glas.webp",
+    breite: 1200,
+    hoehe: 628,
+  },
 ];

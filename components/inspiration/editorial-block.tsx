@@ -36,7 +36,7 @@ export function EditorialBlock({
               alt={block.bild.alt}
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover grayscale"
+              className="object-cover bild-ton"
             />
           </div>
 

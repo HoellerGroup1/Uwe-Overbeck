@@ -13,13 +13,13 @@ export function About() {
               <Image
                 src={about.portrait.src}
                 alt={about.portrait.alt}
-                width={1200}
-                height={1500}
+                width={about.portrait.breite}
+                height={about.portrait.hoehe}
                 sizes="(min-width: 768px) 33vw, 100vw"
-                className="w-full border border-ash/40 object-cover grayscale"
+                className="w-full border border-ash/40 object-cover bild-ton"
               />
             ) : (
-              /* TODO(Marcel): Portrait 4:5 liefern, siehe TODO.md Punkt 3. */
+              /* Fallback, falls das Portrait je wieder ausgetauscht wird. */
               <div className="flex aspect-4/5 w-full items-center justify-center border border-ash/40 bg-sand">
                 <MicroLabel className="text-on-surface-variant">
                   {about.portrait.platzhalterHinweis}

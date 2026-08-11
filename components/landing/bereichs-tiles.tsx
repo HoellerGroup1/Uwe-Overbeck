@@ -22,7 +22,7 @@ export function BereichsTiles() {
                     alt={tile.bild.alt}
                     fill
                     sizes="(min-width: 768px) 50vw, 100vw"
-                    className="img-zoom object-cover grayscale"
+                    className="img-zoom object-cover bild-ton"
                   />
                 </div>
                 <MicroLabel className="mt-stack-md text-on-surface-variant">

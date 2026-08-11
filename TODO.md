@@ -1,107 +1,21 @@
-# TODO — was Marcel liefern muss
+# TODO — was noch fehlt
 
-Stand: alle fünf Meilensteine gebaut, `npm run build` läuft fehlerfrei.
-Alles hier ist ein bewusster Platzhalter im Code, nichts davon ist erfunden.
-Erfundene Inhalte aus dem Stitch-Entwurf (`code.html`) sind vollständig entfernt.
+Stand: alle fünf Meilensteine gebaut, `npm run build` und `eslint` laufen
+fehlerfrei. Zahlen, Referenzlogos und Portrait sind eingepflegt.
 
 Kurzfassung, nach Dringlichkeit:
 
 | # | Was | Ohne das … |
 | - | --- | ---------- |
-| 5 | Resend-Variablen | kommt **keine einzige Anfrage** an |
-| 4 | Impressum und Datenschutz | ist die Seite nicht rechtssicher |
-| 3 | Portrait von Uwe | steht in der About-Sektion ein grauer Kasten |
-| 1 | Zahlen für den Credibility-Strip | stehen dort leere Klammern |
-| 2 | Referenzlogos plus Freigaben | laufen neutrale Platzhalter im Marquee |
-| 7 | weiteres Bildmaterial | fehlen drei geplante Sektionen |
-| 9 | Git-Remote und Vercel-Projekt | gibt es keine Preview-URL |
+| 1 | Resend-Variablen | kommt **keine einzige Anfrage** an |
+| 2 | Impressum und Datenschutz | ist die Seite nicht rechtssicher |
+| 3 | Kontaktdaten im Footer | steht dort `[E-Mail-Adresse]` |
+| 4 | Deployment | gibt es keine Preview-URL |
+| 5 | weiteres Bildmaterial | fehlen drei geplante Sektionen |
 
 ---
 
-## 1. Zahlen für den Credibility-Strip — **offen**
-
-Vier Werte plus Micro-Labels. Im Code stehen leere Klammern `[ ]` als Wert,
-die Labels sind Vorschläge und dürfen geändert werden.
-
-Datei: `content/landing.ts` → `credibility`
-
-| Slot | Label (Vorschlag)      | Wert |
-| ---- | ---------------------- | ---- |
-| 1    | Jahre im Vertrieb      | ?    |
-| 2    | Betriebe ausgestattet  | ?    |
-| 3    | Partnermarken          | ?    |
-| 4    | Länder                 | ?    |
-
-Aus dem Entwurf entfernt und **nicht** übernommen, weil frei erfunden:
-25 Jahre, 450+ Projekte, 12 Partnermarken, 8 Länder.
-
----
-
-## 2. Referenzlogos plus Freigaben — **offen**
-
-Im Marquee laufen aktuell **neutrale Platzhalter-Wortmarken** ohne echte
-Betriebsnamen. Die Datenstruktur liegt in `content/referenzen.ts` und ist so
-gebaut, dass der Tausch eine Zeile pro Logo ist.
-
-Die sechs echten Logos aus `Logos Referenzen/` sind bereits nach
-`public/img/brand/referenzen/` sortiert und liegen einsatzbereit im Repo,
-sind aber **noch nicht eingebunden**, weil die schriftlichen Freigaben fehlen.
-
-| Datei                              | Betrieb                      | Freigabe |
-| ---------------------------------- | ---------------------------- | -------- |
-| `imlauer-palais-mirabell.webp`     | IMLAUER Palais Mirabell       | ☐        |
-| `imlauer-hotel-pitter.jpg`         | IMLAUER Hotel Pitter Salzburg | ☐        |
-| `hotel-zum-hirschen.webp`          | Hotel Zum Hirschen            | ☐        |
-| `laschensky-hof.jpeg`              | Laschensky Hof                | ☐        |
-| `fontana.jpeg`                     | Fontana                       | ☐        |
-| `gabriel-glas.webp`                | Gabriel-Glas                  | ☐        |
-
-Zusätzlich nötig:
-- Logos als **SVG oder PNG mit Transparenz**. Die vorhandenen JPEG/WebP-Dateien
-  haben weiße Kästen als Hintergrund, das fällt im monochromen Marquee auf.
-- Einheitliche Ausrichtung. `hotel-zum-hirschen.webp` ist hochkant (574×1024),
-  alle anderen sind quer — im Marquee wirkt das unruhig.
-
-Freigabe heißt: schriftliches Einverständnis des Betriebs, das Logo als
-Referenz auf der Website zu zeigen. Ohne das bleiben die Platzhalter drin.
-
----
-
-## 3. Portrait von Uwe — **offen, blockiert eine Sektion**
-
-Die About-Sektion braucht ein **4:5-Portrait**. Im gesamten Bildmaterial ist
-kein Bild von Uwe Overbeck enthalten. Aktuell steht dort ein grauer
-Platzhalter mit Hinweistext.
-
-Gebraucht: Hochformat 4:5, mindestens 1200×1500 px, ruhiges Licht,
-entsättigt oder entsättigbar.
-
-Datei: `public/img/brand/portrait-uwe-overbeck.jpg` (Name ist im Code
-bereits vorgesehen, Datei fehlt).
-
----
-
-## 4. Impressumsdaten — **offen**
-
-`content/recht.ts` enthält die vollständige Struktur mit `[Platzhalter]`.
-Gebraucht (gewerblich, AT/DE):
-
-- Vollständiger Firmenwortlaut und Rechtsform
-- Anschrift des Unternehmenssitzes
-- E-Mail und Telefonnummer
-- UID-/USt-IdNr.
-- Firmenbuchnummer und Firmenbuchgericht (AT) bzw. Handelsregister (DE)
-- Gewerbeaufsichts-/Gewerbebehörde, Kammerzugehörigkeit (WKO), Berufsrecht
-- Angaben zur Online-Streitbeilegung
-- Verantwortlich für den Inhalt
-
-Die Datenschutzerklärung in `content/recht.ts` ist eine Struktur mit
-Platzhaltern, **kein geprüfter Rechtstext**. Vor dem Livegang von einer
-juristischen Person prüfen lassen.
-
----
-
-## 5. Resend-API-Key — **offen**
+## 1. Resend-API-Key — **offen, wichtigster Punkt**
 
 `.env.example` liegt im Repo. Gebraucht werden:
 
@@ -112,118 +26,161 @@ juristischen Person prüfen lassen.
 Ohne diese Variablen zeigt das Formular eine saubere Fehlermeldung, statt zu
 crashen. Es werden bewusst **keine** personenbezogenen Daten ins Server-Log
 geschrieben. Das heißt: bis die Variablen gesetzt sind, kommt keine Anfrage an.
-Das ist der wichtigste offene Punkt vor dem Livegang.
 
 ---
 
-## 6. Katalog-PDF — **erledigt, ggf. ersetzen**
+## 2. Impressum und Datenschutz — **bewusst Platzhalter**
 
-`Greif Katalog.pdf` war vorhanden und liegt jetzt als
-`public/downloads/greif-katalog.pdf` im Repo (2,1 MB).
+Entscheidung von Marcel: bleibt vorerst so. Beide Seiten tragen oben einen
+roten Entwurfshinweis, damit niemand den Text für geprüft hält.
 
-Wenn eine neuere Fassung kommt: Datei ersetzen **und** die Größenangabe in
-`content/landing.ts` → `katalog.dateihinweis` anpassen.
+Wenn es so weit ist, in `content/recht.ts` alle Angaben in eckigen Klammern
+ersetzen und `ENTWURFS_HINWEIS` entfernen. Gebraucht wird dann (gewerblich,
+AT/DE):
 
----
+- Firmenwortlaut, Rechtsform, Anschrift
+- E-Mail und Telefon
+- UID-/USt-IdNr., Firmenbuch- bzw. Handelsregisternummer samt Gericht
+- Gewerbeberechtigung, Gewerbe-/Aufsichtsbehörde, Kammerzugehörigkeit
+- Hosting-Anbieter und Speicherdauern für die Datenschutzerklärung
+- Anschrift von Resend als Auftragsverarbeiter und die Rechtsgrundlage der
+  Übermittlung in die USA
 
-## 7. Weiteres Bildmaterial — **offen**
-
-Nicht kritisch, aber diese Sektionen fehlen deshalb aktuell:
-
-| Fehlt                                  | Folge |
-| -------------------------------------- | ----- |
-| 3 Bilder im Format 4:5 für `/hotel`     | Bildstrecke weggelassen |
-| 3 Bilder im Format 4:5 für `/gastro`    | Bildstrecke weggelassen |
-| 1 Bild zu Waschbarkeit / Standzeit      | vierter Editorial-Block auf `/hotel` weggelassen |
-| Hero-Bild in hoher Auflösung            | siehe Inventar unten |
-
----
-
-## 8. Vor dem Livegang
-
-- [ ] `app/robots.ts` und `robots` in `app/layout.tsx` von noindex befreien
-- [ ] Rechtstexte juristisch prüfen lassen und den roten Entwurfshinweis
-      in `content/recht.ts` (`ENTWURFS_HINWEIS`) entfernen
-- [ ] Kontaktdaten im Footer eintragen (`content/site.ts` → `footer.kontakt`)
-- [ ] Prozessaussagen in der Copy von Uwe gegenlesen lassen. Sätze wie
-      „Vor der Bestellung geht ein Größensatz durch den Betrieb" beschreiben
-      seine Arbeitsweise — die sollte er bestätigen oder korrigieren
-      (`content/inspiration.ts`, `content/landing.ts`, `content/beratung.ts`)
-- [ ] Domain und Deployment einrichten (siehe Punkt 9)
+Der Datenschutztext ist eine Struktur, **kein geprüfter Rechtstext**.
+Vor dem Livegang juristisch prüfen lassen.
 
 ---
 
-## 9. Git-Remote und Vercel — **offen**
+## 3. Kontaktdaten im Footer — **offen**
 
-Das Repository liegt unter `Website Uwe/uwe-overbeck/` und hat einen lokalen
-Branch `build/v1` mit fünf Commits. Es gibt **kein Remote und kein
-Vercel-Projekt**, deshalb wurde nichts gepusht und es gibt keine Preview-URL.
+`content/site.ts` → `footer.kontakt`. Aktuell stehen dort
+`[E-Mail-Adresse]` und `[Telefonnummer]` auf jeder Seite.
 
-Zum Aufsetzen:
+---
+
+## 4. Deployment — **offen**
+
+Das Repository liegt unter `Website Uwe/uwe-overbeck/`, lokaler Branch
+`build/v1`. Es gibt noch kein Remote und kein Vercel-Projekt.
 
 ```bash
 gh repo create uwe-overbeck --private --source . --remote origin
 git push -u origin build/v1
 ```
 
-Danach in Vercel importieren und dort `RESEND_API_KEY`, `KONTAKT_ABSENDER`
-und `KONTAKT_EMPFAENGER` als Environment Variables hinterlegen.
-`main` bleibt unberührt, bis du sie freigibst.
+Danach in Vercel importieren und die drei Variablen aus Punkt 1 als
+Environment Variables hinterlegen. `main` bleibt unberührt bis zur Freigabe.
 
 ---
 
-# Bildinventar (Schritt 0)
+## 5. Weiteres Bildmaterial — **offen**
 
-Alles, was im Quellordner lag, mit Auflösung und Seitenverhältnis. Die Spalte
-„Ziel" zeigt den neuen Ort und Namen im Repo.
+Nicht kritisch, aber diese Sektionen fehlen deshalb aktuell:
+
+| Fehlt | Folge |
+| ----- | ----- |
+| 3 Bilder im Format 4:5 für `/hotel` | Bildstrecke weggelassen |
+| 3 Bilder im Format 4:5 für `/gastro` | Bildstrecke weggelassen |
+| 1 Bild zu Waschbarkeit / Standzeit | vierter Editorial-Block auf `/hotel` weggelassen |
+| Hero-Bild in hoher Auflösung | siehe Anmerkungen im Inventar unten |
+
+---
+
+## 6. Kleinigkeiten, kein Blocker
+
+- **Logo Hotel Zum Hirschen** ist als einziges hochkant (574×1024) und wirkt
+  im Marquee dadurch schmaler als die anderen. Eine querformatige Fassung
+  säße besser.
+- **Logos als SVG oder PNG mit Transparenz** würden den `mix-blend-multiply`-
+  Umweg in `components/referenzen-marquee.tsx` überflüssig machen.
+- **Katalog-PDF ersetzen:** Datei unter `public/downloads/greif-katalog.pdf`
+  austauschen **und** die Größenangabe in `content/landing.ts` →
+  `katalog.dateihinweis` anpassen.
+- **Prozessaussagen gegenlesen.** Sätze wie „Vor der Bestellung geht ein
+  Größensatz durch den Betrieb" beschreiben Uwes Arbeitsweise. Ich habe sie
+  plausibel formuliert, aber nicht gewusst. Betrifft
+  `content/inspiration.ts`, `content/landing.ts`, `content/beratung.ts`.
+
+---
+
+## 7. Vor dem Livegang
+
+- [ ] `app/robots.ts` und `robots` in `app/layout.tsx` von noindex befreien
+- [ ] Rechtstexte prüfen lassen, Entwurfshinweis entfernen (Punkt 2)
+- [ ] Kontaktdaten im Footer eintragen (Punkt 3)
+- [ ] Resend-Variablen setzen und eine Testanfrage durchschicken (Punkt 1)
+
+---
+
+# Erledigt
+
+- **Zahlen im Credibility-Strip:** 30 Jahre im Vertrieb, 89 Betriebe
+  ausgestattet, 7 Partnermarken, 2 Länder. In `content/landing.ts`.
+- **Referenzlogos:** alle sechs freigegeben und im Marquee eingebunden,
+  monochrom. Daten in `content/referenzen.ts`, ein Eintrag ohne `logo` fällt
+  automatisch auf die Wortmarke zurück.
+- **Portrait:** Farbfassung als `public/img/brand/portrait-uwe-overbeck.png`,
+  die Schwarzweiß-Variante liegt daneben als `…-sw.png`.
+- **Bildton:** Fotos sind nicht mehr voll entsättigt. Geregelt über eine
+  einzige Stelle — `.bild-ton` in `app/globals.css`, aktuell
+  `grayscale(0.55)`. 0 wäre volle Farbe, 1 reines Schwarzweiß.
+- **Katalog-PDF:** liegt unter `public/downloads/greif-katalog.pdf` (2,1 MB).
+
+---
+
+# Bildinventar
+
+Alles aus dem Quellordner mit Auflösung und Seitenverhältnis, plus Ziel und
+Verwendung im Repo.
 
 ## Hotel & Housekeeping → `public/img/hotel/`
 
-| Quelle                             | Format | Auflösung | Verhältnis | Ziel                                    | Verwendung |
-| ---------------------------------- | ------ | --------- | ---------- | --------------------------------------- | ---------- |
-| `pexels-liliana-drew-9462787.jpg`  | JPEG   | 4000×6000 | 2:3        | `housekeeping-bett-zu-zweit.jpg`        | Hero `/hotel`, Tile Hotel auf der Landingpage |
-| `ImlauerPalaisMirabell-9860.jpg`   | JPEG   | 1400×1050 | 4:3        | `rezeption-empfang-gast.jpg`            | `/hotel` Block 1 (Rezeption) |
-| `ImlauerPalaisMirabell-9391.jpg`   | JPEG   | 1050×1400 | 3:4        | `housekeeping-zimmer-herrichten.jpg`    | `/hotel` Block 2 (Housekeeping) |
-| `IMLAUERPalaisMirabell1433.jpg`    | JPEG   | 1050×1400 | 3:4        | `hotelzimmer-zwei-mitarbeiterinnen.jpg` | `/hotel` Block 3 (Passform) |
+| Quelle | Auflösung | Verhältnis | Ziel | Verwendung |
+| ------ | --------- | ---------- | ---- | ---------- |
+| `pexels-liliana-drew-9462787.jpg` | 4000×6000 | 2:3 | `housekeeping-bett-zu-zweit.jpg` | Hero `/hotel`, Tile Hotel auf der Landingpage |
+| `ImlauerPalaisMirabell-9860.jpg` | 1400×1050 | 4:3 | `rezeption-empfang-gast.jpg` | `/hotel` Block 1 (Rezeption) |
+| `ImlauerPalaisMirabell-9391.jpg` | 1050×1400 | 3:4 | `housekeeping-zimmer-herrichten.jpg` | `/hotel` Block 2 (Housekeeping) |
+| `IMLAUERPalaisMirabell1433.jpg` | 1050×1400 | 3:4 | `hotelzimmer-zwei-mitarbeiterinnen.jpg` | `/hotel` Block 3 (Passform) |
 
 ## Gastronomie → `public/img/gastro/`
 
-| Quelle                                        | Format | Auflösung | Verhältnis | Ziel                                | Verwendung |
-| --------------------------------------------- | ------ | --------- | ---------- | ----------------------------------- | ---------- |
-| `pexels-cottonbro-4253305.jpg`                 | JPEG   | 4000×6000 | 2:3        | `kueche-zwei-koeche-am-herd.jpg`    | Hero `/gastro`, Tile Gastro auf der Landingpage |
-| `pexels-nadin-sh-78971847-37639098.jpg`        | JPEG   | 2736×4864 | 9:16       | `tranchieren-am-gast.jpg`           | `/gastro` Block 1 (Gastkontakt) |
-| `pexels-cottonbro-4253133.jpg`                 | JPEG   | 3946×5919 | 2:3        | `koch-am-herd-mit-schuerze.jpg`     | `/gastro` Block 2 (Hitze, Bewegung) |
-| `pexels-cottonbro-4253298.jpg`                 | JPEG   | 3894×5841 | 2:3        | `koeche-schuerzen-nahaufnahme.jpg`  | `/gastro` Block 3 (Flecken, Wäsche) |
-| `pexels-soc-nang-d-ng-2150345854-35692203.jpg` | JPEG   | 3680×5520 | 2:3        | `service-mit-tablett.jpg`           | `/gastro` Block 4 (Wiedererkennbarkeit) |
+| Quelle | Auflösung | Verhältnis | Ziel | Verwendung |
+| ------ | --------- | ---------- | ---- | ---------- |
+| `pexels-cottonbro-4253305.jpg` | 4000×6000 | 2:3 | `kueche-zwei-koeche-am-herd.jpg` | Hero `/gastro`, Tile Gastro auf der Landingpage |
+| `pexels-nadin-sh-…-37639098.jpg` | 2736×4864 | 9:16 | `tranchieren-am-gast.jpg` | `/gastro` Block 1 (Gastkontakt) |
+| `pexels-cottonbro-4253133.jpg` | 3946×5919 | 2:3 | `koch-am-herd-mit-schuerze.jpg` | `/gastro` Block 2 (Hitze, Bewegung) |
+| `pexels-cottonbro-4253298.jpg` | 3894×5841 | 2:3 | `koeche-schuerzen-nahaufnahme.jpg` | `/gastro` Block 3 (Flecken, Wäsche) |
+| `pexels-soc-nang-…-35692203.jpg` | 3680×5520 | 2:3 | `service-mit-tablett.jpg` | `/gastro` Block 4 (Wiedererkennbarkeit) |
 
-## Marke & Produkt → `public/img/brand/`
+## Marke und Portrait → `public/img/brand/`
 
-| Quelle                        | Format | Auflösung | Verhältnis | Ziel                                   | Verwendung |
-| ----------------------------- | ------ | --------- | ---------- | -------------------------------------- | ---------- |
-| `GA_Tisane_Team_090_0527.jpg` | JPEG   | 1920×810  | ~21:9      | `kuechenteam-weisse-kochjacken.jpg`    | Hero Landingpage |
-| —                             | —      | —         | 4:5        | `portrait-uwe-overbeck.jpg`            | **fehlt**, siehe Punkt 3 |
+| Quelle | Auflösung | Verhältnis | Ziel | Verwendung |
+| ------ | --------- | ---------- | ---- | ---------- |
+| `GA_Tisane_Team_090_0527.jpg` | 1920×810 | ~21:9 | `kuechenteam-weisse-kochjacken.jpg` | Hero Landingpage |
+| `Portrait Uwe frabe.png` | 1122×1402 | 4:5 | `portrait-uwe-overbeck.png` | About-Sektion |
+| `Uwe Portrait .png` | 1122×1402 | 4:5 | `portrait-uwe-overbeck-sw.png` | Reserve, Schwarzweiß |
 
 ## Referenzlogos → `public/img/brand/referenzen/`
 
-| Quelle                                   | Format | Auflösung | Verhältnis | Ziel                             |
-| ---------------------------------------- | ------ | --------- | ---------- | -------------------------------- |
-| `Mirabell Logo.webp`                     | WebP   | 1920×1080 | 16:9       | `imlauer-palais-mirabell.webp`   |
-| `Hotel-Pitter-Salzburg-Logo.jpg`         | JPEG   | 400×366   | ~1:1       | `imlauer-hotel-pitter.jpg`       |
-| `ZumHirschen_Logo_RGB-GREEN-574x1024.webp` | WebP | 574×1024  | 9:16       | `hotel-zum-hirschen.webp`        |
-| `Laschensky.jpeg`                        | JPEG   | 447×447   | 1:1        | `laschensky-hof.jpeg`            |
-| `FC-Fontana-Logo.jpeg`                   | JPEG   | 2048×1448 | ~3:2       | `fontana.jpeg`                   |
-| `Gabriel Glas.webp`                      | WebP   | 1200×628  | ~1.9:1     | `gabriel-glas.webp`              |
+| Quelle | Auflösung | Ziel | Betrieb |
+| ------ | --------- | ---- | ------- |
+| `Mirabell Logo.webp` | 1920×1080 | `imlauer-palais-mirabell.webp` | IMLAUER Palais Mirabell |
+| `Hotel-Pitter-Salzburg-Logo.jpg` | 400×366 | `imlauer-hotel-pitter.jpg` | IMLAUER Hotel Pitter Salzburg |
+| `ZumHirschen_Logo_RGB-GREEN-574x1024.webp` | 574×1024 | `hotel-zum-hirschen.webp` | Hotel Zum Hirschen |
+| `Laschensky.jpeg` | 447×447 | `laschensky-hof.jpeg` | Laschensky Hof |
+| `FC-Fontana-Logo.jpeg` | 2048×1448 | `fontana.jpeg` | Fontana |
+| `Gabriel Glas.webp` | 1200×628 | `gabriel-glas.webp` | Gabriel-Glas |
 
-Alle sechs liegen im Repo, sind aber noch nicht eingebunden. Siehe Punkt 2.
+Alle sechs sind freigegeben und laufen im Marquee.
 
 ## Anmerkungen zur Bildqualität
 
 - **Hero Landingpage:** `kuechenteam-weisse-kochjacken.jpg` ist mit 1920 px
-  Breite das einzige Bild mit passendem Seitenverhältnis für ein Full-Bleed-Band.
-  Auf Displays über 1920 px wird es hochskaliert. Ein Ersatz mit ≥ 2560 px
-  Breite wäre besser — idealerweise ein Motiv, das Hotel **und** Gastronomie
-  zeigt, weil die Positionierung beide gleichwertig behandelt.
+  Breite das einzige Bild mit passendem Seitenverhältnis für ein
+  Full-Bleed-Band. Auf Displays über 1920 px wird es hochskaliert. Ein Ersatz
+  mit ≥ 2560 px Breite wäre besser — idealerweise ein Motiv, das Hotel **und**
+  Gastronomie zeigt, weil die Positionierung beide gleichwertig behandelt.
 - **Rezeptionsbild:** `rezeption-empfang-gast.jpg` hat 1400×1050. Reicht für
   einen halbbreiten Editorial-Block, nicht für Full-Bleed.
-- Die Pexels-Bilder sind Stock. Wenn es echte Bilder aus ausgestatteten
-  Betrieben gibt, sind die deutlich stärker — und belegen die Referenzen gleich mit.
+- Die Pexels-Bilder sind Stock. Echte Bilder aus ausgestatteten Betrieben
+  wären deutlich stärker — und würden die Referenzen gleich mitbelegen.

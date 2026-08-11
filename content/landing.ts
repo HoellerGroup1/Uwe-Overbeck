@@ -19,18 +19,14 @@ export const hero = {
   },
 } as const;
 
-/**
- * TODO(Marcel): echte Werte eintragen. Die Labels sind Vorschläge und dürfen
- * geändert werden. Aus dem Entwurf bewusst nicht übernommen, weil erfunden:
- * 25 Jahre, 450+ Projekte, 12 Partnermarken, 8 Länder.
- */
+/** Werte von Marcel geliefert und bestätigt. */
 export const credibility = {
   label: "In Zahlen",
   eintraege: [
-    { wert: "[ ]", label: "Jahre im Vertrieb" },
-    { wert: "[ ]", label: "Betriebe ausgestattet" },
-    { wert: "[ ]", label: "Partnermarken" },
-    { wert: "[ ]", label: "Länder" },
+    { wert: "30", label: "Jahre im Vertrieb" },
+    { wert: "89", label: "Betriebe ausgestattet" },
+    { wert: "7", label: "Partnermarken" },
+    { wert: "2", label: "Länder" },
   ],
 } as const;
 
@@ -43,13 +39,16 @@ export const about = {
   ],
   signatur: "Uwe Overbeck",
   /**
-   * TODO(Marcel): Portrait im Format 4:5 liefern, mindestens 1200×1500 px.
-   * Solange die Datei fehlt, rendert die About-Sektion einen Platzhalter.
+   * Farbfassung, 1122×1402 (4:5). Die Schwarzweiß-Variante liegt daneben als
+   * portrait-uwe-overbeck-sw.png, falls der Ton doch neutraler werden soll.
+   * `vorhanden: false` schaltet zurück auf den Platzhalter.
    */
   portrait: {
-    src: "/img/brand/portrait-uwe-overbeck.jpg",
+    src: "/img/brand/portrait-uwe-overbeck.png",
     alt: "Portrait von Uwe Overbeck",
-    vorhanden: false,
+    breite: 1122,
+    hoehe: 1402,
+    vorhanden: true,
     platzhalterHinweis: "Portrait folgt",
   },
 } as const;

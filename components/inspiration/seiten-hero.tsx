@@ -20,7 +20,7 @@ export function SeitenHero({
         fill
         priority
         sizes="100vw"
-        className="object-cover grayscale"
+        className="object-cover bild-ton"
       />
 
       {/* Abdunklung wie im Hero der Landingpage, damit heller Text sicher lesbar bleibt. */}

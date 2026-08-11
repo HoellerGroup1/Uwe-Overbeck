@@ -85,6 +85,20 @@ Sekundärtext auf der dunklen `ink`-Fläche verwendet (dort 5,9:1).
 Der Hero arbeitet mit drei Abdunklungslagen über dem Bild, damit heller Text
 auch über hellen Bildstellen sicher über 4,5:1 bleibt.
 
+## Bildton
+
+Alle Fotos laufen über die Utility-Klasse `.bild-ton` in `app/globals.css`.
+Sie ist bewusst die einzige Stelle, an der der Look aller Bilder gemeinsam
+geregelt wird:
+
+```css
+.bild-ton { filter: grayscale(0.55); }
+```
+
+`0` ist volle Farbe, `1` reines Schwarzweiß. Die Referenzlogos im Marquee
+bleiben davon unberührt und sind voll entsättigt — sechs verschiedene
+Markenfarben nebeneinander wären zu unruhig.
+
 Nicht benötigte Material-Design-Tokens aus dem Frontmatter wurden weggelassen.
 
 ## Referenzen-Marquee
@@ -97,9 +111,16 @@ ausgeblendet. Kein JavaScript.
 Bei `prefers-reduced-motion: reduce` läuft keine Animation, die Logos werden als
 statisches Grid ausgegeben.
 
-Die Daten liegen in `content/referenzen.ts`. Aktuell laufen dort neutrale
-Platzhalter-Wortmarken. Sobald Logos und Freigaben da sind: pro Eintrag ein
-`logo`-Feld ergänzen, mehr ist nicht nötig. Siehe TODO.md, Punkt 2.
+Die Daten liegen in `content/referenzen.ts`. Ein Eintrag ohne `logo` fällt
+automatisch auf die Wortmarke zurück — so lassen sich Betriebe ergänzen,
+deren Logo noch fehlt.
+
+Die Logodateien sind JPEG und WebP mit weißem Hintergrund. Damit das Weiß
+nicht als heller Kasten stehen bleibt, liegt `mix-blend-multiply` auf den
+Logos. Der Wrapper trägt dafür explizit `bg-surface`: der Track ist animiert
+und damit transformiert, und eine Transformation erzeugt einen eigenen
+Stacking-Context — das Blending käme sonst nie bis zur Sektionsfläche durch.
+Mit Logos als SVG oder PNG mit Transparenz kann beides raus.
 
 ## Katalog-Download
 

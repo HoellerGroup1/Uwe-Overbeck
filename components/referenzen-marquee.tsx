@@ -15,19 +15,37 @@ import { referenzen, referenzenLabel, type Referenz } from "@/content/referenzen
 function ReferenzItem({ referenz }: { referenz: Referenz }) {
   if (referenz.logo && referenz.breite && referenz.hoehe) {
     return (
-      <Image
-        src={referenz.logo}
-        alt={referenz.name}
-        width={referenz.breite}
-        height={referenz.hoehe}
-        sizes="160px"
-        className="h-10 w-auto object-contain opacity-55 grayscale"
-      />
+      /*
+        Feste Zeilenhöhe, damit unterschiedliche Seitenverhältnisse optisch
+        auf einer Linie sitzen.
+
+        Das bg-surface auf diesem Wrapper ist nötig, nicht dekorativ: der Track
+        ist animiert und damit transformiert, und eine Transformation erzeugt
+        einen eigenen Stacking-Context. mix-blend-multiply am Logo käme deshalb
+        nie bis zur Sektionsfläche durch, und das Weiß der JPEG- und
+        WebP-Dateien bliebe als heller Kasten stehen. Mit der Fläche direkt am
+        Wrapper hat das Blending den richtigen Hintergrund.
+      */
+      <span className="flex h-20 w-[170px] items-center justify-center bg-surface">
+        <Image
+          src={referenz.logo}
+          alt={referenz.name}
+          width={referenz.breite}
+          height={referenz.hoehe}
+          sizes="170px"
+          /*
+            Monochrom wie geplant. Die Deckkraft liegt bei 0.8 statt der
+            ursprünglich vorgesehenen 0.55: mehrere der echten Logos haben
+            feine helle Linien und verschwinden bei 0.55 fast vollständig.
+          */
+          className="max-h-20 w-auto max-w-[170px] object-contain opacity-80 mix-blend-multiply grayscale"
+        />
+      </span>
     );
   }
 
   return (
-    <span className="font-display text-headline-md whitespace-nowrap text-on-surface-variant uppercase">
+    <span className="flex h-20 items-center font-display text-headline-md whitespace-nowrap text-on-surface-variant uppercase">
       {referenz.name}
     </span>
   );
