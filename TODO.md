@@ -1,9 +1,27 @@
 # TODO — was noch fehlt
 
-Stand: alle fünf Meilensteine gebaut, `npm run build` und `eslint` laufen
-fehlerfrei. Zahlen, Referenzlogos und Portrait sind eingepflegt.
+Stand 11.08.2026: alle fünf Meilensteine gebaut, Mobile-Optimierung zu vier
+Fünfteln erledigt. `npm run build` und `eslint` laufen fehlerfrei, alles ist
+committed und auf `origin/build/v1` gepusht.
 
-Kurzfassung, nach Dringlichkeit:
+## Hier geht es weiter
+
+**Phase 5 der Mobile-Optimierung**, siehe Abschnitt „Mobile-Optimierung"
+weiter unten. Sie zerfällt bewusst in zwei Teile:
+
+- **5a, risikoarm, ca. 20 Minuten.** `env(safe-area-inset-*)` in Header,
+  Footer und Container, `-webkit-tap-highlight-color` plus eigener
+  `:active`-Zustand, Scroll-Lock hinter dem offenen Mobile-Menü.
+- **5b, invasiver.** Quellbilder herunterrechnen (die JPEGs auf max. 2400 px,
+  das Portrait von PNG auf JPEG, 2 MB auf etwa 250 KB) und `quality` sowie
+  `placeholder="blur"` setzen. Ersetzt echte Dateien im Repo, deshalb war
+  hier eine Freigabe offen.
+
+Offene Frage an Marcel: beides oder erstmal nur 5a.
+
+---
+
+Kurzfassung der übrigen Punkte, nach Dringlichkeit:
 
 | # | Was | Ohne das … |
 | - | --- | ---------- |
@@ -103,6 +121,63 @@ Nicht kritisch, aber diese Sektionen fehlen deshalb aktuell:
 - [ ] `app/robots.ts` und `robots` in `app/layout.tsx` von noindex befreien
 - [ ] Rechtstexte prüfen lassen, Entwurfshinweis entfernen (Punkt 2)
 - [ ] Resend-Variablen setzen und eine Testanfrage durchschicken (Punkt 1)
+
+---
+
+# Mobile-Optimierung
+
+Gemessen auf 390×844 (iPhone 14/15). Ausgangslage war eine Seite, die auf dem
+Desktop ruhig wirkt und auf dem Handy zur Rutschbahn wurde.
+
+## Ergebnis nach Phase 1 bis 4
+
+| Seite | vorher | jetzt | Bildschirme |
+| ----- | ------ | ----- | ----------- |
+| `/` | 5212 px | 4365 px | 6,2 → 5,2 |
+| `/hotel` | 4168 px | 3295 px | 4,9 → 3,9 |
+| `/gastro` | 5239 px | 3929 px | 6,2 → 4,7 |
+| `/beratung` | 2624 px | 2460 px | 3,1 → 2,9 |
+
+Kein horizontaler Überlauf bei 360 und 390 px. Desktop ist um rund 72 px
+gewachsen, das kommt von den größeren Klickflächen aus Phase 3.
+
+## Phase 1 — vertikaler Rhythmus ✔ (Commit 240b3ca)
+
+Sektionspadding responsiv, Bilder mobil im Querformat 4:3, Footer zweispaltig.
+
+Dabei kam das Feld `fokus` in `content/inspiration.ts` dazu: im Querformat geht
+oben oder unten etwas verloren, und ein pauschaler Zuschnitt trifft nicht jedes
+Motiv. Mittig fehlten den Hochformat-Aufnahmen die Köpfe, oben verankert
+verschwanden bei zwei Bildern die bedruckte Schürze und die arbeitende Person.
+Standard ist `"oben"`, `"mitte"` für `service-mit-tablett` und
+`housekeeping-zimmer-herrichten`. **Wer Bilder tauscht, muss den Zuschnitt am
+Handy einzeln nachsehen.**
+
+## Phase 3 — Trefferflächen ✔ (Commit e767a74)
+
+Alle Ziele auf mindestens 44 px. Vorher lagen zwölf darunter, das kleinste war
+die Datenschutz-Checkbox mit 16×16.
+
+Zwei Entscheidungen zum Nachlesen:
+- Die Checkbox bleibt bei 24×24, das ist die WCAG-2.5.8-Grenze. Das eigentliche
+  Ziel ist das Label mit 306×96 px, per `htmlFor` verbunden.
+- Abstände in Linklisten laufen über Padding statt `space-y`. Mit `space-y`
+  hätten sich die vergrößerten Trefferflächen benachbarter Links überlappt.
+
+## Phase 4 und 2 — Marquee und Hero ✔ (Commit f166d7f)
+
+Blende mobil von 96 auf 24 px, damit sind statt 49 nur noch 12 Prozent der
+Fläche verblendet. Logos mobil kleiner, Laufzeit mobil 26s für gleiches Tempo.
+Hero mobil 68svh statt 80svh.
+
+**Achtung beim Anfassen des Marquees:** der nahtlose Umlauf hängt daran, dass
+die Summe der beiden Außenabstände genau einem Zwischenraum entspricht, und
+zwar pro Breakpoint. Mobil 2×24 = 48, ab md 2×48 = 96. Der Kommentar in
+`components/referenzen-marquee.tsx` sagt es noch einmal.
+
+## Phase 5 — offen
+
+Siehe „Hier geht es weiter" ganz oben.
 
 ---
 
