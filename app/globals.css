@@ -139,12 +139,12 @@
     Seiten mit Hero lassen die Nav bewusst über dem Bild liegen.
   */
   .pt-header {
-    padding-top: 76px;
+    padding-top: 81px;
   }
 
   @media (min-width: 768px) {
     .pt-header {
-      padding-top: 84px;
+      padding-top: 85px;
     }
   }
 

@@ -5,7 +5,8 @@ export function SiteFooter() {
   const jahr = new Date().getFullYear();
 
   return (
-    <footer id="kontakt" className="mt-auto bg-ink text-on-primary">
+    // relative z-10, damit das fixierte bg-grid-Overlay nicht über der Fläche liegt
+    <footer id="kontakt" className="relative z-10 mt-auto bg-ink text-on-primary">
       <div className="px-margin-mobile py-stack-lg md:px-margin-desktop md:py-stack-xl">
         <div className="grid grid-cols-1 gap-stack-lg md:grid-cols-12 md:gap-gutter">
           <div className="md:col-span-5">
