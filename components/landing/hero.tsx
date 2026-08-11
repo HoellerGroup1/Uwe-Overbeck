@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Container } from "@/components/container";
-import { MicroLabel, TextLink } from "@/components/ui";
+import { MicroLabel } from "@/components/ui";
 import { hero } from "@/content/landing";
 
 export function Hero() {
@@ -43,9 +43,6 @@ export function Hero() {
             <p className="max-w-[42ch] font-body text-body-lg text-on-primary">
               {hero.subline}
             </p>
-            <TextLink href={hero.linkHref} className="mt-stack-md text-on-primary">
-              {hero.linkLabel}
-            </TextLink>
           </div>
         </div>
       </Container>

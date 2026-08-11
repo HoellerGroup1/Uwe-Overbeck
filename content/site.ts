@@ -21,6 +21,7 @@ export type NavLink = {
  * Damit springt der Link innerhalb der aktuellen Seite statt zurück zur Startseite.
  */
 export const navigation: NavLink[] = [
+  { label: "Home", href: "/" },
   { label: "Hotel", href: "/hotel" },
   { label: "Gastro", href: "/gastro" },
   { label: "Beratung", href: "/beratung" },
@@ -29,13 +30,11 @@ export const navigation: NavLink[] = [
 
 export const footer = {
   kontaktLabel: "Kontakt",
-  /**
-   * TODO(Marcel): echte Kontaktdaten von Uwe eintragen.
-   * Bis dahin bewusst leere Platzhalter, damit nichts Erfundenes online geht.
-   */
   kontakt: {
-    email: "[E-Mail-Adresse]",
-    telefon: "[Telefonnummer]",
+    email: "office@uwe-overbeck.com",
+    telefon: "+49 151 59851965",
+    /** Ohne Leerzeichen, für den tel:-Link. */
+    telefonRoh: "+4915159851965",
   },
   navLabel: "Seiten",
   rechtLabel: "Rechtliches",

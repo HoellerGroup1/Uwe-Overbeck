@@ -11,22 +11,24 @@ export const hero = {
   headline: "Was Ihr Team trägt, sieht der Gast zuerst.",
   subline:
     "Ich berate Betriebe im DACH-Raum bei der Auswahl ihrer Berufskleidung.",
-  linkLabel: "Beratungsgespräch anfragen",
-  linkHref: "/beratung",
   bild: {
     src: "/img/brand/kuechenteam-weisse-kochjacken.jpg",
     alt: "Küchenteam in weißen Kochjacken bei der Arbeit am Pass",
   },
 } as const;
 
-/** Werte von Marcel geliefert und bestätigt. */
+/**
+ * Werte von Marcel geliefert und bestätigt.
+ * `wert` ist eine Zahl, weil der Strip sie beim Scrollen hochzählt.
+ * `suffix` ist optional, etwa für "90+".
+ */
 export const credibility = {
   label: "In Zahlen",
   eintraege: [
-    { wert: "30", label: "Jahre im Vertrieb" },
-    { wert: "89", label: "Betriebe ausgestattet" },
-    { wert: "7", label: "Partnermarken" },
-    { wert: "2", label: "Länder" },
+    { wert: 30, suffix: "", label: "Jahre im Vertrieb" },
+    { wert: 89, suffix: "", label: "Betriebe ausgestattet" },
+    { wert: 7, suffix: "", label: "Partnermarken" },
+    { wert: 2, suffix: "", label: "Länder" },
   ],
 } as const;
 

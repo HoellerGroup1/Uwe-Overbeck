@@ -15,7 +15,15 @@ persönliche Beratungsgespräche.
 
 Bewusst **nicht** enthalten: Component-Library, Framer Motion, Analytics,
 Third-Party-Skripte, externe Fonts. Damit braucht die Seite kein Cookie-Banner.
-Alle Animationen sind reines CSS.
+
+Animationen sind mit einer Ausnahme reines CSS: der Hochzähler im
+Credibility-Strip (`components/landing/hochzaehl-zahl.tsx`) nutzt
+IntersectionObserver und requestAnimationFrame. Rein per CSS liefe die
+Animation beim Laden los und wäre vorbei, bevor der Strip im Bild ist —
+scroll-getriebene CSS-Animationen sind dafür noch zu wackelig unterstützt.
+Keine Library, keine Abhängigkeit. Der Endwert steht im serverseitig
+gerenderten HTML, ohne JavaScript und bei `prefers-reduced-motion` bleibt er
+einfach stehen.
 
 ## Loslegen
 

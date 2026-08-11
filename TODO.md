@@ -9,9 +9,11 @@ Kurzfassung, nach Dringlichkeit:
 | - | --- | ---------- |
 | 1 | Resend-Variablen | kommt **keine einzige Anfrage** an |
 | 2 | Impressum und Datenschutz | ist die Seite nicht rechtssicher |
-| 3 | Kontaktdaten im Footer | steht dort `[E-Mail-Adresse]` |
-| 4 | Deployment | gibt es keine Preview-URL |
-| 5 | weiteres Bildmaterial | fehlen drei geplante Sektionen |
+| 3 | Deployment | gibt es keine Preview-URL |
+| 4 | weiteres Bildmaterial | fehlen drei geplante Sektionen |
+
+Für das Mockup ist nichts davon ein Blocker — die Seite läuft vollständig,
+die offenen Punkte betreffen den echten Livegang.
 
 ---
 
@@ -51,14 +53,7 @@ Vor dem Livegang juristisch prüfen lassen.
 
 ---
 
-## 3. Kontaktdaten im Footer — **offen**
-
-`content/site.ts` → `footer.kontakt`. Aktuell stehen dort
-`[E-Mail-Adresse]` und `[Telefonnummer]` auf jeder Seite.
-
----
-
-## 4. Deployment — **offen**
+## 3. Deployment — **offen**
 
 Das Repository liegt unter `Website Uwe/uwe-overbeck/`, lokaler Branch
 `build/v1`. Es gibt noch kein Remote und kein Vercel-Projekt.
@@ -73,7 +68,7 @@ Environment Variables hinterlegen. `main` bleibt unberührt bis zur Freigabe.
 
 ---
 
-## 5. Weiteres Bildmaterial — **offen**
+## 4. Weiteres Bildmaterial — **offen**
 
 Nicht kritisch, aber diese Sektionen fehlen deshalb aktuell:
 
@@ -86,7 +81,7 @@ Nicht kritisch, aber diese Sektionen fehlen deshalb aktuell:
 
 ---
 
-## 6. Kleinigkeiten, kein Blocker
+## 5. Kleinigkeiten, kein Blocker
 
 - **Logo Hotel Zum Hirschen** ist als einziges hochkant (574×1024) und wirkt
   im Marquee dadurch schmaler als die anderen. Eine querformatige Fassung
@@ -103,11 +98,10 @@ Nicht kritisch, aber diese Sektionen fehlen deshalb aktuell:
 
 ---
 
-## 7. Vor dem Livegang
+## 6. Vor dem Livegang
 
 - [ ] `app/robots.ts` und `robots` in `app/layout.tsx` von noindex befreien
 - [ ] Rechtstexte prüfen lassen, Entwurfshinweis entfernen (Punkt 2)
-- [ ] Kontaktdaten im Footer eintragen (Punkt 3)
 - [ ] Resend-Variablen setzen und eine Testanfrage durchschicken (Punkt 1)
 
 ---
@@ -125,6 +119,14 @@ Nicht kritisch, aber diese Sektionen fehlen deshalb aktuell:
   einzige Stelle — `.bild-ton` in `app/globals.css`, aktuell
   `grayscale(0.55)`. 0 wäre volle Farbe, 1 reines Schwarzweiß.
 - **Katalog-PDF:** liegt unter `public/downloads/greif-katalog.pdf` (2,1 MB).
+- **Kontaktdaten:** office@uwe-overbeck.com und +49 151 59851965 stehen im
+  Footer jeder Seite, als `mailto:`- und `tel:`-Link.
+- **Home in der Navigation**, links vor Hotel, gleicher Stil.
+- **Hero-CTA entfernt.** Der Link „Beratungsgespräch anfragen" ist aus dem
+  Hero raus. Auf der Startseite führen jetzt der Nav-Punkt „Beratung" und das
+  CTA-Band am Seitenende zum Formular.
+- **Hochzähler im Credibility-Strip:** zählt beim Scrollen über zwei Sekunden
+  hoch, siehe `components/landing/hochzaehl-zahl.tsx`.
 
 ---
 

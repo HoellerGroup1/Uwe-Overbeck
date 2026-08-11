@@ -54,8 +54,11 @@ export function SiteHeader() {
         <nav aria-label="Hauptnavigation" className="hidden md:block">
           <ul className="flex items-center gap-stack-md">
             {navigation.map((link) => {
+              // "/" darf nur auf der Startseite aktiv sein, sonst passt es überall.
               const aktiv =
-                !link.href.startsWith("#") && pathname.startsWith(link.href);
+                link.href === "/"
+                  ? pathname === "/"
+                  : !link.href.startsWith("#") && pathname.startsWith(link.href);
               return (
                 <li key={link.href}>
                   <Link

@@ -20,8 +20,22 @@ export function SiteFooter() {
               {footer.kontaktLabel}
             </h2>
             <ul className="mt-stack-sm space-y-1">
-              <li className="font-body text-body-md">{footer.kontakt.email}</li>
-              <li className="font-body text-body-md">{footer.kontakt.telefon}</li>
+              <li>
+                <a
+                  href={`mailto:${footer.kontakt.email}`}
+                  className="font-body text-body-md underline-offset-4 hover:underline"
+                >
+                  {footer.kontakt.email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`tel:${footer.kontakt.telefonRoh}`}
+                  className="font-body text-body-md underline-offset-4 hover:underline"
+                >
+                  {footer.kontakt.telefon}
+                </a>
+              </li>
             </ul>
           </div>
 

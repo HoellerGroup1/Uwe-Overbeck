@@ -1,10 +1,11 @@
 import { Container } from "@/components/container";
+import { HochzaehlZahl } from "@/components/landing/hochzaehl-zahl";
 import { credibility } from "@/content/landing";
 
 /**
  * Vier Kennzahlen, getrennt durch vertikale Hairlines.
  * Mobil zwei Spalten, ab Desktop vier.
- * Die Werte sind Platzhalter — siehe TODO.md, Punkt 1.
+ * Die Zahlen zählen hoch, sobald der Strip ins Bild kommt.
  */
 
 /** Hairline links steht überall außer in der jeweils ersten Spalte einer Zeile. */
@@ -29,7 +30,7 @@ export function CredibilityStrip() {
                 {eintrag.label}
               </dt>
               <dd className="font-display text-headline-lg-mobile md:text-headline-lg">
-                {eintrag.wert}
+                <HochzaehlZahl wert={eintrag.wert} suffix={eintrag.suffix} />
               </dd>
             </div>
           ))}
