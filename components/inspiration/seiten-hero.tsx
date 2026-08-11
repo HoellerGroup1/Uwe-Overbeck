@@ -13,7 +13,7 @@ export function SeitenHero({
   bild: { src: string; alt: string };
 }) {
   return (
-    <section className="relative isolate flex min-h-[58svh] items-end overflow-hidden md:min-h-[62svh]">
+    <section className="relative isolate flex min-h-[52svh] items-end overflow-hidden md:min-h-[62svh]">
       <Image
         src={bild.src}
         alt={bild.alt}

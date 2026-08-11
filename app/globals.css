@@ -180,9 +180,21 @@
     }
   }
 
+  /*
+    Die Dauer ist pro Breakpoint gesetzt, damit das Tempo gleich bleibt.
+    Der Track ist mobil kürzer (kleinere Logos, engere Abstände), bei 40s
+    würde er dort mit rund 27 px/s kriechen. 26s ergeben mobil dasselbe
+    Tempo wie 40s auf dem Desktop, jeweils etwa 40 px/s.
+  */
   .marquee-track {
-    animation: marquee-scroll 40s linear infinite;
+    animation: marquee-scroll 26s linear infinite;
     will-change: transform;
+  }
+
+  @media (min-width: 768px) {
+    .marquee-track {
+      animation-duration: 40s;
+    }
   }
 
   .marquee-viewport:hover .marquee-track,
@@ -190,14 +202,26 @@
     animation-play-state: paused;
   }
 
+  /*
+    Ränder ausblenden. Die Breite der Blende ist bewusst variabel: 96 px auf
+    einem 390-px-Viewport hätten links und rechts zusammen fast die Hälfte der
+    Fläche verschluckt. Mobil deshalb 24 px, ab Tablet wieder 96 px.
+  */
   .marquee-mask {
+    --blende: 24px;
     mask-image: linear-gradient(
       to right,
       transparent 0,
-      black 96px,
-      black calc(100% - 96px),
+      black var(--blende),
+      black calc(100% - var(--blende)),
       transparent 100%
     );
+  }
+
+  @media (min-width: 768px) {
+    .marquee-mask {
+      --blende: 96px;
+    }
   }
 
   /*

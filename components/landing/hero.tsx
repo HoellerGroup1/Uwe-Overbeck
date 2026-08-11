@@ -5,7 +5,11 @@ import { hero } from "@/content/landing";
 
 export function Hero() {
   return (
-    <section className="relative isolate flex min-h-[80svh] items-end overflow-hidden md:min-h-[88svh]">
+    /*
+      Mobil 68svh statt 80svh: der Inhalt sitzt unten, darüber stand sonst
+      fast der halbe Bildschirm reines Bild, bevor die Headline anfing.
+    */
+    <section className="relative isolate flex min-h-[68svh] items-end overflow-hidden md:min-h-[88svh]">
       <Image
         src={hero.bild.src}
         alt={hero.bild.alt}

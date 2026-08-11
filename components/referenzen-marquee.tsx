@@ -26,7 +26,7 @@ function ReferenzItem({ referenz }: { referenz: Referenz }) {
         WebP-Dateien bliebe als heller Kasten stehen. Mit der Fläche direkt am
         Wrapper hat das Blending den richtigen Hintergrund.
       */
-      <span className="flex h-20 w-[170px] items-center justify-center bg-surface">
+      <span className="flex h-14 w-[130px] items-center justify-center bg-surface md:h-20 md:w-[170px]">
         <Image
           src={referenz.logo}
           alt={referenz.name}
@@ -38,14 +38,14 @@ function ReferenzItem({ referenz }: { referenz: Referenz }) {
             ursprünglich vorgesehenen 0.55: mehrere der echten Logos haben
             feine helle Linien und verschwinden bei 0.55 fast vollständig.
           */
-          className="max-h-20 w-auto max-w-[170px] object-contain opacity-80 mix-blend-multiply grayscale"
+          className="max-h-14 w-auto max-w-[130px] object-contain opacity-80 mix-blend-multiply grayscale md:max-h-20 md:max-w-[170px]"
         />
       </span>
     );
   }
 
   return (
-    <span className="flex h-20 items-center font-display text-headline-md whitespace-nowrap text-on-surface-variant uppercase">
+    <span className="flex h-14 items-center font-display text-headline-md whitespace-nowrap text-on-surface-variant uppercase md:h-20">
       {referenz.name}
     </span>
   );
@@ -67,10 +67,14 @@ export function ReferenzenMarquee() {
       <div className="marquee-viewport marquee-mask mt-stack-md overflow-hidden motion-reduce:hidden">
         {/*
           Damit der Umlauf bei -50% nahtlos sitzt, muss die Summe der beiden
-          Außenabstände genau einem Zwischenraum entsprechen:
-          px-stack-lg (2 × 48px) = gap-stack-xl (96px). Beim Ändern beide anpassen.
+          Außenabstände genau einem Zwischenraum entsprechen. Das gilt pro
+          Breakpoint und ist beim Ändern beidseitig nachzuziehen:
+            mobil  px-stack-md (2 × 24px) = gap-stack-lg (48px)
+            ab md  px-stack-lg (2 × 48px) = gap-stack-xl (96px)
+          Mobil enger, weil bei 96px Abstand kaum mehr als ein Logo gleichzeitig
+          im Bild wäre.
         */}
-        <ul className="marquee-track flex w-max items-center gap-stack-xl px-stack-lg">
+        <ul className="marquee-track flex w-max items-center gap-stack-lg px-stack-md md:gap-stack-xl md:px-stack-lg">
           {referenzen.map((referenz) => (
             <li key={referenz.name}>
               <ReferenzItem referenz={referenz} />
