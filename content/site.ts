@@ -16,11 +16,15 @@ export type NavLink = {
   href: string;
 };
 
+/**
+ * "Kontakt" ist ein Anker auf den Footer, der auf jeder Seite steht.
+ * Damit springt der Link innerhalb der aktuellen Seite statt zurück zur Startseite.
+ */
 export const navigation: NavLink[] = [
   { label: "Hotel", href: "/hotel" },
   { label: "Gastro", href: "/gastro" },
   { label: "Beratung", href: "/beratung" },
-  { label: "Kontakt", href: "/#kontakt" },
+  { label: "Kontakt", href: "#kontakt" },
 ];
 
 export const footer = {

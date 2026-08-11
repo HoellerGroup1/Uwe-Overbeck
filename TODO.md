@@ -1,8 +1,20 @@
 # TODO — was Marcel liefern muss
 
-Stand: Meilenstein 1. Alles hier ist ein bewusster Platzhalter im Code, nichts
-davon ist erfunden. Erfundene Inhalte aus dem Stitch-Entwurf (`code.html`) sind
-vollständig entfernt.
+Stand: alle fünf Meilensteine gebaut, `npm run build` läuft fehlerfrei.
+Alles hier ist ein bewusster Platzhalter im Code, nichts davon ist erfunden.
+Erfundene Inhalte aus dem Stitch-Entwurf (`code.html`) sind vollständig entfernt.
+
+Kurzfassung, nach Dringlichkeit:
+
+| # | Was | Ohne das … |
+| - | --- | ---------- |
+| 5 | Resend-Variablen | kommt **keine einzige Anfrage** an |
+| 4 | Impressum und Datenschutz | ist die Seite nicht rechtssicher |
+| 3 | Portrait von Uwe | steht in der About-Sektion ein grauer Kasten |
+| 1 | Zahlen für den Credibility-Strip | stehen dort leere Klammern |
+| 2 | Referenzlogos plus Freigaben | laufen neutrale Platzhalter im Marquee |
+| 7 | weiteres Bildmaterial | fehlen drei geplante Sektionen |
+| 9 | Git-Remote und Vercel-Projekt | gibt es keine Preview-URL |
 
 ---
 
@@ -130,9 +142,33 @@ Nicht kritisch, aber diese Sektionen fehlen deshalb aktuell:
 ## 8. Vor dem Livegang
 
 - [ ] `app/robots.ts` und `robots` in `app/layout.tsx` von noindex befreien
-- [ ] Rechtstexte juristisch prüfen lassen
+- [ ] Rechtstexte juristisch prüfen lassen und den roten Entwurfshinweis
+      in `content/recht.ts` (`ENTWURFS_HINWEIS`) entfernen
 - [ ] Kontaktdaten im Footer eintragen (`content/site.ts` → `footer.kontakt`)
-- [ ] Domain und Deployment einrichten (siehe README, Abschnitt Deployment)
+- [ ] Prozessaussagen in der Copy von Uwe gegenlesen lassen. Sätze wie
+      „Vor der Bestellung geht ein Größensatz durch den Betrieb" beschreiben
+      seine Arbeitsweise — die sollte er bestätigen oder korrigieren
+      (`content/inspiration.ts`, `content/landing.ts`, `content/beratung.ts`)
+- [ ] Domain und Deployment einrichten (siehe Punkt 9)
+
+---
+
+## 9. Git-Remote und Vercel — **offen**
+
+Das Repository liegt unter `Website Uwe/uwe-overbeck/` und hat einen lokalen
+Branch `build/v1` mit fünf Commits. Es gibt **kein Remote und kein
+Vercel-Projekt**, deshalb wurde nichts gepusht und es gibt keine Preview-URL.
+
+Zum Aufsetzen:
+
+```bash
+gh repo create uwe-overbeck --private --source . --remote origin
+git push -u origin build/v1
+```
+
+Danach in Vercel importieren und dort `RESEND_API_KEY`, `KONTAKT_ABSENDER`
+und `KONTAKT_EMPFAENGER` als Environment Variables hinterlegen.
+`main` bleibt unberührt, bis du sie freigibst.
 
 ---
 

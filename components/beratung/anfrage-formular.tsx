@@ -11,8 +11,14 @@ import { HONEYPOT_FELD } from "@/lib/anfrage-schema";
 
 const START: FormularStatus = { status: "idle" };
 
+/*
+  DESIGN.md sieht für Eingabefelder eine 1px-Unterkante in ash vor. ash erreicht
+  auf surface aber nur 2,7:1 und liegt damit unter den 3:1, die WCAG 1.4.11 für
+  die Begrenzung von Bedienelementen verlangt. Deshalb hier on-surface-variant.
+  Hairlines zwischen Sektionen bleiben ash — die sind rein dekorativ.
+*/
 const FELD_BASIS =
-  "w-full border-0 border-b border-ash bg-transparent pb-2 font-body text-body-lg text-on-surface outline-none focus:border-on-surface";
+  "w-full border-0 border-b border-on-surface-variant bg-transparent pb-2 font-body text-body-lg text-on-surface outline-none focus:border-on-surface";
 
 function Label({ htmlFor, children }: { htmlFor: string; children: React.ReactNode }) {
   return (

@@ -31,7 +31,7 @@ export function SiteFooter() {
             </h2>
             <ul className="mt-stack-sm space-y-1">
               {navigation
-                .filter((link) => link.href !== "/#kontakt")
+                .filter((link) => !link.href.startsWith("#"))
                 .map((link) => (
                   <li key={link.href}>
                     <Link

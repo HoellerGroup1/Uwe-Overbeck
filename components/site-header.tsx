@@ -24,11 +24,6 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Menü bei Seitenwechsel schließen.
-  useEffect(() => {
-    setMenuOffen(false);
-  }, [pathname]);
-
   useEffect(() => {
     if (!menuOffen) return;
     const onKey = (e: KeyboardEvent) => {
@@ -60,7 +55,7 @@ export function SiteHeader() {
           <ul className="flex items-center gap-stack-md">
             {navigation.map((link) => {
               const aktiv =
-                link.href !== "/#kontakt" && pathname.startsWith(link.href);
+                !link.href.startsWith("#") && pathname.startsWith(link.href);
               return (
                 <li key={link.href}>
                   <Link
@@ -127,6 +122,7 @@ export function SiteHeader() {
               <li key={link.href} className="border-b border-ash/30 last:border-b-0">
                 <Link
                   href={link.href}
+                  onClick={() => setMenuOffen(false)}
                   className="block px-margin-mobile py-stack-sm font-body text-body-lg"
                 >
                   {link.label}

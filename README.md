@@ -71,10 +71,19 @@ Ergänzt:
 | `sand` | `#E3DCD1` | Sektionsflächen. Der einzige Akzent der Seite. |
 | `ash`  | `#9A968F` | Hairlines, Divider, Sekundärtext auf `ink` |
 
-Zum Kontrast: `ash` auf `surface` erreicht nur 2,7:1 und ist damit für Fließtext
-nicht ausreichend. `ash` wird deshalb für Hairlines und für Sekundärtext auf der
-dunklen `ink`-Fläche verwendet (dort 5,9:1). Sekundärtext auf hellem Grund nutzt
-`on-surface-variant` (`#494740`, 8,6:1).
+Zum Kontrast: `ash` auf `surface` erreicht nur 2,7:1. Das reicht weder für
+Fließtext (4,5:1 nach WCAG 1.4.3) noch für die Begrenzung von Bedienelementen
+(3:1 nach WCAG 1.4.11). `ash` wird deshalb nur für dekorative Hairlines und für
+Sekundärtext auf der dunklen `ink`-Fläche verwendet (dort 5,9:1).
+
+- Sekundärtext auf hellem Grund: `on-surface-variant` (`#494740`) — 8,6:1
+- Unterkante der Formularfelder: ebenfalls `on-surface-variant`, obwohl
+  DESIGN.md dort `ash` vorsieht
+- Fehlerrot auf `surface` — 6,0:1
+- Text auf `sand` — 6,8:1
+
+Der Hero arbeitet mit drei Abdunklungslagen über dem Bild, damit heller Text
+auch über hellen Bildstellen sicher über 4,5:1 bleibt.
 
 Nicht benötigte Material-Design-Tokens aus dem Frontmatter wurden weggelassen.
 
