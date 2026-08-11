@@ -24,11 +24,17 @@ export function SiteFooter() {
             <h2 className="font-body text-label-caps uppercase text-ash">
               {footer.kontaktLabel}
             </h2>
-            <ul className="mt-stack-sm space-y-1">
+            {/*
+              py-3 ergibt 44 px hohe Zeilen. Die Abstände der Liste sind
+              bewusst über das Padding gelöst statt über space-y: nur so ist
+              die Trefferfläche so hoch wie der Abstand zur nächsten Zeile,
+              sonst überlappen sich benachbarte Ziele.
+            */}
+            <ul className="mt-stack-sm -my-3">
               <li>
                 <a
                   href={`mailto:${footer.kontakt.email}`}
-                  className="font-body text-body-md underline-offset-4 hover:underline"
+                  className="block py-3 font-body text-body-md underline-offset-4 hover:underline"
                 >
                   {footer.kontakt.email}
                 </a>
@@ -36,7 +42,7 @@ export function SiteFooter() {
               <li>
                 <a
                   href={`tel:${footer.kontakt.telefonRoh}`}
-                  className="font-body text-body-md underline-offset-4 hover:underline"
+                  className="block py-3 font-body text-body-md underline-offset-4 hover:underline"
                 >
                   {footer.kontakt.telefon}
                 </a>
@@ -48,14 +54,14 @@ export function SiteFooter() {
             <h2 className="font-body text-label-caps uppercase text-ash">
               {footer.navLabel}
             </h2>
-            <ul className="mt-stack-sm space-y-1">
+            <ul className="mt-stack-sm -my-3">
               {navigation
                 .filter((link) => !link.href.startsWith("#"))
                 .map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="font-body text-body-md underline-offset-4 hover:underline"
+                      className="block py-3 font-body text-body-md underline-offset-4 hover:underline"
                     >
                       {link.label}
                     </Link>
@@ -68,12 +74,12 @@ export function SiteFooter() {
             <h2 className="font-body text-label-caps uppercase text-ash">
               {footer.rechtLabel}
             </h2>
-            <ul className="mt-stack-sm space-y-1">
+            <ul className="mt-stack-sm -my-3">
               {footer.rechtLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="font-body text-body-md underline-offset-4 hover:underline"
+                    className="block py-3 font-body text-body-md underline-offset-4 hover:underline"
                   >
                     {link.label}
                   </Link>

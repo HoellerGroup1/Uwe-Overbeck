@@ -1,5 +1,5 @@
 import { Container } from "@/components/container";
-import { MicroLabel } from "@/components/ui";
+import { BUTTON_KLASSE, MicroLabel } from "@/components/ui";
 import { katalog } from "@/content/landing";
 
 /**
@@ -37,7 +37,7 @@ export function KatalogDownload() {
             <a
               href={katalog.datei}
               download={katalog.dateiname}
-              className="inline-block border border-primary px-stack-md py-3 font-body text-label-caps uppercase text-primary hover:bg-primary hover:text-on-primary"
+              className={BUTTON_KLASSE}
             >
               {katalog.buttonLabel}
             </a>

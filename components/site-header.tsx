@@ -44,9 +44,10 @@ export function SiteHeader() {
       className={`fixed top-0 left-0 z-50 w-full border-b transition-colors duration-200 ${flaeche} ${textFarbe}`}
     >
       <div className="flex items-center justify-between px-margin-mobile py-5 md:px-margin-desktop md:py-6">
+        {/* py-1 mit -my-1: 44 px Trefferfläche, Kopfhöhe bleibt unverändert. */}
         <Link
           href="/"
-          className="font-display text-headline-md uppercase tracking-tight"
+          className="-my-1 py-1 font-display text-headline-md uppercase tracking-tight"
         >
           {site.wortmarke}
         </Link>
@@ -81,7 +82,7 @@ export function SiteHeader() {
           onClick={() => setMenuOffen((offen) => !offen)}
           aria-expanded={menuOffen}
           aria-controls="mobile-navigation"
-          className="md:hidden -mr-2 p-2"
+          className="md:hidden -mr-3 p-3"
         >
           <span className="sr-only">
             {menuOffen ? "Menü schließen" : "Menü öffnen"}

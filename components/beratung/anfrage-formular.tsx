@@ -6,6 +6,7 @@ import {
   anfrageSendenAction,
   type FormularStatus,
 } from "@/app/beratung/actions";
+import { BUTTON_KLASSE } from "@/components/ui";
 import { formular } from "@/content/beratung";
 import { HONEYPOT_FELD } from "@/lib/anfrage-schema";
 
@@ -18,7 +19,7 @@ const START: FormularStatus = { status: "idle" };
   Hairlines zwischen Sektionen bleiben ash — die sind rein dekorativ.
 */
 const FELD_BASIS =
-  "w-full border-0 border-b border-on-surface-variant bg-transparent pb-2 font-body text-body-lg text-on-surface outline-none focus:border-on-surface";
+  "w-full border-0 border-b border-on-surface-variant bg-transparent pt-2 pb-3 font-body text-body-lg text-on-surface outline-none focus:border-on-surface";
 
 function Label({ htmlFor, children }: { htmlFor: string; children: React.ReactNode }) {
   return (
@@ -206,6 +207,12 @@ export function AnfrageFormular() {
           </div>
 
           <div>
+            {/*
+              Die Checkbox war 16×16 px und damit klar unter den 24 px, die
+              WCAG 2.5.8 verlangt — jetzt 24×24. Das eigentliche Ziel ist aber
+              das Label: es gehört per htmlFor zur Checkbox, ist mehrzeilig und
+              damit deutlich über 44 px hoch.
+            */}
             <div className="flex items-start gap-stack-sm">
               <input
                 id="datenschutz"
@@ -216,7 +223,7 @@ export function AnfrageFormular() {
                 aria-describedby={
                   fehler.datenschutz ? "datenschutz-fehler" : undefined
                 }
-                className="mt-1 h-4 w-4 shrink-0 accent-primary"
+                className="mt-0.5 h-6 w-6 shrink-0 accent-primary"
               />
               <label
                 htmlFor="datenschutz"
@@ -244,7 +251,7 @@ export function AnfrageFormular() {
         <button
           type="submit"
           disabled={laeuft}
-          className="mt-stack-md border border-primary px-stack-md py-3 font-body text-label-caps uppercase text-primary hover:bg-primary hover:text-on-primary disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent disabled:hover:text-primary"
+          className={`mt-stack-md ${BUTTON_KLASSE} disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent disabled:hover:text-primary`}
         >
           {laeuft ? formular.absendenLaeuft : formular.absenden}
         </button>
