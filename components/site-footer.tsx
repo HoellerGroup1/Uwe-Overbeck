@@ -8,14 +8,19 @@ export function SiteFooter() {
     // relative z-10, damit das fixierte bg-grid-Overlay nicht über der Fläche liegt
     <footer id="kontakt" className="relative z-10 mt-auto bg-ink text-on-primary">
       <div className="px-margin-mobile py-stack-lg md:px-margin-desktop md:py-stack-xl">
-        <div className="grid grid-cols-1 gap-stack-lg md:grid-cols-12 md:gap-gutter">
-          <div className="md:col-span-5">
+        {/*
+          Mobil zweispaltig statt gestapelt: Wortmarke und Kontakt über die
+          volle Breite, Seiten und Rechtliches nebeneinander. Gestapelt war
+          der Footer 681 px hoch, also fast ein ganzer Bildschirm.
+        */}
+        <div className="grid grid-cols-2 gap-stack-md md:grid-cols-12 md:gap-gutter">
+          <div className="col-span-2 md:col-span-5">
             <p className="font-display text-headline-lg-mobile uppercase tracking-tight md:text-headline-lg">
               {site.wortmarke}
             </p>
           </div>
 
-          <div className="md:col-span-3">
+          <div className="col-span-2 md:col-span-3">
             <h2 className="font-body text-label-caps uppercase text-ash">
               {footer.kontaktLabel}
             </h2>
@@ -39,7 +44,7 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          <div className="md:col-span-2">
+          <div className="col-span-1 md:col-span-2">
             <h2 className="font-body text-label-caps uppercase text-ash">
               {footer.navLabel}
             </h2>
@@ -59,7 +64,7 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          <div className="md:col-span-2">
+          <div className="col-span-1 md:col-span-2">
             <h2 className="font-body text-label-caps uppercase text-ash">
               {footer.rechtLabel}
             </h2>
@@ -78,7 +83,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <p className="mt-stack-lg border-t border-ash/40 pt-stack-md font-body text-label-caps uppercase text-ash">
+        <p className="mt-stack-md border-t border-ash/40 pt-stack-md font-body text-label-caps uppercase text-ash md:mt-stack-lg">
           © {jahr} {site.wortmarke}. {footer.copyrightSuffix}
         </p>
       </div>

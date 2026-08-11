@@ -3,10 +3,22 @@ import { Container } from "@/components/container";
 import { MicroLabel } from "@/components/ui";
 import type { EditorialBlock as EditorialBlockDaten } from "@/content/inspiration";
 
-/** Feste Klassen statt dynamischer Strings, damit Tailwind sie erzeugt. */
+/**
+ * Feste Klassen statt dynamischer Strings, damit Tailwind sie erzeugt.
+ *
+ * Auf Mobile laufen alle Bilder im Querformat 4:3. Ein 4:5-Bild wäre bei
+ * 342 px Spaltenbreite 428 px hoch — damit wird ein Block länger als ein
+ * Bildschirm, für zwei Sätze Text. Ab md gilt wieder das gewählte Verhältnis.
+ */
 const VERHAELTNIS_KLASSE = {
-  "4/5": "aspect-4/5",
+  "4/5": "aspect-4/3 md:aspect-4/5",
   "4/3": "aspect-4/3",
+} as const;
+
+/** Bildregie pro Motiv, siehe `fokus` in content/inspiration.ts. */
+const FOKUS_KLASSE = {
+  oben: "object-top md:object-center",
+  mitte: "object-center",
 } as const;
 
 /**
@@ -24,7 +36,7 @@ export function EditorialBlock({
 
   return (
     <section className="border-b border-ash/40">
-      <Container className="py-stack-xl">
+      <Container className="py-stack-lg md:py-stack-xl">
         <div className="grid grid-cols-1 gap-stack-md md:grid-cols-12 md:items-center md:gap-gutter">
           <div
             className={`${VERHAELTNIS_KLASSE[block.bild.verhaeltnis]} relative overflow-hidden border border-ash/40 md:col-span-6 ${
@@ -36,7 +48,7 @@ export function EditorialBlock({
               alt={block.bild.alt}
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover bild-ton"
+              className={`object-cover bild-ton ${FOKUS_KLASSE[block.bild.fokus ?? "oben"]}`}
             />
           </div>
 

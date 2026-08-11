@@ -5,8 +5,8 @@ import type { Rechtstext } from "@/content/recht";
 /** Gemeinsames Gerüst für Impressum und Datenschutz. */
 export function RechtSeite({ text }: { text: Rechtstext }) {
   return (
-    <Container as="section" className="pt-header pb-stack-xl">
-      <div className="grid grid-cols-1 gap-stack-lg pt-stack-xl md:grid-cols-12 md:gap-gutter">
+    <Container as="section" className="pt-header pb-stack-lg md:pb-stack-xl">
+      <div className="grid grid-cols-1 gap-stack-lg pt-stack-lg md:pt-stack-xl md:grid-cols-12 md:gap-gutter">
         <div className="md:col-span-3">
           <MicroLabel className="text-on-surface-variant">/ {text.label}</MicroLabel>
         </div>

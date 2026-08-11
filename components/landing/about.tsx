@@ -6,7 +6,7 @@ import { about } from "@/content/landing";
 export function About() {
   return (
     <section aria-labelledby="about-headline" className="border-b border-ash/40">
-      <Container className="py-stack-xl">
+      <Container className="py-stack-lg md:py-stack-xl">
         <div className="grid grid-cols-1 gap-stack-lg md:grid-cols-12 md:gap-gutter">
           <div className="md:col-span-4">
             {about.portrait.vorhanden ? (

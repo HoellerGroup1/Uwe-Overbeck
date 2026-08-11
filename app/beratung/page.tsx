@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 
 export default function BeratungPage() {
   return (
-    <Container as="section" className="pt-header pb-stack-xl">
-      <div className="grid grid-cols-1 gap-stack-xl pt-stack-xl md:grid-cols-12 md:gap-gutter">
+    <Container as="section" className="pt-header pb-stack-lg md:pb-stack-xl">
+      <div className="grid grid-cols-1 gap-stack-lg pt-stack-lg md:gap-stack-xl md:pt-stack-xl md:grid-cols-12 md:gap-gutter">
         <div className="md:col-span-6">
           <MicroLabel className="text-on-surface-variant">
             / {beratung.label}

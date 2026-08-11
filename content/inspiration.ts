@@ -10,6 +10,15 @@ export type Bild = {
   alt: string;
   /** Wird auf ein festes Seitenverhältnis zugeschnitten. */
   verhaeltnis: "4/5" | "4/3";
+  /**
+   * Wohin der Zuschnitt auf Mobile verankert wird. Dort laufen alle Bilder im
+   * Querformat, es geht also oben oder unten etwas verloren.
+   *
+   * "oben"  — Standard. Die Hochformat-Aufnahmen haben die Köpfe im oberen
+   *           Drittel, mittig zugeschnitten bliebe nur der Rumpf übrig.
+   * "mitte" — wenn das Motiv in der Bildmitte sitzt.
+   */
+  fokus?: "oben" | "mitte";
 };
 
 export type EditorialBlock = {
@@ -66,6 +75,9 @@ export const hotelSeite: InspirationsSeite = {
         src: "/img/hotel/housekeeping-zimmer-herrichten.jpg",
         alt: "Housekeeping-Mitarbeiterin richtet ein Bett im Hotelzimmer her",
         verhaeltnis: "4/5",
+        // Oberes Drittel ist nur Wand und Wandleuchte. Die Mitarbeiterin und
+        // das Bett sitzen in der Bildmitte.
+        fokus: "mitte",
       },
     },
     {
@@ -135,6 +147,9 @@ export const gastroSeite: InspirationsSeite = {
         src: "/img/gastro/service-mit-tablett.jpg",
         alt: "Servicemitarbeiter mit bedruckter Schürze trägt ein Tablett mit Getränken",
         verhaeltnis: "4/5",
+        // Oben verankert bliebe nur Farn und Kopf übrig. Die bedruckte Schürze
+        // ist hier aber der Punkt, deshalb mittig.
+        fokus: "mitte",
       },
     },
   ],

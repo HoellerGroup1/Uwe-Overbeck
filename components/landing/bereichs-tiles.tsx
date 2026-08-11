@@ -11,18 +11,21 @@ import { tiles } from "@/content/landing";
 export function BereichsTiles() {
   return (
     <section aria-label={tiles.label} className="border-b border-ash/40">
-      <Container className="py-stack-xl">
+      <Container className="py-stack-lg md:py-stack-xl">
         <ul className="grid grid-cols-1 gap-stack-lg md:grid-cols-2 md:gap-gutter">
           {tiles.eintraege.map((tile) => (
             <li key={tile.href}>
               <Link href={tile.href} className="group block">
-                <div className="relative aspect-4/5 w-full overflow-hidden border border-ash/40">
+                {/* Mobil flacher, sonst sind zwei Tiles länger als zwei Bildschirme. */}
+                <div className="relative aspect-4/3 w-full overflow-hidden border border-ash/40 md:aspect-4/5">
                   <Image
                     src={tile.bild.src}
                     alt={tile.bild.alt}
                     fill
                     sizes="(min-width: 768px) 50vw, 100vw"
-                    className="img-zoom object-cover bild-ton"
+                    /* Siehe EditorialBlock: oben verankert, damit im
+                       Querformat die Köpfe im Bild bleiben. */
+                    className="img-zoom object-cover object-top bild-ton md:object-center"
                   />
                 </div>
                 <MicroLabel className="mt-stack-md text-on-surface-variant">
