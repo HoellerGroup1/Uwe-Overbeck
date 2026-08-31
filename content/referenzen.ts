@@ -48,12 +48,6 @@ export const referenzen: Referenz[] = [
     hoehe: 447,
   },
   {
-    name: "Fontana",
-    logo: "/img/brand/referenzen/fontana.jpeg",
-    breite: 2048,
-    hoehe: 1448,
-  },
-  {
     name: "Gabriel-Glas",
     logo: "/img/brand/referenzen/gabriel-glas.webp",
     breite: 1200,
