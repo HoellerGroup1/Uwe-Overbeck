@@ -55,7 +55,7 @@ export function TextLink({
     */
     <Link
       href={href}
-      className={`-mt-5 inline-block border-b border-current pt-6 pb-1 font-body text-label-caps uppercase transition-opacity hover:opacity-60 ${className}`}
+      className={`-mt-5 inline-block border-b border-current pt-6 pb-1 font-body text-label-caps uppercase transition-colors hover:border-signal ${className}`}
     >
       {children}
     </Link>

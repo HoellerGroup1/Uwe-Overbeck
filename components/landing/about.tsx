@@ -43,7 +43,7 @@ export function About() {
                 </p>
               ))}
             </div>
-            <p className="mt-stack-md font-display text-headline-md italic">
+            <p className="mt-stack-md font-display text-headline-md text-on-surface-variant">
               {about.signatur}
             </p>
           </div>

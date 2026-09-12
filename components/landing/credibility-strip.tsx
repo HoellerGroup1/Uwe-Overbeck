@@ -29,7 +29,7 @@ export function CredibilityStrip() {
               <dt className="mt-stack-sm font-body text-label-caps uppercase text-on-surface-variant">
                 {eintrag.label}
               </dt>
-              <dd className="font-display text-headline-lg-mobile md:text-headline-lg">
+              <dd className="font-display text-signal text-headline-lg-mobile md:text-headline-lg">
                 <HochzaehlZahl wert={eintrag.wert} suffix={eintrag.suffix} />
               </dd>
             </div>

@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { navigation, site } from "@/content/site";
+import { Wortmarke } from "@/components/wortmarke";
+import { navigation } from "@/content/site";
 
 /** Routen mit bildgestütztem Hero: dort steht die Nav transparent auf dunklem Bild. */
 const ROUTEN_MIT_HERO = new Set(["/", "/hotel", "/gastro"]);
@@ -44,12 +45,13 @@ export function SiteHeader() {
       className={`fixed top-0 left-0 z-50 w-full border-b transition-colors duration-200 ${flaeche} ${textFarbe}`}
     >
       <div className="flex items-center justify-between px-margin-mobile py-5 md:px-margin-desktop md:py-6">
-        {/* py-1 mit -my-1: 44 px Trefferfläche, Kopfhöhe bleibt unverändert. */}
-        <Link
-          href="/"
-          className="-my-1 py-1 font-display text-headline-md uppercase tracking-tight"
-        >
-          {site.wortmarke}
+        {/*
+          py-1 mit -my-1: 44 px Trefferfläche, Kopfhöhe bleibt unverändert.
+          Die kleine Wortmarke ist bewusst 36 px hoch — genau so hoch wie die
+          frühere einzeilige Fassung, damit .pt-header weiter stimmt.
+        */}
+        <Link href="/" className="-my-1 block py-1">
+          <Wortmarke groesse="klein" />
         </Link>
 
         <nav aria-label="Hauptnavigation" className="hidden md:block">
@@ -65,7 +67,7 @@ export function SiteHeader() {
                   <Link
                     href={link.href}
                     aria-current={aktiv ? "page" : undefined}
-                    className={`font-body text-label-caps uppercase border-b pb-1 transition-opacity hover:opacity-60 ${
+                    className={`font-body text-label-caps uppercase border-b pb-1 transition-colors hover:border-signal ${
                       aktiv ? "border-current" : "border-transparent"
                     }`}
                   >

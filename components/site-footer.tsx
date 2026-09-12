@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Wortmarke } from "@/components/wortmarke";
 import { footer, navigation, site } from "@/content/site";
 
 export function SiteFooter() {
@@ -15,8 +16,9 @@ export function SiteFooter() {
         */}
         <div className="grid grid-cols-2 gap-stack-md md:grid-cols-12 md:gap-gutter">
           <div className="col-span-2 md:col-span-5">
-            <p className="font-display text-headline-lg-mobile uppercase tracking-tight md:text-headline-lg">
-              {site.wortmarke}
+            <Wortmarke groesse="gross" />
+            <p className="mt-stack-md max-w-[28ch] font-body text-body-md text-ash">
+              {site.claim}
             </p>
           </div>
 
@@ -34,7 +36,7 @@ export function SiteFooter() {
               <li>
                 <a
                   href={`mailto:${footer.kontakt.email}`}
-                  className="block py-3 font-body text-body-md underline-offset-4 hover:underline"
+                  className="block py-3 font-body text-body-md underline-offset-4 hover:underline hover:decoration-signal"
                 >
                   {footer.kontakt.email}
                 </a>
@@ -42,12 +44,20 @@ export function SiteFooter() {
               <li>
                 <a
                   href={`tel:${footer.kontakt.telefonRoh}`}
-                  className="block py-3 font-body text-body-md underline-offset-4 hover:underline"
+                  className="block py-3 font-body text-body-md underline-offset-4 hover:underline hover:decoration-signal"
                 >
                   {footer.kontakt.telefon}
                 </a>
               </li>
             </ul>
+            {/* Postanschrift: kein Link, deshalb ausserhalb der Liste. */}
+            <address className="mt-stack-sm font-body text-body-md text-ash not-italic">
+              {footer.kontakt.strasse}
+              <br />
+              {footer.kontakt.ort}
+              <br />
+              {footer.kontakt.land}
+            </address>
           </div>
 
           <div className="col-span-1 md:col-span-2">
@@ -61,7 +71,7 @@ export function SiteFooter() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="block py-3 font-body text-body-md underline-offset-4 hover:underline"
+                      className="block py-3 font-body text-body-md underline-offset-4 hover:underline hover:decoration-signal"
                     >
                       {link.label}
                     </Link>
@@ -79,7 +89,7 @@ export function SiteFooter() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="block py-3 font-body text-body-md underline-offset-4 hover:underline"
+                    className="block py-3 font-body text-body-md underline-offset-4 hover:underline hover:decoration-signal"
                   >
                     {link.label}
                   </Link>
@@ -90,7 +100,7 @@ export function SiteFooter() {
         </div>
 
         <p className="mt-stack-md border-t border-ash/40 pt-stack-md font-body text-label-caps uppercase text-ash md:mt-stack-lg">
-          © {jahr} {site.wortmarke}. {footer.copyrightSuffix}
+          © {jahr} {site.firma}. {footer.copyrightSuffix}
         </p>
       </div>
     </footer>

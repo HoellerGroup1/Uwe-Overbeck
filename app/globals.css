@@ -1,70 +1,102 @@
 @import "tailwindcss";
 
 /*
-  Design-Tokens aus DESIGN.md ("Overbeck Editorial").
-  Token-Namen bewusst unverändert übernommen, damit spätere Stitch-Exporte
-  kompatibel bleiben. Nicht benötigte Material-Design-Tokens sind weggelassen.
+  Design-Tokens nach STYLE.md (Design-System Overbeck Berufsmode).
+  STYLE.md im Hauptordner ist die verbindliche Quelle -- nicht mehr DESIGN.md,
+  das nur noch als Stitch-Referenz im Ordner liegt.
 
-  Drei Korrekturen gegenüber dem YAML-Frontmatter von DESIGN.md
-  (bei Widerspruch gilt der Prosatext):
-  1. surface/background = #F7F6F3   (nicht #fdf8f7)
-     primary            = #1C1B19   (nicht #000000)
-  2. Neue Tokens: sand = #E3DCD1 (Sektionsflächen, einziger Akzent)
-                  ash  = #9A968F (Hairlines, Sekundärtext auf ink)
-  3. Body-Font ist Schibsted Grotesk (nicht Hanken Grotesk).
+  Die Token-NAMEN stammen aus dem urspruenglichen Stitch-Export und bleiben,
+  weil sie quer durch alle Komponenten verwendet werden. Die WERTE folgen
+  STYLE.md, Abschnitt 3. Uebersetzung:
+
+    STYLE.md      Token hier
+    papier        surface / background / on-primary
+    sand          sand
+    stein         stein
+    asche         ash
+    grafit        on-surface-variant
+    tinte         on-surface / on-background / primary / ink
+    signal        signal   (zugleich error -- die Marke hat genau ein Rot)
 */
 
 @theme inline {
-  /* Fonts — self-hosted über next/font, kein Google-Fonts-CDN */
-  --font-display: var(--font-instrument-serif), Georgia, serif;
-  --font-body: var(--font-schibsted-grotesk), system-ui, sans-serif;
+  /*
+    Switzer ist das einzige Schriftsystem (E3). Beide Rollen zeigen auf
+    dieselbe Familie: display und body unterscheiden sich ueber Groesse,
+    Gewicht und Sperrung, nicht ueber die Schrift. Die Klassen font-display
+    und font-body bleiben trotzdem bestehen -- sie sagen weiterhin, welche
+    Rolle eine Zeile hat.
+  */
+  --font-display: var(--font-switzer), system-ui, sans-serif;
+  --font-body: var(--font-switzer), system-ui, sans-serif;
 }
 
 @theme {
   /* ---------- Colors ---------- */
+  /* papier */
   --color-surface: #f7f6f3;
   --color-background: #f7f6f3;
+  /* tinte */
   --color-on-surface: #1c1b19;
   --color-on-background: #1c1b19;
+  /* grafit */
   --color-on-surface-variant: #494740;
 
   --color-primary: #1c1b19;
   --color-on-primary: #f7f6f3;
 
-  /* ink = Flächenfarbe für Footer und CTA-Band */
+  /* ink = tinte als Flaeche, fuer Footer und CTA-Band */
   --color-ink: #1c1b19;
 
-  /* sand = einziger Akzent der Seite (Sektionsflächen) */
+  /* sand = einziger Flaechenakzent (Sektionsflaechen) */
   --color-sand: #e3dcd1;
 
-  /* ash = Hairlines, Divider, Sekundärtext auf ink */
+  /* stein = Zwischenton, wo sand zu hell und ash zu grau ist. Sparsam. */
+  --color-stein: #c9c3b8;
+
+  /* asche = Hairlines, Divider, Sekundaertext auf ink */
   --color-ash: #9a968f;
 
-  --color-error: #ba1a1a;
-  --color-on-error: #ffffff;
+  /*
+    signal = der einzige Buntton der Marke, gemessen aus der gedruckten
+    Visitenkarte (E17). Unter 2 % der Flaeche, nie als Hintergrund, nie als
+    Buttonflaeche, nie im Fliesstext. Auf papier 4,6:1 (Text ab 16 px),
+    auf tinte nur 3,5:1 -- dort ausschliesslich Grosstext und Linien.
+  */
+  --color-signal: #dd1836;
+
+  /*
+    Fehlerzustand ist derselbe Wert. Das frueher hier stehende zweite Rot
+    (#ba1a1a) ist gestrichen -- STYLE.md, Abschnitt 3.
+  */
+  --color-error: #dd1836;
+  --color-on-error: #f7f6f3;
 
   /* ---------- Typography ---------- */
   --text-display-lg: 80px;
   --text-display-lg--line-height: 84px;
-  --text-display-lg--letter-spacing: -0.02em;
-  --text-display-lg--font-weight: 400;
+  --text-display-lg--letter-spacing: -0.03em;
+  --text-display-lg--font-weight: 300;
 
   /* Mobile-Gegenstück zu display-lg, analog zu headline-lg-mobile aus DESIGN.md */
   --text-display-lg-mobile: 40px;
   --text-display-lg-mobile--line-height: 44px;
-  --text-display-lg-mobile--letter-spacing: -0.02em;
-  --text-display-lg-mobile--font-weight: 400;
+  --text-display-lg-mobile--letter-spacing: -0.03em;
+  --text-display-lg-mobile--font-weight: 300;
 
   --text-headline-lg: 48px;
   --text-headline-lg--line-height: 52px;
-  --text-headline-lg--font-weight: 400;
+  --text-headline-lg--letter-spacing: -0.02em;
+  --text-headline-lg--font-weight: 300;
 
   --text-headline-lg-mobile: 36px;
   --text-headline-lg-mobile--line-height: 40px;
-  --text-headline-lg-mobile--font-weight: 400;
+  --text-headline-lg-mobile--letter-spacing: -0.02em;
+  --text-headline-lg-mobile--font-weight: 300;
 
   --text-headline-md: 32px;
   --text-headline-md--line-height: 36px;
+  --text-headline-md--letter-spacing: -0.01em;
   --text-headline-md--font-weight: 400;
 
   --text-body-lg: 18px;

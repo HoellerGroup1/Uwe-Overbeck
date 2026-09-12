@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Schibsted_Grotesk } from "next/font/google";
+import localFont from "next/font/local";
 import { BgGrid } from "@/components/bg-grid";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -7,22 +7,26 @@ import { site } from "@/content/site";
 import "./globals.css";
 
 /**
- * next/font lädt die Schriften zur Buildzeit herunter und liefert sie
- * selbst gehostet aus. Kein Google-Fonts-CDN zur Laufzeit, damit die Seite
- * ohne Third-Party-Requests und ohne Cookie-Banner auskommt.
+ * Switzer ist das einzige Schriftsystem der Marke (STYLE.md, Abschnitt 4,
+ * Entscheidung E3). Eine einzige Variable-Datei, 43 KB, Achse wght 100-900 --
+ * weniger als drei einzelne Schnitte und gibt jedes Gewicht dazwischen frei.
+ *
+ * Die ITF Free Font License verbietet Subsetting und jede Aenderung an der
+ * Datei. next/font/local liefert sie unveraendert aus, deshalb dieser Weg und
+ * nicht next/font/google oder ein Subsetter.
  */
-const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
+const switzer = localFont({
+  src: [
+    {
+      path: "../public/fonts/Switzer-Variable.woff2",
+      weight: "100 900",
+      style: "normal",
+    },
+  ],
   display: "swap",
-  variable: "--font-instrument-serif",
-});
-
-const schibstedGrotesk = Schibsted_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  display: "swap",
-  variable: "--font-schibsted-grotesk",
+  variable: "--font-switzer",
+  // Fallback-Metriken angeglichen, damit beim Nachladen nichts springt.
+  adjustFontFallback: "Arial",
 });
 
 export const metadata: Metadata = {
@@ -36,7 +40,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="de" className={`${instrumentSerif.variable} ${schibstedGrotesk.variable}`}>
+    <html lang="de" className={switzer.variable}>
       <body className="flex min-h-screen flex-col">
         <a
           href="#inhalt"

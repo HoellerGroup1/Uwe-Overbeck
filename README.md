@@ -9,7 +9,7 @@ persönliche Beratungsgespräche.
 
 - Next.js 16 (App Router, TypeScript)
 - Tailwind CSS v4
-- next/font — Schriften werden zur Buildzeit geladen und selbst ausgeliefert
+- next/font/local — Switzer als einziges Schriftsystem, selbst ausgeliefert
 - Resend für den Versand der Formularanfragen
 - Zod für die Validierung
 
@@ -52,6 +52,7 @@ content/            Sämtliche sichtbaren Texte
 lib/                Validierung, Rate-Limit, Mailversand
 public/img/         hotel/ · gastro/ · brand/
 public/downloads/   greif-katalog.pdf
+public/fonts/       Switzer-Variable.woff2 + FFL.txt
 ```
 
 **Alle Texte liegen in `content/`**, nicht in den JSX-Dateien. Wer Copy ändert,
@@ -59,39 +60,67 @@ fasst keine Komponente an.
 
 ## Design-System
 
-Verbindliche Quelle ist `DESIGN.md` im übergeordneten Ordner. Die Tokens sind
-in `app/globals.css` unter `@theme` abgelegt, mit den Original-Token-Namen,
-damit spätere Stitch-Exporte kompatibel bleiben.
+Verbindliche Quelle ist **`STYLE.md` im Hauptordner des Projekts**. `DESIGN.md`
+neben diesem Repo ist nur noch der Stitch-Entwurf und damit Referenz, keine
+Vorgabe.
 
-Drei bewusste Abweichungen vom YAML-Frontmatter in `DESIGN.md` — bei
-Widerspruch gilt dort der Prosatext:
+Die Tokens liegen in `app/globals.css` unter `@theme`. Die Token-**Namen**
+stammen aus dem Stitch-Export und bleiben, weil sie quer durch alle
+Komponenten verwendet werden. Die **Werte** folgen STYLE.md, Abschnitt 3:
 
-| Token          | Wert      | Statt      |
-| -------------- | --------- | ---------- |
-| `surface` / `background` | `#F7F6F3` | `#fdf8f7` |
-| `primary`      | `#1C1B19` | `#000000`  |
-| Body-Font      | Schibsted Grotesk | Hanken Grotesk |
+| STYLE.md | Token hier | Wert |
+| -------- | ---------- | ----- |
+| `papier` | `surface` / `background` / `on-primary` | `#F7F6F3` |
+| `sand`   | `sand`   | `#E3DCD1` |
+| `stein`  | `stein`  | `#C9C3B8` |
+| `asche`  | `ash`    | `#9A968F` |
+| `grafit` | `on-surface-variant` | `#494740` |
+| `tinte`  | `on-surface` / `primary` / `ink` | `#1C1B19` |
+| `signal` | `signal` (zugleich `error`) | `#DD1836` |
 
-Ergänzt:
-
-| Token  | Wert      | Verwendung |
-| ------ | --------- | ---------- |
-| `sand` | `#E3DCD1` | Sektionsflächen. Der einzige Akzent der Seite. |
-| `ash`  | `#9A968F` | Hairlines, Divider, Sekundärtext auf `ink` |
+`signal` ist der einzige Buntton und bleibt unter 2 % der Fläche. Im Code
+steht er an genau fünf Stellen: Trennlinie der Wortmarke, Zahlen im
+Credibility-Strip, Oberkante des CTA-Bands, Link-Hover, Formularfehler. Nie
+als Hintergrund, nie als Buttonfläche, nie im Fließtext.
 
 Zum Kontrast: `ash` auf `surface` erreicht nur 2,7:1. Das reicht weder für
 Fließtext (4,5:1 nach WCAG 1.4.3) noch für die Begrenzung von Bedienelementen
 (3:1 nach WCAG 1.4.11). `ash` wird deshalb nur für dekorative Hairlines und für
-Sekundärtext auf der dunklen `ink`-Fläche verwendet (dort 5,9:1).
-
-- Sekundärtext auf hellem Grund: `on-surface-variant` (`#494740`) — 8,6:1
-- Unterkante der Formularfelder: ebenfalls `on-surface-variant`, obwohl
-  DESIGN.md dort `ash` vorsieht
-- Fehlerrot auf `surface` — 6,0:1
-- Text auf `sand` — 6,8:1
+Sekundärtext auf der dunklen `ink`-Fläche verwendet (dort 5,9:1). Sekundärtext
+auf hellem Grund läuft über `on-surface-variant` (8,6:1).
 
 Der Hero arbeitet mit drei Abdunklungslagen über dem Bild, damit heller Text
 auch über hellen Bildstellen sicher über 4,5:1 bleibt.
+
+## Schrift
+
+**Switzer** (Indian Type Foundry) ist das einzige Schriftsystem — Display und
+Fließtext, Web und Print. Keine zweite Schrift, keine Serif. Eingebunden über
+`next/font/local` in `app/layout.tsx`, eine einzige Variable-Datei unter
+`public/fonts/Switzer-Variable.woff2` (43 KB, Achse `wght` 100–900).
+
+Die Klassen `font-display` und `font-body` bleiben bestehen und zeigen beide
+auf Switzer. Sie sagen weiterhin, welche Rolle eine Zeile hat — der Unterschied
+entsteht über Größe, Gewicht und Sperrung, nicht über die Schrift.
+
+**Lizenz (ITF Free Font License, liegt als `public/fonts/FFL.txt` daneben):**
+Subsetting, Konvertieren und Umbenennen der Datei sind verboten, ebenso die
+Weitergabe an Dritte. `next/font/local` liefert die Datei unverändert aus —
+deshalb dieser Weg und nicht `next/font/google` oder ein Subsetter. Wer später
+einen Konverter darüber laufen lässt, verstößt gegen die Lizenz.
+
+## Wortmarke
+
+`components/wortmarke.tsx` setzt OVERBECK über BERUFSMODE, getrennt durch eine
+Haarlinie in `signal`. Zwei Details, die leicht kaputtgehen und im Code
+kommentiert sind: das negative rechte Margin (sonst läuft die Linie ins Leere,
+weil `letter-spacing` hinter dem letzten Buchstaben hängt) und die Subline über
+`flex/justify-between` statt über festes Tracking (nur so endet sie bei jeder
+Größe bündig).
+
+Die kleine Fassung im Header ist exakt 36 px hoch — genau so hoch wie die
+frühere einzeilige Wortmarke, damit die Kopfhöhe und damit `.pt-header`
+unverändert stimmen.
 
 ## Bildton
 
@@ -158,10 +187,12 @@ Metadaten in `app/layout.tsx`. Beides vor dem Livegang entfernen.
 
 ## Deployment
 
-Noch nicht eingerichtet. Es gibt kein Git-Remote und kein Vercel-Projekt.
-Zum Aufsetzen: Repository auf GitHub anlegen, als Remote eintragen, Branch
-`build/v1` pushen und das Projekt in Vercel importieren. Die drei Variablen
-aus `.env.example` müssen dort als Environment Variables hinterlegt werden.
+Remote steht: `github.com/HoellerGroup1/Uwe-Overbeck`, Arbeitsbranch
+`build/v1`, `main` bleibt unberührt bis zur Freigabe.
+
+Ein Vercel-Projekt gibt es noch nicht. Zum Aufsetzen das Repo in Vercel
+importieren; die drei Variablen aus `.env.example` müssen dort als
+Environment Variables hinterlegt werden.
 
 ## Offene Punkte
 

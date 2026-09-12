@@ -14,7 +14,10 @@ export function AbschlussCta({
   linkHref: string;
 }) {
   return (
-    <section aria-labelledby="cta-headline" className="bg-ink text-on-primary">
+    <section
+      aria-labelledby="cta-headline"
+      className="border-t border-signal bg-ink text-on-primary"
+    >
       <Container className="py-stack-lg md:py-stack-xl">
         <div className="grid grid-cols-1 gap-stack-md md:grid-cols-12 md:items-end md:gap-gutter">
           <div className="md:col-span-7">
