@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BildPlatzhalter } from "@/components/bild-platzhalter";
 import { Container } from "@/components/container";
 import { MicroLabel } from "@/components/ui";
 
@@ -10,18 +11,29 @@ export function SeitenHero({
 }: {
   label: string;
   headline: string;
-  bild: { src: string; alt: string };
+  bild: { src?: string; alt: string };
 }) {
   return (
     <section className="relative isolate flex min-h-[52svh] items-end overflow-hidden md:min-h-[62svh]">
-      <Image
-        src={bild.src}
-        alt={bild.alt}
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover bild-ton"
-      />
+      {/*
+        Ohne Bild wird die Fläche dunkel statt hell: der Hero-Text ist auf
+        hellen Text ausgelegt, ein heller Platzhalter würde ihn unlesbar
+        machen.
+      */}
+      {bild.src ? (
+        <Image
+          src={bild.src}
+          alt={bild.alt}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover bild-ton"
+        />
+      ) : (
+        <div className="absolute inset-0">
+          <BildPlatzhalter hinweis="Bild folgt" dunkel />
+        </div>
+      )}
 
       {/* Abdunklung wie im Hero der Landingpage, damit heller Text sicher lesbar bleibt. */}
       <div aria-hidden="true" className="absolute inset-0 bg-ink/45" />

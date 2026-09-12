@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BildPlatzhalter } from "@/components/bild-platzhalter";
 import { Container } from "@/components/container";
 import { MicroLabel } from "@/components/ui";
 import type { EditorialBlock as EditorialBlockDaten } from "@/content/inspiration";
@@ -43,13 +44,17 @@ export function EditorialBlock({
               bildRechts ? "md:order-2 md:col-start-7" : "md:col-start-1"
             }`}
           >
-            <Image
-              src={block.bild.src}
-              alt={block.bild.alt}
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className={`object-cover bild-ton ${FOKUS_KLASSE[block.bild.fokus ?? "oben"]}`}
-            />
+            {block.bild.src ? (
+              <Image
+                src={block.bild.src}
+                alt={block.bild.alt}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className={`object-cover bild-ton ${FOKUS_KLASSE[block.bild.fokus ?? "oben"]}`}
+              />
+            ) : (
+              <BildPlatzhalter hinweis="Bild folgt" />
+            )}
           </div>
 
           <div

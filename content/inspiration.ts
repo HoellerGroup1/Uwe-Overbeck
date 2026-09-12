@@ -1,12 +1,17 @@
 /**
- * Texte der beiden Inspirationsseiten /hotel und /gastro.
+ * Texte der drei Inspirationsseiten /hotel, /gastro und /firmen.
  *
  * Zweck ist Inspiration, nicht Katalog: keine Produkte, keine Preise.
  * Beide Seiten teilen sich dieselbe Struktur, siehe Typ `InspirationsSeite`.
  */
 
 export type Bild = {
-  src: string;
+  /**
+   * Fehlt die Quelle, rendert die Komponente einen beschrifteten Platzhalter.
+   * Dasselbe Muster wie bei den Referenzen: ein fehlendes Bild bricht nichts,
+   * es wird nur noch nicht gezeigt.
+   */
+  src?: string;
   alt: string;
   /** Wird auf ein festes Seitenverhältnis zugeschnitten. */
   verhaeltnis: "4/5" | "4/3";
@@ -33,7 +38,7 @@ export type InspirationsSeite = {
   hero: {
     label: string;
     headline: string;
-    bild: { src: string; alt: string };
+    bild: { src?: string; alt: string };
   };
   bloecke: EditorialBlock[];
   abschluss: {
@@ -156,6 +161,66 @@ export const gastroSeite: InspirationsSeite = {
   abschluss: {
     headline: "Passt das zu Ihrem Betrieb?",
     text: "Wir gehen Küche, Service und Wäsche einmal durch.",
+    linkLabel: "Beratungsgespräch anfragen",
+    linkHref: "/kontakt",
+  },
+};
+
+/**
+ * ENTWURF — von Uwe gegenzulesen.
+ *
+ * Das Segment "Firmen" kam erst im Gespräch dazu (E8), Uwes einziges genanntes
+ * Beispiel ist das Marionettentheater. Die Texte unten beschreiben deshalb,
+ * was fachlich unstrittig ist, und behaupten bewusst KEINE Abläufe, die ich
+ * nicht kenne — anders als bei Hotel und Gastro steht hier kein Größensatz und
+ * kein Waschzyklus, weil mir dazu Uwes Praxis fehlt.
+ *
+ * Beide Bilder fehlen noch. Marcel liefert zwei Motive aus den Katalogen von
+ * Greiff und Hakro nach; bis dahin stehen Platzhalter. Zum Einsetzen genügt es,
+ * `src` zu ergänzen.
+ */
+export const firmenSeite: InspirationsSeite = {
+  meta: {
+    titel: "Firmen — Overbeck Berufsmode",
+    beschreibung:
+      "Berufskleidung für Betriebe außerhalb der Hotellerie: Kultur, Handel, Handwerk und Dienstleistung.",
+  },
+  hero: {
+    label: "Firmen",
+    headline: "Ein Team, ein Bild.",
+    bild: {
+      alt: "Mitarbeitende eines Betriebs in einheitlicher Berufskleidung",
+    },
+  },
+  bloecke: [
+    {
+      headline: "Einheitlich auftreten, ohne uniform zu wirken.",
+      text: "Wer einheitlich auftritt, wird als ein Betrieb wahrgenommen und nicht als eine Ansammlung von Einzelnen. Das gelingt schon über Farbe, Material und ein durchgehendes Detail — es braucht dafür keine Uniform, die niemand gern anzieht.",
+      bild: {
+        alt: "Mitarbeitende verschiedener Bereiche in aufeinander abgestimmter Kleidung",
+        verhaeltnis: "4/3",
+      },
+    },
+    {
+      headline: "Ein Betrieb, viele Arbeitsplätze.",
+      text: "Im Lager wird anders gearbeitet als am Empfang und im Werkstattbereich anders als im Büro. Die Aufgabe ist, alle Bereiche sichtbar zusammenzuhalten und trotzdem jedem die Kleidung zu geben, in der sich arbeiten lässt.",
+      bild: {
+        alt: "Arbeitskleidung im Einsatz an unterschiedlichen Arbeitsplätzen",
+        verhaeltnis: "4/5",
+      },
+    },
+    {
+      headline: "Das Logo hält so lange wie das Teil.",
+      text: "Stick, Druck oder Emblem entscheiden mit, wie lange ein Teil ordentlich aussieht. Eine Veredelung, die den zehnten Waschgang nicht übersteht, kostet mehr als sie gespart hat. Ich sage vorher, welches Verfahren zu welchem Stoff passt.",
+      bild: {
+        alt: "Nahaufnahme einer Logostickerei auf Berufskleidung",
+        verhaeltnis: "4/5",
+      },
+    },
+  ],
+  abschluss: {
+    headline: "Passt das zu Ihrem Betrieb?",
+    text: "Wir gehen Bereiche, Aufgaben und Veredelung einmal durch.",
     linkLabel: "Beratungsgespräch anfragen",
     linkHref: "/kontakt",
   },

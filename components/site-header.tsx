@@ -7,7 +7,7 @@ import { Wortmarke } from "@/components/wortmarke";
 import { navigation } from "@/content/site";
 
 /** Routen mit bildgestütztem Hero: dort steht die Nav transparent auf dunklem Bild. */
-const ROUTEN_MIT_HERO = new Set(["/", "/hotel", "/gastro"]);
+const ROUTEN_MIT_HERO = new Set(["/", "/hotel", "/gastro", "/firmen"]);
 
 export function SiteHeader() {
   const pathname = usePathname();

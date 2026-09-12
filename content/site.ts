@@ -33,12 +33,13 @@ export type NavLink = {
 
 /**
  * "Beratung" ist entfallen und durch "Kontakt" ersetzt (E9) -- dieselbe Seite
- * unter neuer Route. "Firmen" kommt dazu, sobald die Seite steht.
+ * unter neuer Route. "Firmen" ist das dritte Segment (E8).
  */
 export const navigation: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "Hotel", href: "/hotel" },
   { label: "Gastro", href: "/gastro" },
+  { label: "Firmen", href: "/firmen" },
   { label: "Kontakt", href: "/kontakt" },
 ];
 

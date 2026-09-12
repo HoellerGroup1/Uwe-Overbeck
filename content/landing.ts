@@ -74,6 +74,19 @@ export const tiles = {
         alt: "Zwei Köche in Schürzen arbeiten nebeneinander am Herd",
       },
     },
+    {
+      kategorie: "Firmen",
+      // Wie bei Hotel und Gastro: Arbeitsbereiche, nicht Branchen. Kürzer und
+      // parallel gebaut — "Kultur, Handel, Dienstleistung" lief bis an die
+      // Spaltenkante.
+      titel: "Empfang, Büro, Lager",
+      href: "/firmen",
+      /** Bild folgt aus den Katalogen von Greiff und Hakro. */
+      bild: {
+        src: undefined,
+        alt: "Mitarbeitende eines Betriebs in einheitlicher Berufskleidung",
+      },
+    },
   ],
 } as const;
 
