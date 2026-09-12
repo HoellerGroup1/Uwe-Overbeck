@@ -71,14 +71,13 @@ Vor dem Livegang juristisch prüfen lassen.
 
 ---
 
-## 3. Deployment — **offen**
+## 3. Deployment — **teilweise**
 
-Das Repository liegt unter `Website Uwe/uwe-overbeck/`, lokaler Branch
-`build/v1`. Es gibt noch kein Remote und kein Vercel-Projekt.
+Remote steht: `github.com/HoellerGroup1/Uwe-Overbeck`, Arbeitsbranch
+`build/v1`. Ein Vercel-Projekt gibt es noch nicht.
 
 ```bash
-gh repo create uwe-overbeck --private --source . --remote origin
-git push -u origin build/v1
+git push origin build/v1          # zwei Commits liegen noch lokal
 ```
 
 Danach in Vercel importieren und die drei Variablen aus Punkt 1 als
