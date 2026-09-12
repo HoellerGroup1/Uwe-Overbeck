@@ -148,7 +148,7 @@ export const datenschutz: Rechtstext = {
     {
       titel: "Anfragen über das Formular",
       absaetze: [
-        "Wenn Sie das Formular auf der Seite Beratung nutzen, verarbeite ich die dort eingegebenen Daten: Name, Betrieb, Rolle, E-Mail-Adresse, optional Telefonnummer und Nachricht.",
+        "Wenn Sie das Formular auf der Seite Kontakt nutzen, verarbeite ich die dort eingegebenen Daten: Name, Betrieb, Rolle, E-Mail-Adresse, optional Telefonnummer und Nachricht.",
         "Zweck ist ausschließlich die Bearbeitung Ihrer Anfrage und die Kontaktaufnahme. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO für vorvertragliche Maßnahmen sowie Art. 6 Abs. 1 lit. a DSGVO auf Grundlage Ihrer Einwilligung.",
         "Die Angabe ist freiwillig. Ohne Name, Betrieb und E-Mail-Adresse kann ich die Anfrage nicht bearbeiten.",
         "Für den Versand der Formularnachricht setze ich den Dienst Resend (Plus Five Five, Inc., [Anschrift ergänzen]) als Auftragsverarbeiter ein. Dabei kann eine Übermittlung in die USA stattfinden, abgesichert über [Rechtsgrundlage der Übermittlung, z. B. EU-Standardvertragsklauseln oder EU-US Data Privacy Framework].",

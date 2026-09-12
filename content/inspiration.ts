@@ -94,7 +94,7 @@ export const hotelSeite: InspirationsSeite = {
     headline: "Passt das zu Ihrem Haus?",
     text: "Wir gehen Bereiche, Größen und Waschzyklen einmal durch.",
     linkLabel: "Beratungsgespräch anfragen",
-    linkHref: "/beratung",
+    linkHref: "/kontakt",
   },
 };
 
@@ -157,6 +157,6 @@ export const gastroSeite: InspirationsSeite = {
     headline: "Passt das zu Ihrem Betrieb?",
     text: "Wir gehen Küche, Service und Wäsche einmal durch.",
     linkLabel: "Beratungsgespräch anfragen",
-    linkHref: "/beratung",
+    linkHref: "/kontakt",
   },
 };

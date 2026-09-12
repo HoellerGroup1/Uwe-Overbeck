@@ -5,9 +5,9 @@ import { useActionState, useEffect, useRef } from "react";
 import {
   anfrageSendenAction,
   type FormularStatus,
-} from "@/app/beratung/actions";
+} from "@/app/kontakt/actions";
 import { BUTTON_KLASSE } from "@/components/ui";
-import { formular } from "@/content/beratung";
+import { formular } from "@/content/kontakt";
 import { HONEYPOT_FELD } from "@/lib/anfrage-schema";
 
 const START: FormularStatus = { status: "idle" };

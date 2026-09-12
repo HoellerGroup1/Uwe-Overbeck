@@ -7,7 +7,8 @@ export function SiteFooter() {
 
   return (
     // relative z-10, damit das fixierte bg-grid-Overlay nicht über der Fläche liegt
-    <footer id="kontakt" className="relative z-10 mt-auto bg-ink text-on-primary">
+    // Der frühere Anker id="kontakt" ist raus — Kontakt ist jetzt eine eigene Seite.
+    <footer className="relative z-10 mt-auto bg-ink text-on-primary">
       <div className="px-margin-mobile py-stack-lg md:px-margin-desktop md:py-stack-xl">
         {/*
           Mobil zweispaltig statt gestapelt: Wortmarke und Kontakt über die

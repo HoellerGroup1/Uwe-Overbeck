@@ -111,7 +111,7 @@ Nicht kritisch, aber diese Sektionen fehlen deshalb aktuell:
 - **Prozessaussagen gegenlesen.** Sätze wie „Vor der Bestellung geht ein
   Größensatz durch den Betrieb" beschreiben Uwes Arbeitsweise. Ich habe sie
   plausibel formuliert, aber nicht gewusst. Betrifft
-  `content/inspiration.ts`, `content/landing.ts`, `content/beratung.ts`.
+  `content/inspiration.ts`, `content/landing.ts`, `content/kontakt.ts`.
 
 ---
 
@@ -135,7 +135,7 @@ Desktop ruhig wirkt und auf dem Handy zur Rutschbahn wurde.
 | `/` | 5212 px | 4365 px | 6,2 → 5,2 |
 | `/hotel` | 4168 px | 3295 px | 4,9 → 3,9 |
 | `/gastro` | 5239 px | 3929 px | 6,2 → 4,7 |
-| `/beratung` | 2624 px | 2460 px | 3,1 → 2,9 |
+| `/kontakt` | 2624 px | 2460 px | 3,1 → 2,9 |
 
 Kein horizontaler Überlauf bei 360 und 390 px. Desktop ist um rund 72 px
 gewachsen, das kommt von den größeren Klickflächen aus Phase 3.

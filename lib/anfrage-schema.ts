@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { fehlermeldungen } from "@/content/beratung";
+import { fehlermeldungen } from "@/content/kontakt";
 
 /**
  * Validierung der Beratungsanfrage. Läuft ausschließlich auf dem Server —

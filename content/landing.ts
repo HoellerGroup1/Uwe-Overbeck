@@ -25,10 +25,8 @@ export const hero = {
 export const credibility = {
   label: "In Zahlen",
   eintraege: [
-    { wert: 30, suffix: "", label: "Jahre im Vertrieb" },
+    { wert: 30, suffix: "+", label: "Jahre im Vertrieb" },
     { wert: 89, suffix: "", label: "Betriebe ausgestattet" },
-    { wert: 7, suffix: "", label: "Partnermarken" },
-    { wert: 2, suffix: "", label: "Länder" },
   ],
 } as const;
 
@@ -94,5 +92,5 @@ export const ctaBand = {
   headline: "Reden wir über Ihren Betrieb.",
   text: "Ein Gespräch, unverbindlich. Danach wissen Sie, ob es passt.",
   linkLabel: "Beratungsgespräch anfragen",
-  linkHref: "/beratung",
+  linkHref: "/kontakt",
 } as const;

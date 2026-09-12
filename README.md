@@ -44,7 +44,7 @@ app/
   page.tsx          Landingpage
   hotel/            Inspiration Hotel & Housekeeping
   gastro/           Inspiration Gastronomie
-  beratung/         Lead-Formular inkl. Server Action
+  kontakt/          Lead-Formular inkl. Server Action
   impressum/
   datenschutz/
 components/         Wiederverwendbare Bausteine
@@ -167,7 +167,7 @@ die Landingpage bleibt unverändert.
 
 ## Formular
 
-`/beratung` nutzt eine Server Action mit Zod-Validierung, einem Honeypot-Feld
+`/kontakt` nutzt eine Server Action mit Zod-Validierung, einem Honeypot-Feld
 und einem einfachen In-Memory-Rate-Limit pro IP. Erfolg und Fehler werden inline
 ausgegeben, es gibt keinen Redirect und keinen Alert.
 

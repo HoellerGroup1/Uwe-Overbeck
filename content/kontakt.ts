@@ -1,18 +1,23 @@
-/** Texte der Beratungsseite und des Formulars. */
+/** Texte der Kontaktseite und des Formulars. */
 
-export const beratung = {
+export const kontakt = {
   meta: {
-    titel: "Beratung — Uwe Overbeck",
+    titel: "Kontakt — Overbeck Berufsmode",
     beschreibung:
-      "Unverbindliches Beratungsgespräch zu Berufskleidung für Hotel, Housekeeping und Gastronomie.",
+      "Unverbindliches Gespräch zu Berufskleidung für Hotel, Gastro und Firmen. Overbeck Berufsmode, Anthering bei Salzburg.",
   },
-  label: "Beratung",
+  label: "Kontakt",
   headline: "Ein Gespräch, kein Termin mit Katalog.",
   bullets: [
     "Ich frage nach Bereichen, Schichten, Größen und Waschzyklen.",
     "Sie zeigen mir, was heute getragen wird und woran es scheitert.",
     "Danach bekommen Sie einen Vorschlag. Kein Abschluss im Termin, keine Verpflichtung.",
   ],
+  /**
+   * Wer lieber direkt anruft, soll nicht erst bis in den Footer scrollen.
+   * Die Werte selbst stehen in site.ts, hier nur die Überschrift.
+   */
+  direktLabel: "Oder direkt",
 } as const;
 
 export const formular = {

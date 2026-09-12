@@ -45,7 +45,13 @@ function ReferenzItem({ referenz }: { referenz: Referenz }) {
   }
 
   return (
-    <span className="flex h-14 items-center font-display text-headline-md whitespace-nowrap text-on-surface-variant uppercase md:h-20">
+    /*
+      Fallback ohne Logo. Bewusst klein und in gemischter Schreibweise: in
+      Versalien und headline-md war "Marionettentheater" dreimal so breit wie
+      die Logos daneben und kippte das ganze Band. Ein Textname soll ungefähr
+      so viel Platz einnehmen wie ein Logo, nicht mehr.
+    */
+    <span className="flex h-14 items-center font-body text-body-lg whitespace-nowrap text-on-surface-variant md:h-20">
       {referenz.name}
     </span>
   );

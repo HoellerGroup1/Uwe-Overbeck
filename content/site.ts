@@ -32,15 +32,14 @@ export type NavLink = {
 };
 
 /**
- * "Kontakt" ist ein Anker auf den Footer, der auf jeder Seite steht.
- * Damit springt der Link innerhalb der aktuellen Seite statt zurueck zur Startseite.
+ * "Beratung" ist entfallen und durch "Kontakt" ersetzt (E9) -- dieselbe Seite
+ * unter neuer Route. "Firmen" kommt dazu, sobald die Seite steht.
  */
 export const navigation: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "Hotel", href: "/hotel" },
   { label: "Gastro", href: "/gastro" },
-  { label: "Beratung", href: "/beratung" },
-  { label: "Kontakt", href: "#kontakt" },
+  { label: "Kontakt", href: "/kontakt" },
 ];
 
 export const footer = {

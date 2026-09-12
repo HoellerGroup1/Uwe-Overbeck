@@ -1,5 +1,5 @@
 import { Resend } from "resend";
-import { formular } from "@/content/beratung";
+import { formular } from "@/content/kontakt";
 import type { Anfrage } from "@/lib/anfrage-schema";
 
 type Versandergebnis = { ok: true } | { ok: false; grund: "konfiguration" | "versand" };

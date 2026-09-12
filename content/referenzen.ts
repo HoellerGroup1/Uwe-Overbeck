@@ -53,4 +53,9 @@ export const referenzen: Referenz[] = [
     breite: 1200,
     hoehe: 628,
   },
+  // Die folgenden drei laufen als Wortmarke, bis Uwe die Logos liefert.
+  // Anzeigename bewusst kurz: ausgeschrieben sprengt er das Marquee.
+  { name: "Marionettentheater" },
+  { name: "Arte Hotel" },
+  { name: "Segafredo" },
 ];

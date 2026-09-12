@@ -1,7 +1,7 @@
 "use server";
 
 import { headers } from "next/headers";
-import { formular } from "@/content/beratung";
+import { formular } from "@/content/kontakt";
 import {
   anfrageSchema,
   FELDNAMEN,
