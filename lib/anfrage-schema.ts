@@ -17,7 +17,7 @@ export const anfrageSchema = z.object({
     .min(2, fehlermeldungen.betriebLeer)
     .max(120, fehlermeldungen.zuLang),
   rolle: z
-    .enum(["hotel", "gastronomie", "housekeeping", "sonstiges"], {
+    .enum(["hotel", "gastronomie", "housekeeping", "firma", "sonstiges"], {
       message: fehlermeldungen.rolleUngueltig,
     })
     .optional(),

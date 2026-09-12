@@ -7,10 +7,15 @@
  */
 
 export const hero = {
-  label: "Hotel · Housekeeping · Gastronomie",
-  headline: "Was Ihr Team trägt, sieht der Gast zuerst.",
+  // Drei Segmente, wie der Claim und die Navigation. "Housekeeping" ist raus:
+  // es ist Teil von Hotel und stand hier gleichrangig neben ganzen Branchen.
+  label: "Hotel · Gastronomie · Firmen",
+  // "der Gast" galt nur für Hotel und Gastro. Seit dem dritten Segment steht
+  // hier "Kunde", sonst spricht die Startseite ein Drittel der Zielgruppe
+  // nicht an.
+  headline: "Was Ihr Team trägt, sieht Ihr Kunde zuerst.",
   subline:
-    "Ich berate Betriebe im DACH-Raum bei der Auswahl ihrer Berufskleidung.",
+    "Ich berate Hotels, Gastronomie und Firmen bei der Auswahl ihrer Berufskleidung.",
   bild: {
     src: "/img/brand/kuechenteam-weisse-kochjacken.jpg",
     alt: "Küchenteam in weißen Kochjacken bei der Arbeit am Pass",
@@ -34,8 +39,8 @@ export const about = {
   label: "Zur Person",
   headline: "Ich sehe mir erst den Betrieb an, dann die Kleidung.",
   absaetze: [
-    "Ich arbeite im Vertrieb für Berufskleidung in Hotellerie und Gastronomie. Bevor ich etwas vorschlage, will ich wissen, wie bei Ihnen gearbeitet wird. Wie viele Zimmer pro Schicht. Wie oft gewaschen wird. Wer sich in der aktuellen Kleidung nicht wohlfühlt.",
-    "Meistens braucht es keine große Kollektion. Es braucht wenige Teile, die zum Betrieb passen und die Wäscherei überstehen. Darauf arbeite ich hin.",
+    "Ich arbeite im Vertrieb für Berufskleidung, für Hotels, Gastronomie und Firmen. Bevor ich etwas vorschlage, will ich wissen, wie Sie arbeiten: wie oft Ihre Wäscherei läuft und wer sich in der aktuellen Kleidung nicht wohlfühlt.",
+    "Meistens reichen wenige Teile, die zum Betrieb passen und die Wäscherei überstehen. Eine ganze Kollektion braucht kaum ein Betrieb.",
   ],
   signatur: "Uwe Overbeck",
   /**
@@ -93,17 +98,18 @@ export const tiles = {
 export const katalog = {
   label: "Katalog",
   headline: "Das Sortiment zum Durchblättern.",
-  text: "Der aktuelle Greif Katalog als PDF. Ohne Formular, ohne E-Mail-Adresse.",
-  buttonLabel: "Greif Katalog herunterladen",
-  datei: "/downloads/greif-katalog.pdf",
-  dateiname: "greif-katalog.pdf",
+  // Die Marke schreibt sich Greiff, mit zwei f. Stand vorher überall falsch.
+  text: "Der aktuelle Greiff-Katalog als PDF. Sie laden ihn direkt herunter, ohne Formular.",
+  buttonLabel: "Greiff-Katalog herunterladen",
+  datei: "/downloads/greiff-katalog.pdf",
+  dateiname: "greiff-katalog.pdf",
   /** TODO(Marcel): bei Austausch des PDF die Größenangabe mit anpassen. */
   dateihinweis: "PDF, 2,1 MB",
 } as const;
 
 export const ctaBand = {
   headline: "Reden wir über Ihren Betrieb.",
-  text: "Ein Gespräch, unverbindlich. Danach wissen Sie, ob es passt.",
+  text: "Rufen Sie an oder schreiben Sie mir. Danach wissen Sie, ob es passt.",
   linkLabel: "Beratungsgespräch anfragen",
   linkHref: "/kontakt",
 } as const;

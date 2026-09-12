@@ -51,7 +51,7 @@ components/         Wiederverwendbare Bausteine
 content/            Sämtliche sichtbaren Texte
 lib/                Validierung, Rate-Limit, Mailversand
 public/img/         hotel/ · gastro/ · brand/
-public/downloads/   greif-katalog.pdf
+public/downloads/   greiff-katalog.pdf
 public/fonts/       Switzer-Variable.woff2 + FFL.txt
 ```
 

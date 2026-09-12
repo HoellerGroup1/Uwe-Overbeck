@@ -51,7 +51,7 @@ export type InspirationsSeite = {
 
 export const hotelSeite: InspirationsSeite = {
   meta: {
-    titel: "Hotel & Housekeeping — Uwe Overbeck",
+    titel: "Hotel & Housekeeping — Overbeck Berufsmode",
     beschreibung:
       "Berufskleidung für Rezeption, Etage und Service. Was im Hotelalltag zählt.",
   },
@@ -66,7 +66,7 @@ export const hotelSeite: InspirationsSeite = {
   bloecke: [
     {
       headline: "Die Rezeption ist das erste Bild.",
-      text: "Der Gast sieht die Kleidung, bevor er ein Wort hört. Passform und Stoffgriff wirken dabei stärker als jedes Logo. Ich achte darauf, dass ein Sakko auch nach acht Stunden Dienst noch sitzt.",
+      text: "Der Gast sieht die Kleidung, bevor er ein Wort hört. Passform und Stoffgriff wirken stärker als ein Logo. Ich achte darauf, dass ein Sakko auch nach acht Stunden Dienst noch sitzt.",
       bild: {
         src: "/img/hotel/rezeption-empfang-gast.jpg",
         alt: "Mitarbeiterin an der Rezeption begrüßt einen ankommenden Gast",
@@ -75,7 +75,7 @@ export const hotelSeite: InspirationsSeite = {
     },
     {
       headline: "Housekeeping belastet Kleidung anders.",
-      text: "Bücken, heben, wischen, und das über eine volle Schicht. Nähte an Schulter und Knie geben zuerst nach. Ich wähle Schnitte, die Bewegung zulassen, und Verstärkungen dort, wo sie gebraucht werden.",
+      text: "Bücken, heben, wischen, und das über eine volle Schicht. Nähte an Schulter und Knie geben zuerst nach. Ich wähle Schnitte, die Bewegung zulassen, und achte auf verstärkte Nähte an genau diesen Stellen.",
       bild: {
         src: "/img/hotel/housekeeping-zimmer-herrichten.jpg",
         alt: "Housekeeping-Mitarbeiterin richtet ein Bett im Hotelzimmer her",
@@ -86,8 +86,8 @@ export const hotelSeite: InspirationsSeite = {
       },
     },
     {
-      headline: "Passform über alle Körperformen.",
-      text: "Ein Team besteht nicht aus einer Größe. Vor der Bestellung geht ein Größensatz durch den Betrieb, damit jede und jeder anprobieren kann. Wer sich in der Kleidung wohlfühlt, trägt sie auch so, wie sie gedacht ist.",
+      headline: "Erst anprobieren, dann bestellen.",
+      text: "Vor der Bestellung geht ein Größensatz durch den Betrieb, damit jede und jeder anprobieren kann. Wer sich in der Kleidung wohlfühlt, trägt sie so, wie sie gedacht ist.",
       bild: {
         src: "/img/hotel/hotelzimmer-zwei-mitarbeiterinnen.jpg",
         alt: "Zwei Mitarbeiterinnen in dunkler Berufskleidung im Hotelzimmer",
@@ -97,7 +97,7 @@ export const hotelSeite: InspirationsSeite = {
   ],
   abschluss: {
     headline: "Passt das zu Ihrem Haus?",
-    text: "Wir gehen Bereiche, Größen und Waschzyklen einmal durch.",
+    text: "Wir gehen Etagen, Größen und Wäsche einmal durch.",
     linkLabel: "Beratungsgespräch anfragen",
     linkHref: "/kontakt",
   },
@@ -105,7 +105,7 @@ export const hotelSeite: InspirationsSeite = {
 
 export const gastroSeite: InspirationsSeite = {
   meta: {
-    titel: "Gastronomie — Uwe Overbeck",
+    titel: "Gastronomie — Overbeck Berufsmode",
     beschreibung:
       "Berufskleidung für Küche, Service und Bar. Was im Gastronomiealltag zählt.",
   },
@@ -120,7 +120,7 @@ export const gastroSeite: InspirationsSeite = {
   bloecke: [
     {
       headline: "Im Gastkontakt zählt der erste Blick.",
-      text: "Wer am Tisch arbeitet, wird angesehen. Schürze, Hemd und Schnitt entscheiden, ob das Bild zum Haus passt. Ich stimme die Teile auf das ab, was der Betrieb sonst zeigt: Einrichtung, Karte, Ton.",
+      text: "Wer am Tisch arbeitet, steht im Blick. An Schürze und Schnitt sieht der Gast, ob das Bild zum Haus passt. Ich stimme die Teile auf das ab, was der Betrieb sonst zeigt: Einrichtung, Karte, Ton.",
       bild: {
         src: "/img/gastro/tranchieren-am-gast.jpg",
         alt: "Koch tranchiert Schinken vor den Gästen im Restaurant",
@@ -129,7 +129,7 @@ export const gastroSeite: InspirationsSeite = {
     },
     {
       headline: "Hitze und Bewegungsfreiheit in der Küche.",
-      text: "An der Linie wird es heiß und eng. Eine Kochjacke braucht Luft, ohne dabei zu weit zu werden. Ich achte auf Gewebe, das Wärme abgibt, und auf Ärmel, die beim Greifen nicht stören.",
+      text: "An der Linie wird es heiß und eng. Eine Kochjacke braucht Luft, ohne zu weit zu werden. Ich achte auf Gewebe, das Wärme abgibt, und auf Ärmel, die beim Greifen nicht stören.",
       bild: {
         src: "/img/gastro/koch-am-herd-mit-schuerze.jpg",
         alt: "Koch mit Schürze arbeitet am Herd in einer Restaurantküche",
@@ -138,7 +138,7 @@ export const gastroSeite: InspirationsSeite = {
     },
     {
       headline: "Flecken und Industriewäsche.",
-      text: "Fett, Wein und Sauce sind Alltag. Entscheidend ist, wie oft ein Teil bei welcher Temperatur gewaschen werden kann, bevor Farbe und Form nachlassen. Danach rechne ich, nicht nach Stückpreis.",
+      text: "Fett, Wein und Sauce sind Alltag. Ich rechne deshalb in Waschgängen: wie oft ein Teil bei welcher Temperatur durch die Maschine geht, bevor Farbe und Form nachlassen. Der Stückpreis sagt darüber nichts.",
       bild: {
         src: "/img/gastro/koeche-schuerzen-nahaufnahme.jpg",
         alt: "Nahaufnahme zweier Köche in Schürzen bei der Arbeit",
@@ -147,7 +147,7 @@ export const gastroSeite: InspirationsSeite = {
     },
     {
       headline: "Der Betrieb muss erkennbar bleiben.",
-      text: "Ein Logo auf der Brust reicht selten. Farbe, Material und Details tragen den Betrieb weiter als eine Stickerei. Und sie halten länger als ein Trend.",
+      text: "Ein Logo auf der Brust reicht selten. Farbe und Material tragen den Betrieb weiter als eine Stickerei, und sie halten länger als ein Trend.",
       bild: {
         src: "/img/gastro/service-mit-tablett.jpg",
         alt: "Servicemitarbeiter mit bedruckter Schürze trägt ein Tablett mit Getränken",
@@ -160,7 +160,7 @@ export const gastroSeite: InspirationsSeite = {
   ],
   abschluss: {
     headline: "Passt das zu Ihrem Betrieb?",
-    text: "Wir gehen Küche, Service und Wäsche einmal durch.",
+    text: "Wir schauen uns Küche, Service und Wäsche gemeinsam an.",
     linkLabel: "Beratungsgespräch anfragen",
     linkHref: "/kontakt",
   },
@@ -187,7 +187,7 @@ export const firmenSeite: InspirationsSeite = {
   },
   hero: {
     label: "Firmen",
-    headline: "Ein Team, ein Bild.",
+    headline: "Vom Lager bis zum Empfang.",
     bild: {
       alt: "Mitarbeitende eines Betriebs in einheitlicher Berufskleidung",
     },
@@ -195,7 +195,7 @@ export const firmenSeite: InspirationsSeite = {
   bloecke: [
     {
       headline: "Einheitlich auftreten, ohne uniform zu wirken.",
-      text: "Wer einheitlich auftritt, wird als ein Betrieb wahrgenommen und nicht als eine Ansammlung von Einzelnen. Das gelingt schon über Farbe, Material und ein durchgehendes Detail — es braucht dafür keine Uniform, die niemand gern anzieht.",
+      text: "Farbe und Material halten ein Team optisch zusammen, auch ohne durchgehende Uniform. Wichtiger ist, dass Ihre Leute die Sachen gern anziehen. Sonst tragen sie am Ende doch das eigene Shirt darunter.",
       bild: {
         alt: "Mitarbeitende verschiedener Bereiche in aufeinander abgestimmter Kleidung",
         verhaeltnis: "4/3",
@@ -203,7 +203,7 @@ export const firmenSeite: InspirationsSeite = {
     },
     {
       headline: "Ein Betrieb, viele Arbeitsplätze.",
-      text: "Im Lager wird anders gearbeitet als am Empfang und im Werkstattbereich anders als im Büro. Die Aufgabe ist, alle Bereiche sichtbar zusammenzuhalten und trotzdem jedem die Kleidung zu geben, in der sich arbeiten lässt.",
+      text: "Im Lager packt Ihr Team an, am Empfang steht es im Blick der Besucher. Beide sollen zum selben Betrieb gehören, brauchen aber anderes Material und andere Schnitte. Ich löse das über eine gemeinsame Farbe und unterschiedliche Teile.",
       bild: {
         alt: "Arbeitskleidung im Einsatz an unterschiedlichen Arbeitsplätzen",
         verhaeltnis: "4/5",
@@ -211,7 +211,7 @@ export const firmenSeite: InspirationsSeite = {
     },
     {
       headline: "Das Logo hält so lange wie das Teil.",
-      text: "Stick, Druck oder Emblem entscheiden mit, wie lange ein Teil ordentlich aussieht. Eine Veredelung, die den zehnten Waschgang nicht übersteht, kostet mehr als sie gespart hat. Ich sage vorher, welches Verfahren zu welchem Stoff passt.",
+      text: "Ein Stick hält länger als ein Druck, kostet mehr und passt nicht auf jeden Stoff. Eine Veredelung, die den zehnten Waschgang nicht übersteht, kostet Sie am Ende mehr als sie gespart hat. Ich sage Ihnen vorher, was zu Ihrem Material passt.",
       bild: {
         alt: "Nahaufnahme einer Logostickerei auf Berufskleidung",
         verhaeltnis: "4/5",
@@ -219,8 +219,8 @@ export const firmenSeite: InspirationsSeite = {
     },
   ],
   abschluss: {
-    headline: "Passt das zu Ihrem Betrieb?",
-    text: "Wir gehen Bereiche, Aufgaben und Veredelung einmal durch.",
+    headline: "Wie läuft das bei Ihnen?",
+    text: "Wir klären Bereiche, Teile und Veredelung.",
     linkLabel: "Beratungsgespräch anfragen",
     linkHref: "/kontakt",
   },

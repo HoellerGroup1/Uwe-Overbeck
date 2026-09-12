@@ -105,7 +105,7 @@ Nicht kritisch, aber diese Sektionen fehlen deshalb aktuell:
   säße besser.
 - **Logos als SVG oder PNG mit Transparenz** würden den `mix-blend-multiply`-
   Umweg in `components/referenzen-marquee.tsx` überflüssig machen.
-- **Katalog-PDF ersetzen:** Datei unter `public/downloads/greif-katalog.pdf`
+- **Katalog-PDF ersetzen:** Datei unter `public/downloads/greiff-katalog.pdf`
   austauschen **und** die Größenangabe in `content/landing.ts` →
   `katalog.dateihinweis` anpassen.
 - **Prozessaussagen gegenlesen.** Sätze wie „Vor der Bestellung geht ein
@@ -192,7 +192,7 @@ Siehe „Hier geht es weiter" ganz oben.
 - **Bildton:** Fotos sind nicht mehr voll entsättigt. Geregelt über eine
   einzige Stelle — `.bild-ton` in `app/globals.css`, aktuell
   `grayscale(0.55)`. 0 wäre volle Farbe, 1 reines Schwarzweiß.
-- **Katalog-PDF:** liegt unter `public/downloads/greif-katalog.pdf` (2,1 MB).
+- **Katalog-PDF:** liegt unter `public/downloads/greiff-katalog.pdf` (2,1 MB).
 - **Kontaktdaten:** office@uwe-overbeck.com und +49 151 59851965 stehen im
   Footer jeder Seite, als `mailto:`- und `tel:`-Link.
 - **Home in der Navigation**, links vor Hotel, gleicher Stil.

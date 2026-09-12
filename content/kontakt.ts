@@ -7,11 +7,11 @@ export const kontakt = {
       "Unverbindliches Gespräch zu Berufskleidung für Hotel, Gastro und Firmen. Overbeck Berufsmode, Anthering bei Salzburg.",
   },
   label: "Kontakt",
-  headline: "Ein Gespräch, kein Termin mit Katalog.",
+  headline: "Wir reden, bevor Sie etwas bestellen.",
   bullets: [
-    "Ich frage nach Bereichen, Schichten, Größen und Waschzyklen.",
-    "Sie zeigen mir, was heute getragen wird und woran es scheitert.",
-    "Danach bekommen Sie einen Vorschlag. Kein Abschluss im Termin, keine Verpflichtung.",
+    "Ich frage nach Bereichen, Größen und Wäsche.",
+    "Sie zeigen mir, was Ihr Team heute trägt und woran es scheitert.",
+    "Danach bekommen Sie einen Vorschlag. Entscheiden können Sie in Ruhe.",
   ],
   /**
    * Wer lieber direkt anruft, soll nicht erst bis in den Footer scrollen.
@@ -25,13 +25,22 @@ export const formular = {
   felder: {
     name: { label: "Name", pflicht: true },
     betrieb: { label: "Betrieb", pflicht: true },
+    /**
+     * Sichtbar heißt das Feld "Bereich" — Hotel und Gastronomie sind keine
+     * Rollen. Der interne Feldname `rolle` bleibt, er steckt im Schema, in der
+     * Server Action und in der Benachrichtigungsmail.
+     *
+     * "Firma" ist seit dem dritten Segment dazugekommen: ohne den Eintrag
+     * konnte ein Firmenkunde seinen Bereich nicht angeben.
+     */
     rolle: {
-      label: "Rolle",
+      label: "Bereich",
       pflicht: false,
       optionen: [
         { wert: "hotel", label: "Hotel" },
         { wert: "gastronomie", label: "Gastronomie" },
         { wert: "housekeeping", label: "Housekeeping" },
+        { wert: "firma", label: "Firma" },
         { wert: "sonstiges", label: "Sonstiges" },
       ],
     },
@@ -61,7 +70,7 @@ export const formular = {
 export const fehlermeldungen = {
   nameLeer: "Bitte geben Sie Ihren Namen an.",
   betriebLeer: "Bitte geben Sie den Betrieb an.",
-  rolleUngueltig: "Bitte wählen Sie eine der angebotenen Rollen.",
+  rolleUngueltig: "Bitte wählen Sie einen der angebotenen Bereiche.",
   emailUngueltig: "Bitte geben Sie eine gültige E-Mail-Adresse an.",
   telefonZuLang: "Die Telefonnummer ist zu lang.",
   nachrichtZuLang: "Die Nachricht ist zu lang.",

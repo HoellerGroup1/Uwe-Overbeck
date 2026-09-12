@@ -13,7 +13,7 @@ function alsText(anfrage: Anfrage): string {
   return [
     `Name:      ${anfrage.name}`,
     `Betrieb:   ${anfrage.betrieb}`,
-    `Rolle:     ${rolleLabel(anfrage.rolle)}`,
+    `Bereich:   ${rolleLabel(anfrage.rolle)}`,
     `E-Mail:    ${anfrage.email}`,
     `Telefon:   ${anfrage.telefon || "keine Angabe"}`,
     "",
