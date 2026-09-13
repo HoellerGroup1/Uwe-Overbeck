@@ -29,9 +29,22 @@ const switzer = localFont({
   adjustFontFallback: "Arial",
 });
 
+/**
+ * Basis fuer absolute URLs in Open Graph und Co. In Production die echte
+ * Domain aus content/site.ts. Auf Vercel-Previews die Deployment-URL --
+ * sonst zeigt das Vorschaubild auf eine Domain, die noch nicht existiert,
+ * und der Link, den Uwe per WhatsApp bekommt, hat keine Vorschau.
+ * Die Sitemap nutzt weiterhin site.url; sie ist bis zum Livegang ohnehin
+ * durch robots.ts gesperrt.
+ */
+const basisUrl =
+  process.env.VERCEL_ENV !== "production" && process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : site.url;
+
 export const metadata: Metadata = {
-  // Macht relative Pfade in Open Graph, Sitemap und canonical absolut.
-  metadataBase: new URL(site.url),
+  // Macht relative Pfade in Open Graph und canonical absolut.
+  metadataBase: new URL(basisUrl),
   title: site.titel,
   description: site.beschreibung,
   applicationName: site.firma,
