@@ -114,7 +114,12 @@
 
   /* ---------- Spacing ---------- */
   --spacing-margin-desktop: 80px;
-  --spacing-margin-mobile: 24px;
+  /*
+    Mobil mindestens 24px, auf Geräten mit Displayrundung oder Notch der
+    Sicherheitsabstand des Systems, falls der größer ist. Wirkt nur mit
+    viewport-fit=cover (app/layout.tsx).
+  */
+  --spacing-margin-mobile: max(24px, env(safe-area-inset-left), env(safe-area-inset-right));
   --spacing-gutter: 24px;
   --spacing-stack-sm: 12px;
   --spacing-stack-md: 24px;
@@ -146,6 +151,19 @@
     line-height: var(--text-body-md--line-height);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  /*
+    Kein blauer Tap-Blitz auf iOS/Android. Stattdessen ein eigener
+    Aktivzustand, damit der Tipp trotzdem eine Rückmeldung gibt.
+  */
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+  a:active,
+  button:active {
+    opacity: 0.6;
   }
 
   /* Sichtbarer Fokus auf allen interaktiven Elementen */

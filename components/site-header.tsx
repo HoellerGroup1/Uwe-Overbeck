@@ -31,8 +31,25 @@ export function SiteHeader() {
       if (e.key === "Escape") setMenuOffen(false);
     };
     document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
+    // Seite hinter dem offenen Menü nicht mitscrollen lassen.
+    const vorher = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = vorher;
+    };
   }, [menuOffen]);
+
+  // Menü schließen, wenn der Viewport auf Desktopbreite wächst -- sonst bleibt
+  // der Scroll-Lock aktiv, obwohl das Menü per CSS längst ausgeblendet ist.
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    const onChange = () => {
+      if (mq.matches) setMenuOffen(false);
+    };
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
 
   const flaeche =
     hell

@@ -45,11 +45,11 @@ export const about = {
   signatur: "Uwe Overbeck",
   /**
    * Farbfassung, 1122×1402 (4:5). Die Schwarzweiß-Variante liegt daneben als
-   * portrait-uwe-overbeck-sw.png, falls der Ton doch neutraler werden soll.
+   * portrait-uwe-overbeck-sw.jpg, falls der Ton doch neutraler werden soll.
    * `vorhanden: false` schaltet zurück auf den Platzhalter.
    */
   portrait: {
-    src: "/img/brand/portrait-uwe-overbeck.png",
+    src: "/img/brand/portrait-uwe-overbeck.jpg",
     alt: "Portrait von Uwe Overbeck",
     breite: 1122,
     hoehe: 1402,

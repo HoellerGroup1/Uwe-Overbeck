@@ -6,8 +6,7 @@ committed und auf `origin/build/v1` gepusht.
 
 ## Hier geht es weiter
 
-**Phase 5 der Mobile-Optimierung**, siehe Abschnitt „Mobile-Optimierung"
-weiter unten. Sie zerfällt bewusst in zwei Teile:
+~~**Phase 5 der Mobile-Optimierung**~~ — 5a und 5b am 13.09. erledigt, siehe unten. Zur Nachvollziehbarkeit:
 
 - **5a, risikoarm, ca. 20 Minuten.** `env(safe-area-inset-*)` in Header,
   Footer und Container, `-webkit-tap-highlight-color` plus eigener
@@ -176,9 +175,18 @@ die Summe der beiden Außenabstände genau einem Zwischenraum entspricht, und
 zwar pro Breakpoint. Mobil 2×24 = 48, ab md 2×48 = 96. Der Kommentar in
 `components/referenzen-marquee.tsx` sagt es noch einmal.
 
-## Phase 5 — offen
+## Phase 5 — erledigt (13.09.)
 
-Siehe „Hier geht es weiter" ganz oben.
+**5a:** `--spacing-margin-mobile` nimmt `env(safe-area-inset-left/right)`
+mit, `viewport-fit=cover` im Layout, Footer mit `safe-area-inset-bottom`.
+Tap-Highlight aus, eigener `:active`-Zustand (Opacity 0.6). Scroll-Lock
+hinter dem offenen Mobile-Menü, Menü schließt beim Wechsel auf Desktopbreite.
+
+**5b:** Quellbilder auf max. 2400 px lange Seite (Heroes auf `/hotel` und
+`/gastro` auf 2000 px Breite, weil sie Full-Bleed laufen), JPEG 82 progressiv;
+Portrait von PNG auf JPEG. 15,5 MB → 2,5 MB im Repo. `placeholder="blur"`
+bewusst nicht gesetzt: die Bilder liegen auf sand/papier, ein verwaschener
+Vorabzug sähe wie ein Fehler aus.
 
 ---
 

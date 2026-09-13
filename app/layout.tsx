@@ -92,6 +92,8 @@ const localBusiness = {
 /** Browserleiste auf dem Handy in papier statt Standardweiß. */
 export const viewport: Viewport = {
   themeColor: "#F7F6F3",
+  // Seite läuft bis in die Rundungen; die Ränder halten über env(safe-area-inset-*) Abstand.
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
