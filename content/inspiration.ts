@@ -182,11 +182,11 @@ export const firmenSeite: InspirationsSeite = {
   meta: {
     titel: "Firmen — Overbeck Berufsmode",
     beschreibung:
-      "Berufskleidung für Betriebe außerhalb der Hotellerie: Kultur, Handel, Handwerk und Dienstleistung.",
+      "Berufsmode für Firmen: einheitlich, modern und passend zum Unternehmen. Persönliche Beratung und ein Kleidungskonzept vom Empfang bis zum Lager.",
   },
   hero: {
     label: "Firmen",
-    headline: "Vom Lager bis zum Empfang.",
+    headline: "Ein Unternehmen, ein Auftritt.",
     bild: {
       src: "/img/firmen/team-im-buero-besprechung.jpg",
       alt: "Fünf Mitarbeitende in abgestimmter dunkelblauer Businesskleidung besprechen sich im Büro",
@@ -195,8 +195,8 @@ export const firmenSeite: InspirationsSeite = {
   },
   bloecke: [
     {
-      headline: "Einheitlich auftreten, ohne uniform zu wirken.",
-      text: "Farbe und Material halten ein Team optisch zusammen, auch ohne durchgehende Uniform. Wichtiger ist, dass Ihre Leute die Sachen gern anziehen. Sonst tragen sie am Ende doch das eigene Shirt darunter.",
+      headline: "Einheitlich, ohne nach Uniform auszusehen.",
+      text: "Ein Team erkennt man an Farbe und Schnitt, lange bevor jemand das Logo liest. Moderne Berufsmode schafft das mit Teilen, die Ihre Leute auch nach Feierabend anbehalten würden: ein Blouson, ein gut geschnittenes Hemd, eine Hose, die sitzt. Wer sich darin wohlfühlt, trägt es mit Haltung. Das sieht der Kunde.",
       bild: {
         src: "/img/firmen/blousons-team-casual.jpg",
         alt: "Zwei Mitarbeitende in dunkelblauen Blousons über Shirt und Hemd",
@@ -205,8 +205,8 @@ export const firmenSeite: InspirationsSeite = {
       },
     },
     {
-      headline: "Ein Betrieb, viele Arbeitsplätze.",
-      text: "Im Lager packt Ihr Team an, am Empfang steht es im Blick der Besucher. Beide sollen zum selben Betrieb gehören, brauchen aber anderes Material und andere Schnitte. Ich löse das über eine gemeinsame Farbe und unterschiedliche Teile.",
+      headline: "Vom Empfang bis zum Lager ein Konzept.",
+      text: "Am Empfang zählt der Auftritt, im Lager die Bewegungsfreiheit, im Büro beides ein bisschen. Ein gutes Kleidungskonzept verbindet diese Arbeitsplätze über eine gemeinsame Farbwelt und gibt jedem Bereich die Teile, die er braucht. Ich sehe mir Ihre Abläufe vor Ort an und stelle das Konzept mit Ihnen zusammen.",
       bild: {
         src: "/img/firmen/anzug-und-kostuem-empfang.jpg",
         alt: "Mitarbeiterin und Mitarbeiter in grauem Kostüm und Anzug",
@@ -216,8 +216,8 @@ export const firmenSeite: InspirationsSeite = {
       },
     },
     {
-      headline: "Das Logo hält so lange wie das Teil.",
-      text: "Ein Stick hält länger als ein Druck, kostet mehr und passt nicht auf jeden Stoff. Eine Veredelung, die den zehnten Waschgang nicht übersteht, kostet Sie am Ende mehr als sie gespart hat. Ich sage Ihnen vorher, was zu Ihrem Material passt.",
+      headline: "Das Logo gehört zum Outfit, nicht drauf.",
+      text: "Ob Stick oder Druck, Ton in Ton oder als Akzent: Die Veredelung entscheidet mit, ob ein Hemd nach Marke aussieht oder nach Werbegeschenk. Ich zeige Ihnen, was zu Ihrem Material und Ihrer Farbwelt passt, und wähle eine Technik, die auch nach dem fünfzigsten Waschgang noch sauber aussieht.",
       bild: {
         src: "/img/firmen/hemd-und-bluse-hellblau.jpg",
         alt: "Hellblaues Hemd und Bluse Rücken an Rücken, Fläche für Stick oder Druck",
@@ -228,8 +228,8 @@ export const firmenSeite: InspirationsSeite = {
     },
   ],
   abschluss: {
-    headline: "Wie läuft das bei Ihnen?",
-    text: "Wir klären, welche Bereiche was brauchen.",
+    headline: "Wie soll Ihr Unternehmen auftreten?",
+    text: "Ich komme vorbei, und wir entwickeln das Konzept gemeinsam.",
     linkLabel: "Oder per Formular",
     linkHref: "/kontakt",
   },
