@@ -96,15 +96,31 @@ export const tiles = {
 } as const;
 
 export const katalog = {
-  label: "Katalog",
+  label: "Kataloge",
   headline: "Das Sortiment zum Durchblättern.",
-  // Die Marke schreibt sich Greiff, mit zwei f. Stand vorher überall falsch.
-  text: "Der aktuelle Greiff-Katalog als PDF. Sie laden ihn direkt herunter, ohne Formular.",
-  buttonLabel: "Greiff-Katalog herunterladen",
-  datei: "/downloads/greiff-katalog.pdf",
-  dateiname: "greiff-katalog.pdf",
-  /** TODO(Marcel): bei Austausch des PDF die Größenangabe mit anpassen. */
-  dateihinweis: "PDF, 2,1 MB",
+  text: "Die aktuellen Kataloge beider Partnermarken als PDF. Sie laden sie direkt herunter, ohne Formular.",
+  /**
+   * Ein Eintrag ohne `datei` läuft als offene Position mit `hinweisOffen`
+   * (E19-Muster). Zum Freischalten `datei`, `dateiname` und `dateihinweis`
+   * setzen. Beim Austausch eines PDFs die Größenangabe mitziehen.
+   */
+  eintraege: [
+    {
+      marke: "Greiff",
+      buttonLabel: "Greiff-Katalog herunterladen",
+      datei: "/downloads/greiff-katalog.pdf",
+      dateiname: "greiff-katalog.pdf",
+      dateihinweis: "PDF, 2,1 MB",
+    },
+    {
+      marke: "Hakro",
+      buttonLabel: "Hakro-Katalog herunterladen",
+      datei: undefined,
+      dateiname: "hakro-katalog.pdf",
+      dateihinweis: undefined,
+      hinweisOffen: "PDF folgt",
+    },
+  ],
 } as const;
 
 export const ctaBand = {

@@ -107,7 +107,7 @@ Nicht kritisch, aber diese Sektionen fehlen deshalb aktuell:
   Umweg in `components/referenzen-marquee.tsx` überflüssig machen.
 - **Katalog-PDF ersetzen:** Datei unter `public/downloads/greiff-katalog.pdf`
   austauschen **und** die Größenangabe in `content/landing.ts` →
-  `katalog.dateihinweis` anpassen.
+  `katalog.eintraege[…].dateihinweis` anpassen.
 - **Prozessaussagen gegenlesen.** Sätze wie „Vor der Bestellung geht ein
   Größensatz durch den Betrieb" beschreiben Uwes Arbeitsweise. Ich habe sie
   plausibel formuliert, aber nicht gewusst. Betrifft

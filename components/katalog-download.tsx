@@ -3,11 +3,14 @@ import { BUTTON_KLASSE, MicroLabel } from "@/components/ui";
 import { katalog } from "@/content/landing";
 
 /**
- * Katalog-Download in sand.
+ * Katalog-Downloads in sand — ein Eintrag je Partnermarke.
  *
- * Bewusst als eigene Komponente gekapselt: wenn der Download später hinter ein
- * Formular-Gate soll, wird nur diese Datei getauscht. Die Landingpage bleibt
- * unverändert.
+ * Bewusst als eigene Komponente gekapselt: wenn die Downloads später hinter
+ * ein Formular-Gate sollen, wird nur diese Datei getauscht. Die Landingpage
+ * bleibt unverändert.
+ *
+ * Ein Eintrag ohne `datei` steht als offene Position da (E19): sichtbar
+ * beschriftet, ohne Link. Sobald das PDF liegt, wird nur der Content ergänzt.
  */
 export function KatalogDownload() {
   return (
@@ -21,7 +24,7 @@ export function KatalogDownload() {
             <MicroLabel className="text-on-surface-variant">{katalog.label}</MicroLabel>
           </div>
 
-          <div className="md:col-span-6">
+          <div className="md:col-span-5">
             <h2
               id="katalog-headline"
               className="font-display text-headline-lg-mobile text-balance md:text-headline-lg"
@@ -33,18 +36,38 @@ export function KatalogDownload() {
             </p>
           </div>
 
-          <div className="md:col-span-3 md:pt-1">
-            <a
-              href={katalog.datei}
-              download={katalog.dateiname}
-              className={BUTTON_KLASSE}
-            >
-              {katalog.buttonLabel}
-            </a>
-            <p className="mt-stack-sm font-body text-label-caps uppercase text-on-surface-variant">
-              {katalog.dateihinweis}
-            </p>
-          </div>
+          <ul className="flex flex-col gap-stack-md md:col-span-4 md:pt-1">
+            {katalog.eintraege.map((eintrag) => (
+              <li key={eintrag.marke}>
+                {eintrag.datei ? (
+                  <>
+                    <a
+                      href={eintrag.datei}
+                      download={eintrag.dateiname}
+                      className={BUTTON_KLASSE}
+                    >
+                      {eintrag.buttonLabel}
+                    </a>
+                    <p className="mt-stack-sm font-body text-label-caps uppercase text-on-surface-variant">
+                      {eintrag.dateihinweis}
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <span
+                      aria-disabled="true"
+                      className="inline-block border border-ash/60 px-stack-md py-3.5 font-body text-label-caps uppercase text-on-surface-variant"
+                    >
+                      {eintrag.buttonLabel}
+                    </span>
+                    <p className="mt-stack-sm font-body text-label-caps uppercase text-on-surface-variant">
+                      {eintrag.hinweisOffen}
+                    </p>
+                  </>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
       </Container>
     </section>
