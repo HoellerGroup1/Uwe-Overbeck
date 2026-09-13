@@ -100,9 +100,9 @@ Nicht kritisch, aber diese Sektionen fehlen deshalb aktuell:
 
 ## 5. Kleinigkeiten, kein Blocker
 
-- **Logo Hotel Zum Hirschen** ist als einziges hochkant (574×1024) und wirkt
-  im Marquee dadurch schmaler als die anderen. Eine querformatige Fassung
-  säße besser.
+- **Logo IMLAUER Palais Mirabell** läuft nur als Wortmarke, weil die
+  gelieferte Datei oben abgeschnitten war. Eine vollständige Fassung von
+  IMLAUER (mit Signet) würde sie ersetzen.
 - **Logos als SVG oder PNG mit Transparenz** würden den `mix-blend-multiply`-
   Umweg in `components/referenzen-marquee.tsx` überflüssig machen.
 - **Katalog-PDF ersetzen:** Datei unter `public/downloads/greiff-katalog.pdf`

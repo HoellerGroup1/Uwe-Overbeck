@@ -12,6 +12,21 @@ import { referenzen, referenzenLabel, type Referenz } from "@/content/referenzen
  * Bei prefers-reduced-motion läuft keine Animation. Stattdessen wird
  * dieselbe Liste als statisches Grid ausgegeben.
  */
+/**
+ * Größenklasse nach Seitenverhältnis. Ein fester Rahmen mit max-h und max-w
+ * behandelt alle Logos gleich, sieht aber ungleich aus: ein Hochformat wie
+ * Zum Hirschen (0,5) wird 40 px schmal, ein Querformat wie Gabriel-Glas (2,9)
+ * füllt die volle Breite. Ausgeglichen wird über die sichtbare Fläche --
+ * hohe Logos dürfen die ganze Zeilenhöhe nutzen, breite bekommen weniger
+ * Höhe, damit sie nicht das Band dominieren.
+ */
+function groessenKlasse(breite: number, hoehe: number) {
+  const verhaeltnis = breite / hoehe;
+  if (verhaeltnis < 0.85) return "max-h-14 md:max-h-20"; // hoch
+  if (verhaeltnis > 2) return "max-h-10 md:max-h-14"; // breit
+  return "max-h-14 md:max-h-20"; // annähernd quadratisch, meist mit Textzeilen
+}
+
 function ReferenzItem({ referenz }: { referenz: Referenz }) {
   if (referenz.logo && referenz.breite && referenz.hoehe) {
     return (
@@ -22,9 +37,9 @@ function ReferenzItem({ referenz }: { referenz: Referenz }) {
         Das bg-surface auf diesem Wrapper ist nötig, nicht dekorativ: der Track
         ist animiert und damit transformiert, und eine Transformation erzeugt
         einen eigenen Stacking-Context. mix-blend-multiply am Logo käme deshalb
-        nie bis zur Sektionsfläche durch, und das Weiß der JPEG- und
-        WebP-Dateien bliebe als heller Kasten stehen. Mit der Fläche direkt am
-        Wrapper hat das Blending den richtigen Hintergrund.
+        nie bis zur Sektionsfläche durch, und das Weiß der WebP-Dateien bliebe
+        als heller Kasten stehen. Mit der Fläche direkt am Wrapper hat das
+        Blending den richtigen Hintergrund.
       */
       <span className="flex h-14 w-[130px] items-center justify-center bg-surface md:h-20 md:w-[170px]">
         <Image
@@ -38,7 +53,7 @@ function ReferenzItem({ referenz }: { referenz: Referenz }) {
             ursprünglich vorgesehenen 0.55: mehrere der echten Logos haben
             feine helle Linien und verschwinden bei 0.55 fast vollständig.
           */
-          className="max-h-14 w-auto max-w-[130px] object-contain opacity-80 mix-blend-multiply grayscale md:max-h-20 md:max-w-[170px]"
+          className={`w-auto max-w-[130px] object-contain opacity-80 mix-blend-multiply grayscale md:max-w-[170px] ${groessenKlasse(referenz.breite, referenz.hoehe)}`}
         />
       </span>
     );
