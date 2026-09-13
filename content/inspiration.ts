@@ -56,11 +56,11 @@ export const hotelSeite: InspirationsSeite = {
   meta: {
     titel: "Hotel & Housekeeping — Overbeck Berufsmode",
     beschreibung:
-      "Berufskleidung für Rezeption, Etage und Service. Was im Hotelalltag zählt.",
+      "Berufsmode für Rezeption, Etage und Service: modern, gut sitzend, passend zum Haus. Persönliche Beratung und ein Kleidungskonzept für den ganzen Betrieb.",
   },
   hero: {
     label: "Hotel & Housekeeping",
-    headline: "Vorn repräsentieren, hinten arbeiten.",
+    headline: "Ihr Haus hat einen Stil. Ihr Team trägt ihn.",
     bild: {
       src: "/img/hotel/housekeeping-bett-zu-zweit.jpg",
       alt: "Zwei Housekeeping-Mitarbeiterinnen beziehen gemeinsam ein Bett",
@@ -70,8 +70,8 @@ export const hotelSeite: InspirationsSeite = {
   },
   bloecke: [
     {
-      headline: "Die Rezeption ist das erste Bild.",
-      text: "Der Gast sieht die Kleidung, bevor er ein Wort hört. Passform und Stoffgriff wirken stärker als ein Logo. Ich achte darauf, dass ein Sakko auch nach acht Stunden Dienst noch sitzt.",
+      headline: "Der erste Eindruck steht an der Rezeption.",
+      text: "Gäste lesen ein Haus in Sekunden: das Licht, der Ton, und was die Person hinter dem Empfang trägt. Ein Sakko, das sitzt, und ein Schnitt, der zur Einrichtung passt, sagen mehr über Ihr Haus als jede Broschüre. Berufsmode heißt für mich Kleidung, die man auch privat gern anziehen würde, mit dem Unterschied, dass sie acht Stunden Dienst aushält.",
       bild: {
         src: "/img/hotel/rezeption-empfang-gast.jpg",
         alt: "Mitarbeiterin an der Rezeption begrüßt einen ankommenden Gast",
@@ -80,8 +80,8 @@ export const hotelSeite: InspirationsSeite = {
       },
     },
     {
-      headline: "Housekeeping belastet Kleidung anders.",
-      text: "Bücken, heben, wischen, eine volle Schicht lang. Nähte an Schulter und Knie geben zuerst nach. Ich wähle Schnitte, die Bewegung zulassen, und achte auf verstärkte Nähte an genau diesen Stellen.",
+      headline: "Housekeeping darf gut aussehen.",
+      text: "Auf der Etage bückt sich Ihr Team, hebt und wischt, eine ganze Schicht lang. Die Kleidung muss das mitmachen, und trotzdem darf sie nicht nach Arbeitskittel aussehen. Moderne Schnitte, Stretchanteile und Farben, die zum Haus passen, sind heute der Mindestanspruch. Ihr Team fühlt sich wohler, und der Gast im Flur sieht ein Haus, das bis ins Detail auf sich achtet.",
       bild: {
         src: "/img/hotel/housekeeping-zimmer-herrichten.jpg",
         alt: "Housekeeping-Mitarbeiterin richtet ein Bett im Hotelzimmer her",
@@ -92,8 +92,8 @@ export const hotelSeite: InspirationsSeite = {
       },
     },
     {
-      headline: "Erst anprobieren, dann bestellen.",
-      text: "Vor der Bestellung schicke ich einen Größensatz in den Betrieb, damit jede und jeder anprobieren kann. Wer sich in der Kleidung wohlfühlt, trägt sie so, wie sie gedacht ist.",
+      headline: "Ein Kleidungskonzept für das ganze Haus.",
+      text: "Ich komme zu Ihnen, sehe mir Rezeption, Etage und Restaurant an und höre zu, wie Sie Ihr Haus verstehen. Daraus stelle ich ein Konzept zusammen, das alle Bereiche verbindet und jedem lässt, was er braucht. Vor der Bestellung probiert Ihr Team an. Was nicht sitzt, kommt nicht ins Haus.",
       bild: {
         src: "/img/hotel/hotelzimmer-zwei-mitarbeiterinnen.jpg",
         alt: "Zwei Mitarbeiterinnen in dunkler Berufskleidung im Hotelzimmer",
@@ -104,7 +104,7 @@ export const hotelSeite: InspirationsSeite = {
   ],
   abschluss: {
     headline: "Passt das zu Ihrem Haus?",
-    text: "Wir gehen Etagen und Wäsche einmal durch.",
+    text: "Ich komme vorbei, und wir sehen es uns gemeinsam an.",
     linkLabel: "Oder per Formular",
     linkHref: "/kontakt",
   },
@@ -114,11 +114,11 @@ export const gastroSeite: InspirationsSeite = {
   meta: {
     titel: "Gastronomie — Overbeck Berufsmode",
     beschreibung:
-      "Berufskleidung für Küche, Service und Bar. Was im Gastronomiealltag zählt.",
+      "Berufsmode für Küche, Service und Bar: schick, passend zum Konzept und für die Industriewäsche gemacht. Persönliche Beratung für Ihren Betrieb.",
   },
   hero: {
     label: "Gastronomie",
-    headline: "Küche und Service tragen nicht dasselbe.",
+    headline: "Gute Küche hat einen Look. Der Service auch.",
     bild: {
       src: "/img/gastro/kueche-zwei-koeche-am-herd.jpg",
       alt: "Zwei Köche in Schürzen arbeiten nebeneinander am Herd",
@@ -127,8 +127,8 @@ export const gastroSeite: InspirationsSeite = {
   },
   bloecke: [
     {
-      headline: "Im Gastkontakt zählt der erste Blick.",
-      text: "Wer am Tisch arbeitet, steht im Blick. An Schürze und Schnitt sieht der Gast, ob das Bild zum Haus passt. Ich stimme die Teile auf das ab, was der Betrieb sonst zeigt: Einrichtung, Karte, Ton.",
+      headline: "Der Service ist Teil der Inszenierung.",
+      text: "Ein Restaurant lebt von Stimmung, und Ihr Service steht mittendrin. An Schürze, Hemd und Farbe erkennt der Gast, ob er in einem Wirtshaus, einer Bar oder einem Fine Dining sitzt. Ich stimme die Kleidung auf das ab, was Ihr Konzept schon sagt: Einrichtung, Karte, Ton. Am Ende soll man Ihr Team auf einem Foto erkennen, bevor man das Logo sieht.",
       bild: {
         src: "/img/gastro/tranchieren-am-gast.jpg",
         alt: "Koch tranchiert Schinken vor den Gästen im Restaurant",
@@ -137,8 +137,8 @@ export const gastroSeite: InspirationsSeite = {
       },
     },
     {
-      headline: "Hitze und Bewegungsfreiheit in der Küche.",
-      text: "An der Linie wird es heiß und eng. Eine Kochjacke braucht Luft, ohne zu weit zu werden. Ich achte auf Gewebe, das Wärme abgibt, und auf Ärmel, die beim Greifen nicht stören.",
+      headline: "Die Küche darf man heute sehen.",
+      text: "Offene Küchen und Chef's Tables haben die Kochjacke sichtbar gemacht. Sie muss Hitze aushalten und Bewegung zulassen, und sie soll dabei so gut aussehen wie das, was auf den Teller kommt. Moderne Kochjacken und Schürzen aus leichten Geweben können beides. Ich zeige Ihnen, welche zu Ihrer Küche passen.",
       bild: {
         src: "/img/gastro/koch-am-herd-mit-schuerze.jpg",
         alt: "Koch mit Schürze arbeitet am Herd in einer Restaurantküche",
@@ -147,8 +147,8 @@ export const gastroSeite: InspirationsSeite = {
       },
     },
     {
-      headline: "Flecken und Industriewäsche.",
-      text: "Fett, Wein und Sauce sind Alltag. Ich rechne deshalb in Waschgängen: wie oft ein Teil bei welcher Temperatur durch die Maschine geht, bevor Farbe und Form nachlassen. Der Stückpreis sagt darüber nichts.",
+      headline: "Schick, und nach dem fünfzigsten Waschgang noch immer.",
+      text: "Fett, Wein und Sauce gehören zum Alltag. Ein Outfit, das nach zehn Wäschen ausbleicht oder die Form verliert, sieht billig aus, egal was es gekostet hat. Ich wähle Stoffe und Farben, die Industriewäsche aushalten, und rechne mit Ihnen durch, was ein Teil pro Schicht kostet statt pro Stück.",
       bild: {
         src: "/img/gastro/koeche-schuerzen-nahaufnahme.jpg",
         alt: "Nahaufnahme zweier Köche in Schürzen bei der Arbeit",
@@ -156,22 +156,10 @@ export const gastroSeite: InspirationsSeite = {
         verhaeltnis: "4/5",
       },
     },
-    {
-      headline: "Der Betrieb muss erkennbar bleiben.",
-      text: "Ein Logo auf der Brust reicht selten. Farbe und Material tragen den Betrieb weiter als eine Stickerei, und sie halten länger als ein Trend.",
-      bild: {
-        src: "/img/gastro/service-mit-tablett.jpg",
-        alt: "Servicemitarbeiter mit bedruckter Schürze trägt ein Tablett mit Getränken",
-        fokus: 50,
-        verhaeltnis: "4/5",
-        // Oben verankert bliebe nur Farn und Kopf übrig. Die bedruckte Schürze
-        // ist hier aber der Punkt, deshalb mittig.
-      },
-    },
   ],
   abschluss: {
-    headline: "Passt das zu Ihrem Betrieb?",
-    text: "Wir schauen uns Küche und Service an, dann die Wäsche.",
+    headline: "Passt das zu Ihrem Konzept?",
+    text: "Wir schauen uns Küche und Service an, dann reden wir über Stil.",
     linkLabel: "Oder per Formular",
     linkHref: "/kontakt",
   },

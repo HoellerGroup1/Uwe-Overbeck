@@ -237,7 +237,7 @@ Verwendung im Repo.
 | `pexels-nadin-sh-…-37639098.jpg` | 2736×4864 | 9:16 | `tranchieren-am-gast.jpg` | `/gastro` Block 1 (Gastkontakt) |
 | `pexels-cottonbro-4253133.jpg` | 3946×5919 | 2:3 | `koch-am-herd-mit-schuerze.jpg` | `/gastro` Block 2 (Hitze, Bewegung) |
 | `pexels-cottonbro-4253298.jpg` | 3894×5841 | 2:3 | `koeche-schuerzen-nahaufnahme.jpg` | `/gastro` Block 3 (Flecken, Wäsche) |
-| `pexels-soc-nang-…-35692203.jpg` | 3680×5520 | 2:3 | `service-mit-tablett.jpg` | `/gastro` Block 4 (Wiedererkennbarkeit) |
+| `pexels-soc-nang-…-35692203.jpg` | 3680×5520 | 2:3 | ~~`service-mit-tablett.jpg`~~ | Block 4 am 13.09. gestrichen, Datei entfernt |
 
 ## Marke und Portrait → `public/img/brand/`
 
