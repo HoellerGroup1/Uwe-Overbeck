@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import { BgGrid } from "@/components/bg-grid";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { site } from "@/content/site";
+import { footer, site } from "@/content/site";
 import "./globals.css";
 
 /**
@@ -30,10 +30,48 @@ const switzer = localFont({
 });
 
 export const metadata: Metadata = {
+  // Macht relative Pfade in Open Graph, Sitemap und canonical absolut.
+  metadataBase: new URL(site.url),
   title: site.titel,
   description: site.beschreibung,
-  // Bis zum Launch bewusst nicht indexierbar.
+  applicationName: site.firma,
+  // Die Unterseiten bringen ihren eigenen Titel mit Suffix bereits mit;
+  // Open Graph bekommt hier die globalen Defaults, das Bild kommt aus
+  // app/opengraph-image.tsx.
+  openGraph: {
+    type: "website",
+    locale: "de_AT",
+    siteName: site.firma,
+    title: site.titel,
+    description: site.beschreibung,
+  },
+  twitter: { card: "summary_large_image" },
+  // Bis zum Launch bewusst nicht indexierbar (TODO.md, Abschnitt 6).
   robots: { index: false, follow: false },
+};
+
+/**
+ * Strukturierte Daten fuer Google: ein LocalBusiness mit den Stammdaten aus
+ * PROJEKT.md, Abschnitt 3. Bewusst nur belegbare Felder -- keine
+ * Oeffnungszeiten, keine Bewertungen, keine Preisspanne.
+ */
+const localBusiness = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: site.firma,
+  url: site.url,
+  telephone: footer.kontakt.telefonRoh,
+  email: footer.kontakt.email,
+  founder: { "@type": "Person", name: site.person },
+  description: site.beschreibung,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: footer.kontakt.strasse,
+    postalCode: footer.kontakt.ort.split(" ")[0],
+    addressLocality: footer.kontakt.ort.split(" ").slice(1).join(" "),
+    addressCountry: "AT",
+  },
+  areaServed: ["AT", "DE"],
 };
 
 export default function RootLayout({
@@ -54,6 +92,14 @@ export default function RootLayout({
           {children}
         </main>
         <SiteFooter />
+        <script
+          type="application/ld+json"
+          // JSON.stringify liefert keine HTML-Sonderzeichen aus den Stammdaten,
+          // "<" wird trotzdem maskiert, damit ein Content-Wert nie das Script schliesst.
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusiness).replace(/</g, "\\u003c"),
+          }}
+        />
       </body>
     </html>
   );

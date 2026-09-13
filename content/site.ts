@@ -20,6 +20,12 @@ export const site = {
   /** Der Personenname ist Absender, nie Marke — STYLE.md, Abschnitt 2. */
   person: "Uwe Overbeck",
   claim: "Persönlicher Service für Hotel, Gastro & Firmen",
+  /**
+   * Kanonische Adresse. Basis fuer metadataBase, Sitemap, Open Graph und das
+   * LocalBusiness-Schema. Bis zur Domain-Entscheidung (PROJEKT.md, Abschnitt 5)
+   * der Wert aus den Stammdaten.
+   */
+  url: "https://www.overbeck-berufsmode.at",
   /** Wird fuer <title> und Metadaten verwendet. */
   titel: "Overbeck Berufsmode — Berufskleidung für Hotel, Gastro und Firmen",
   beschreibung:

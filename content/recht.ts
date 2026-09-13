@@ -32,7 +32,7 @@ const ENTWURFS_HINWEIS =
 
 export const impressum: Rechtstext = {
   meta: {
-    titel: "Impressum — Uwe Overbeck",
+    titel: "Impressum — Overbeck Berufsmode",
     beschreibung: "Impressum und Offenlegung.",
   },
   label: "Rechtliches",
@@ -111,7 +111,7 @@ export const impressum: Rechtstext = {
 
 export const datenschutz: Rechtstext = {
   meta: {
-    titel: "Datenschutz — Uwe Overbeck",
+    titel: "Datenschutz — Overbeck Berufsmode",
     beschreibung: "Informationen zur Verarbeitung personenbezogener Daten.",
   },
   label: "Rechtliches",

@@ -118,6 +118,8 @@ Nicht kritisch, aber diese Sektionen fehlen deshalb aktuell:
 ## 6. Vor dem Livegang
 
 - [ ] `app/robots.ts` und `robots` in `app/layout.tsx` von noindex befreien
+- [x] Sitemap, `metadataBase`, Open Graph mit Vorschaubild, LocalBusiness-Schema — seit 13.09. drin
+- [ ] Domain in `content/site.ts` → `url` bestätigen, sobald sie feststeht
 - [ ] Rechtstexte prüfen lassen, Entwurfshinweis entfernen (Punkt 2)
 - [ ] Resend-Variablen setzen und eine Testanfrage durchschicken (Punkt 1)
 
