@@ -145,9 +145,11 @@ const katalogEintraege: KatalogEintrag[] = [
  */
 export const katalog = {
   label: "Partnermarken",
-  headline: "Seit Jahren mit denselben zwei Marken.",
-  text: "Uwe Overbeck arbeitet seit vielen Jahren mit Greiff und Hakro zusammen. Beide stehen für Material, das Waschzyklen aushält, und für Schnitte, die im Betrieb funktionieren. Deshalb gibt es hier keine dritte Marke.",
-  ueberleitung: "Das aktuelle Sortiment beider Marken als Katalog zum Herunterladen, ohne Formular.",
+  // Ich-Perspektive wie auf der ganzen Seite: Uwe spricht, nicht ein Text
+  // ueber Uwe. "Seit vielen Jahren" ist Marcels Angabe, keine Jahreszahl.
+  headline: "Ich arbeite mit zwei Marken, seit Jahren mit denselben.",
+  text: "Greiff und Hakro beliefern mich seit vielen Jahren. Ich kenne ihre Stoffe aus der Wäscherei und ihre Schnitte aus dem Dienst. Eine dritte Marke brauche ich nicht.",
+  ueberleitung: "Die aktuellen Kataloge beider Marken laden Sie hier herunter, ohne Formular.",
   eintraege: katalogEintraege,
 } as const;
 
