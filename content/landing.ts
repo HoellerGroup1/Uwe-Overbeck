@@ -86,41 +86,48 @@ export const tiles = {
       // Spaltenkante.
       titel: "Empfang, Büro, Lager",
       href: "/firmen",
-      /** Bild folgt aus den Katalogen von Greiff und Hakro. */
       bild: {
-        src: undefined,
-        alt: "Mitarbeitende eines Betriebs in einheitlicher Berufskleidung",
+        src: "/img/firmen/anzug-und-kostuem-empfang.jpg",
+        alt: "Mitarbeiterin und Mitarbeiter in grauem Kostüm und Anzug",
       },
     },
   ],
 } as const;
 
+export type KatalogEintrag = {
+  marke: string;
+  buttonLabel: string;
+  /** Fehlt die Datei, zeigt die Komponente `hinweisOffen` statt eines Links (E19-Muster). */
+  datei?: string;
+  dateiname: string;
+  /** Sichtbare Größenangabe -- beim Austausch eines PDFs mitziehen. */
+  dateihinweis?: string;
+  hinweisOffen?: string;
+};
+
+const katalogEintraege: KatalogEintrag[] = [
+  {
+    marke: "Greiff",
+    buttonLabel: "Greiff-Katalog herunterladen",
+    datei: "/downloads/greiff-katalog.pdf",
+    dateiname: "greiff-katalog.pdf",
+    dateihinweis: "PDF, 2,1 MB",
+  },
+  {
+    marke: "Hakro",
+    buttonLabel: "Hakro-Katalog herunterladen",
+    // Original 47 MB, per Ghostscript auf 90 dpi verkleinert. Text bleibt Vektor.
+    datei: "/downloads/hakro-katalog.pdf",
+    dateiname: "hakro-katalog.pdf",
+    dateihinweis: "PDF, 19,6 MB",
+  },
+];
+
 export const katalog = {
   label: "Kataloge",
   headline: "Das Sortiment zum Durchblättern.",
   text: "Die aktuellen Kataloge beider Partnermarken als PDF. Sie laden sie direkt herunter, ohne Formular.",
-  /**
-   * Ein Eintrag ohne `datei` läuft als offene Position mit `hinweisOffen`
-   * (E19-Muster). Zum Freischalten `datei`, `dateiname` und `dateihinweis`
-   * setzen. Beim Austausch eines PDFs die Größenangabe mitziehen.
-   */
-  eintraege: [
-    {
-      marke: "Greiff",
-      buttonLabel: "Greiff-Katalog herunterladen",
-      datei: "/downloads/greiff-katalog.pdf",
-      dateiname: "greiff-katalog.pdf",
-      dateihinweis: "PDF, 2,1 MB",
-    },
-    {
-      marke: "Hakro",
-      buttonLabel: "Hakro-Katalog herunterladen",
-      datei: undefined,
-      dateiname: "hakro-katalog.pdf",
-      dateihinweis: undefined,
-      hinweisOffen: "PDF folgt",
-    },
-  ],
+  eintraege: katalogEintraege,
 } as const;
 
 export const ctaBand = {

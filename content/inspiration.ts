@@ -175,9 +175,9 @@ export const gastroSeite: InspirationsSeite = {
  * nicht kenne — anders als bei Hotel und Gastro steht hier kein Größensatz und
  * kein Waschzyklus, weil mir dazu Uwes Praxis fehlt.
  *
- * Beide Bilder fehlen noch. Marcel liefert zwei Motive aus den Katalogen von
- * Greiff und Hakro nach; bis dahin stehen Platzhalter. Zum Einsetzen genügt es,
- * `src` zu ergänzen.
+ * Bilder seit 13.09.: Katalogmotive von Greiff und Hakro (Freigabe beider
+ * Marken liegt vor). Der Hero hat 1920 px, die drei Blockmotive nur 640 px --
+ * deshalb laufen alle Blöcke in 4/3. Höher aufgelöste Fassungen wären besser.
  */
 export const firmenSeite: InspirationsSeite = {
   meta: {
@@ -189,7 +189,8 @@ export const firmenSeite: InspirationsSeite = {
     label: "Firmen",
     headline: "Vom Lager bis zum Empfang.",
     bild: {
-      alt: "Mitarbeitende eines Betriebs in einheitlicher Berufskleidung",
+      src: "/img/firmen/team-im-buero-besprechung.jpg",
+      alt: "Fünf Mitarbeitende in abgestimmter dunkelblauer Businesskleidung besprechen sich im Büro",
     },
   },
   bloecke: [
@@ -197,7 +198,8 @@ export const firmenSeite: InspirationsSeite = {
       headline: "Einheitlich auftreten, ohne uniform zu wirken.",
       text: "Farbe und Material halten ein Team optisch zusammen, auch ohne durchgehende Uniform. Wichtiger ist, dass Ihre Leute die Sachen gern anziehen. Sonst tragen sie am Ende doch das eigene Shirt darunter.",
       bild: {
-        alt: "Mitarbeitende verschiedener Bereiche in aufeinander abgestimmter Kleidung",
+        src: "/img/firmen/blousons-team-casual.jpg",
+        alt: "Zwei Mitarbeitende in dunkelblauen Blousons über Shirt und Hemd",
         verhaeltnis: "4/3",
       },
     },
@@ -205,16 +207,20 @@ export const firmenSeite: InspirationsSeite = {
       headline: "Ein Betrieb, viele Arbeitsplätze.",
       text: "Im Lager packt Ihr Team an, am Empfang steht es im Blick der Besucher. Beide sollen zum selben Betrieb gehören, brauchen aber anderes Material und andere Schnitte. Ich löse das über eine gemeinsame Farbe und unterschiedliche Teile.",
       bild: {
-        alt: "Arbeitskleidung im Einsatz an unterschiedlichen Arbeitsplätzen",
-        verhaeltnis: "4/5",
+        src: "/img/firmen/anzug-und-kostuem-empfang.jpg",
+        alt: "Mitarbeiterin und Mitarbeiter in grauem Kostüm und Anzug",
+        // Quelle nur 640 px breit -- 4/3 statt 4/5, damit nichts hochskaliert wird.
+        verhaeltnis: "4/3",
       },
     },
     {
       headline: "Das Logo hält so lange wie das Teil.",
       text: "Ein Stick hält länger als ein Druck, kostet mehr und passt nicht auf jeden Stoff. Eine Veredelung, die den zehnten Waschgang nicht übersteht, kostet Sie am Ende mehr als sie gespart hat. Ich sage Ihnen vorher, was zu Ihrem Material passt.",
       bild: {
-        alt: "Nahaufnahme einer Logostickerei auf Berufskleidung",
-        verhaeltnis: "4/5",
+        src: "/img/firmen/hemd-und-bluse-hellblau.jpg",
+        alt: "Hellblaues Hemd und Bluse Rücken an Rücken, Fläche für Stick oder Druck",
+        // Quelle nur 640 px breit -- 4/3 statt 4/5, damit nichts hochskaliert wird.
+        verhaeltnis: "4/3",
       },
     },
   ],
