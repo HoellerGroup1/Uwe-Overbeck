@@ -15,7 +15,7 @@ export const hero = {
   // nicht an.
   headline: "Was Ihr Team trägt, sieht Ihr Kunde zuerst.",
   subline:
-    "Ich berate Hotels, Gastronomie und Firmen bei der Auswahl ihrer Berufskleidung.",
+    "Ich stelle Berufsmode für Hotels, Gastronomie und Firmen zusammen: modern, gut sitzend und auf Ihr Konzept abgestimmt.",
   bild: {
     src: "/img/brand/kuechenteam-weisse-kochjacken.jpg",
     alt: "Küchenteam in weißen Kochjacken bei der Arbeit am Pass",
@@ -39,8 +39,8 @@ export const about = {
   label: "Zur Person",
   headline: "Ich sehe mir erst den Betrieb an, dann die Kleidung.",
   absaetze: [
-    "Ich verkaufe Berufskleidung an Hotels, Gastronomie und Firmen. Bevor ich etwas vorschlage, will ich wissen, wie Sie arbeiten: wie oft Ihre Wäscherei läuft und wer sich in der aktuellen Kleidung nicht wohlfühlt.",
-    "Meistens reichen wenige Teile, die zum Betrieb passen und die Wäscherei überstehen. Eine ganze Kollektion braucht kaum ein Betrieb.",
+    "Seit über dreißig Jahren stelle ich Berufsmode für Hotels, Gastronomie und Firmen zusammen. Bevor ich etwas vorschlage, komme ich vorbei: Ich will Ihr Haus sehen, Ihr Konzept verstehen und wissen, wer sich in der aktuellen Kleidung nicht wohlfühlt.",
+    "Daraus entsteht ein Kleidungskonzept, das zu Ihrem Betrieb gehört wie die Einrichtung. Wenige Teile, gut geschnitten, in Farben, die zum Haus passen. Ein Auftritt, an dem man Ihr Team erkennt.",
   ],
   signatur: "Uwe Overbeck",
   /**
@@ -155,7 +155,7 @@ export const katalog = {
   // Ich-Perspektive wie auf der ganzen Seite: Uwe spricht, nicht ein Text
   // ueber Uwe. "Seit vielen Jahren" ist Marcels Angabe, keine Jahreszahl.
   headline: "Ich arbeite mit zwei Marken, seit Jahren mit denselben.",
-  text: "Greiff und Hakro beliefern mich seit vielen Jahren. Ich kenne ihre Stoffe aus der Wäscherei und ihre Schnitte aus dem Dienst. Eine dritte Marke brauche ich nicht.",
+  text: "Greiff und Hakro beliefern mich seit vielen Jahren. Ich kenne ihre Schnitte, ihre Stoffe und was davon nach Jahren im Dienst noch gut aussieht. Eine dritte Marke brauche ich nicht.",
   ueberleitung: "Die aktuellen Kataloge beider Marken laden Sie hier herunter, ohne Formular.",
   eintraege: katalogEintraege,
 } as const;

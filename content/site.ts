@@ -29,7 +29,7 @@ export const site = {
   /** Wird fuer <title> und Metadaten verwendet. */
   titel: "Overbeck Berufsmode — Berufskleidung für Hotel, Gastro und Firmen",
   beschreibung:
-    "Uwe Overbeck berät Hotels, Gastronomie und Firmen bei der Auswahl ihrer Berufskleidung. Overbeck Berufsmode, Anthering bei Salzburg.",
+    "Berufsmode für Hotels, Gastronomie und Firmen: modern, gut sitzend, auf das Konzept abgestimmt. Persönliche Beratung von Uwe Overbeck, Anthering bei Salzburg.",
 } as const;
 
 /**
