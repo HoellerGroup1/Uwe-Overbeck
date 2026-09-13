@@ -75,7 +75,7 @@ export const hotelSeite: InspirationsSeite = {
     },
     {
       headline: "Housekeeping belastet Kleidung anders.",
-      text: "Bücken, heben, wischen, und das über eine volle Schicht. Nähte an Schulter und Knie geben zuerst nach. Ich wähle Schnitte, die Bewegung zulassen, und achte auf verstärkte Nähte an genau diesen Stellen.",
+      text: "Bücken, heben, wischen, eine volle Schicht lang. Nähte an Schulter und Knie geben zuerst nach. Ich wähle Schnitte, die Bewegung zulassen, und achte auf verstärkte Nähte an genau diesen Stellen.",
       bild: {
         src: "/img/hotel/housekeeping-zimmer-herrichten.jpg",
         alt: "Housekeeping-Mitarbeiterin richtet ein Bett im Hotelzimmer her",
@@ -87,7 +87,7 @@ export const hotelSeite: InspirationsSeite = {
     },
     {
       headline: "Erst anprobieren, dann bestellen.",
-      text: "Vor der Bestellung geht ein Größensatz durch den Betrieb, damit jede und jeder anprobieren kann. Wer sich in der Kleidung wohlfühlt, trägt sie so, wie sie gedacht ist.",
+      text: "Vor der Bestellung schicke ich einen Größensatz in den Betrieb, damit jede und jeder anprobieren kann. Wer sich in der Kleidung wohlfühlt, trägt sie so, wie sie gedacht ist.",
       bild: {
         src: "/img/hotel/hotelzimmer-zwei-mitarbeiterinnen.jpg",
         alt: "Zwei Mitarbeiterinnen in dunkler Berufskleidung im Hotelzimmer",
@@ -97,7 +97,7 @@ export const hotelSeite: InspirationsSeite = {
   ],
   abschluss: {
     headline: "Passt das zu Ihrem Haus?",
-    text: "Wir gehen Etagen, Größen und Wäsche einmal durch.",
+    text: "Wir gehen Etagen und Wäsche einmal durch.",
     linkLabel: "Oder per Formular",
     linkHref: "/kontakt",
   },
@@ -160,7 +160,7 @@ export const gastroSeite: InspirationsSeite = {
   ],
   abschluss: {
     headline: "Passt das zu Ihrem Betrieb?",
-    text: "Wir schauen uns Küche, Service und Wäsche gemeinsam an.",
+    text: "Wir schauen uns Küche und Service an, dann die Wäsche.",
     linkLabel: "Oder per Formular",
     linkHref: "/kontakt",
   },
@@ -226,7 +226,7 @@ export const firmenSeite: InspirationsSeite = {
   ],
   abschluss: {
     headline: "Wie läuft das bei Ihnen?",
-    text: "Wir klären Bereiche, Teile und Veredelung.",
+    text: "Wir klären, welche Bereiche was brauchen.",
     linkLabel: "Oder per Formular",
     linkHref: "/kontakt",
   },

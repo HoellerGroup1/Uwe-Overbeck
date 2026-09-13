@@ -24,7 +24,7 @@ export const kontakt = {
   ablaufLabel: "So läuft es",
   bullets: [
     "Ich frage nach Bereichen, Größen und Wäsche.",
-    "Sie zeigen mir, was Ihr Team heute trägt und woran es scheitert.",
+    "Sie sagen mir, woran es bei der aktuellen Kleidung hakt.",
     "Danach bekommen Sie einen Vorschlag. Entscheiden können Sie in Ruhe.",
   ],
 } as const;
@@ -33,7 +33,7 @@ export const formular = {
   /** Das Formular ist der zweite Weg. Die Ueberschrift sagt das. */
   ueberschrift: "Lieber schriftlich?",
   einleitung:
-    "Das Formular kommt als E-Mail bei mir an. Für alle, die Anfragen gern dokumentiert haben.",
+    "Das Formular kommt als E-Mail bei mir an, und ich antworte persönlich.",
   felder: {
     name: { label: "Name", pflicht: true },
     betrieb: { label: "Betrieb", pflicht: true },

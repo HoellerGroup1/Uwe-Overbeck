@@ -39,7 +39,7 @@ export const about = {
   label: "Zur Person",
   headline: "Ich sehe mir erst den Betrieb an, dann die Kleidung.",
   absaetze: [
-    "Ich arbeite im Vertrieb für Berufskleidung, für Hotels, Gastronomie und Firmen. Bevor ich etwas vorschlage, will ich wissen, wie Sie arbeiten: wie oft Ihre Wäscherei läuft und wer sich in der aktuellen Kleidung nicht wohlfühlt.",
+    "Ich verkaufe Berufskleidung an Hotels, Gastronomie und Firmen. Bevor ich etwas vorschlage, will ich wissen, wie Sie arbeiten: wie oft Ihre Wäscherei läuft und wer sich in der aktuellen Kleidung nicht wohlfühlt.",
     "Meistens reichen wenige Teile, die zum Betrieb passen und die Wäscherei überstehen. Eine ganze Kollektion braucht kaum ein Betrieb.",
   ],
   signatur: "Uwe Overbeck",
@@ -155,7 +155,7 @@ export const katalog = {
 
 export const ctaBand = {
   headline: "Reden wir über Ihren Betrieb.",
-  text: "Rufen Sie an oder schreiben Sie mir. Danach wissen Sie, ob es passt.",
+  text: "Schreiben Sie mir auf WhatsApp oder rufen Sie an. Danach wissen Sie, ob es passt.",
   linkLabel: "Oder per Formular",
   linkHref: "/kontakt",
 } as const;
