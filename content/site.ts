@@ -32,6 +32,20 @@ export const site = {
     "Uwe Overbeck berät Hotels, Gastronomie und Firmen bei der Auswahl ihrer Berufskleidung. Overbeck Berufsmode, Anthering bei Salzburg.",
 } as const;
 
+/**
+ * WhatsApp als Hauptweg fuer Anfragen (E21, E24). Nummer aus footer.kontakt,
+ * Vorlagentext hier, damit CTA-Band und Kontaktseite denselben Link bauen.
+ */
+export const whatsapp = {
+  label: "Auf WhatsApp schreiben",
+  vorlage:
+    "Guten Tag Herr Overbeck, ich interessiere mich für Berufskleidung für unseren Betrieb. ",
+} as const;
+
+export function whatsappHref(): string {
+  return `https://wa.me/${footer.kontakt.whatsapp}?text=${encodeURIComponent(whatsapp.vorlage)}`;
+}
+
 export type NavLink = {
   label: string;
   href: string;

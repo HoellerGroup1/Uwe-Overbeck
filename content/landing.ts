@@ -133,6 +133,6 @@ export const katalog = {
 export const ctaBand = {
   headline: "Reden wir über Ihren Betrieb.",
   text: "Rufen Sie an oder schreiben Sie mir. Danach wissen Sie, ob es passt.",
-  linkLabel: "Beratungsgespräch anfragen",
+  linkLabel: "Oder per Formular",
   linkHref: "/kontakt",
 } as const;

@@ -66,6 +66,9 @@ export function AnfrageFormular() {
   return (
     <div>
       <h2 className="font-display text-headline-md">{formular.ueberschrift}</h2>
+      <p className="mt-stack-sm max-w-[42ch] font-body text-body-md text-on-surface-variant">
+        {formular.einleitung}
+      </p>
 
       {status.status !== "idle" && status.nachricht && (
         <p

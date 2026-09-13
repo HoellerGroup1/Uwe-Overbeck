@@ -12,6 +12,14 @@ export const BUTTON_KLASSE =
   "inline-block border border-primary px-stack-md py-3.5 font-body text-label-caps uppercase text-primary hover:bg-primary hover:text-on-primary";
 
 /**
+ * Gefuellte Fassung fuer den einen primaeren Weg einer Seite. Invertiert im
+ * Hover, also dieselbe Form, nur andersherum. Pro Seite hoechstens einmal --
+ * zwei gefuellte Buttons im selben Blickfeld heben sich gegenseitig auf.
+ */
+export const BUTTON_PRIMAER_KLASSE =
+  "inline-block border border-primary bg-primary px-stack-md py-3.5 font-body text-label-caps uppercase text-on-primary hover:bg-transparent hover:text-primary";
+
+/**
  * Micro-Label nach DESIGN.md: immer Versalien, weites Tracking.
  * Wirkt als architektonischer Marker auf der Seite.
  */

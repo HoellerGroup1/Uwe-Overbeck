@@ -4,35 +4,36 @@ export const kontakt = {
   meta: {
     titel: "Kontakt — Overbeck Berufsmode",
     beschreibung:
-      "Unverbindliches Gespräch zu Berufskleidung für Hotel, Gastro und Firmen. Overbeck Berufsmode, Anthering bei Salzburg.",
+      "Unverbindliches Gespräch zu Berufskleidung für Hotel, Gastro und Firmen. Am schnellsten per WhatsApp. Overbeck Berufsmode, Anthering bei Salzburg.",
   },
   label: "Kontakt",
   headline: "Wir reden, bevor Sie etwas bestellen.",
+  /**
+   * WhatsApp ist der Hauptweg (E21, E24). Uwe will die meisten Anfragen dort
+   * bekommen. Der Link oeffnet WhatsApp beim Besucher mit vorformuliertem
+   * Text; nichts laeuft ueber unseren Server.
+   */
+  whatsapp: {
+    label: "Der schnellste Weg",
+    text: "Schreiben Sie mir auf WhatsApp. Ein paar Zeilen reichen. Ein Foto von dem, was Ihr Team heute trägt, ist noch besser.",
+    buttonLabel: "Auf WhatsApp schreiben",
+    hinweis: "Öffnet WhatsApp mit einer vorbereiteten Nachricht.",
+  },
+  /** Telefon und Mail als zweiter Weg, die Werte stehen in site.ts. */
+  direktLabel: "Oder anrufen, oder mailen",
+  ablaufLabel: "So läuft es",
   bullets: [
     "Ich frage nach Bereichen, Größen und Wäsche.",
     "Sie zeigen mir, was Ihr Team heute trägt und woran es scheitert.",
     "Danach bekommen Sie einen Vorschlag. Entscheiden können Sie in Ruhe.",
   ],
-  /**
-   * Wer lieber direkt anruft, soll nicht erst bis in den Footer scrollen.
-   * Die Werte selbst stehen in site.ts, hier nur die Überschrift.
-   */
-  direktLabel: "Oder direkt",
-  /**
-   * WhatsApp nach E14, Weg C: kein Versand ueber unseren Server, sondern ein
-   * wa.me-Link, der beim Besucher WhatsApp mit vorformuliertem Text oeffnet.
-   * Der Besucher schickt selbst ab. Nichts laeuft ueber Dritte, deshalb kein
-   * Datenschutzthema fuer die Seite.
-   */
-  whatsapp: {
-    label: "Per WhatsApp schreiben",
-    vorlage:
-      "Guten Tag Herr Overbeck, ich interessiere mich für Berufskleidung für unseren Betrieb. ",
-  },
 } as const;
 
 export const formular = {
-  ueberschrift: "Anfrage",
+  /** Das Formular ist der zweite Weg. Die Ueberschrift sagt das. */
+  ueberschrift: "Lieber schriftlich?",
+  einleitung:
+    "Das Formular kommt als E-Mail bei mir an. Für alle, die Anfragen gern dokumentiert haben.",
   felder: {
     name: { label: "Name", pflicht: true },
     betrieb: { label: "Betrieb", pflicht: true },
