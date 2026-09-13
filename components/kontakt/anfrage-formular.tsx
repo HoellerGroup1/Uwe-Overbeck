@@ -63,6 +63,17 @@ export function AnfrageFormular() {
   // Nach einem Erfolg das Formular frisch aufbauen, damit die Felder leer sind.
   const formKey = status.status === "erfolg" ? "gesendet" : "offen";
 
+  /*
+    Die Meldung steht ueber dem Formular. Wer bis zum Absenden-Button
+    gescrollt hat, sieht sie sonst nicht; Screenreader bekommen sie nur ueber
+    role=status/alert, aber nicht den Fokus. Deshalb: Fokus auf die Meldung,
+    die scrollt damit ins Bild.
+  */
+  const meldungRef = useRef<HTMLParagraphElement>(null);
+  useEffect(() => {
+    if (status.status !== "idle") meldungRef.current?.focus();
+  }, [status]);
+
   return (
     <div>
       <h2 className="font-display text-headline-md">{formular.ueberschrift}</h2>
@@ -72,8 +83,10 @@ export function AnfrageFormular() {
 
       {status.status !== "idle" && status.nachricht && (
         <p
+          ref={meldungRef}
+          tabIndex={-1}
           role={status.status === "erfolg" ? "status" : "alert"}
-          className={`mt-stack-md border-l-2 pl-gutter font-body text-body-lg ${
+          className={`mt-stack-md border-l-2 pl-gutter font-body text-body-lg outline-none ${
             status.status === "erfolg"
               ? "border-on-surface text-on-surface"
               : "border-error text-error"

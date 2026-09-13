@@ -46,6 +46,14 @@ export function whatsappHref(): string {
   return `https://wa.me/${footer.kontakt.whatsapp}?text=${encodeURIComponent(whatsapp.vorlage)}`;
 }
 
+/** Eigene 404 statt der englischen Next-Standardseite. */
+export const nichtGefunden = {
+  label: "404",
+  headline: "Diese Seite gibt es nicht.",
+  text: "Vielleicht ist der Link alt, vielleicht ein Tippfehler. Die Startseite hilft weiter.",
+  linkLabel: "Zur Startseite",
+} as const;
+
 export type NavLink = {
   label: string;
   href: string;

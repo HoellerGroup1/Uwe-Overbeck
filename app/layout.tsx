@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { BgGrid } from "@/components/bg-grid";
 import { SiteFooter } from "@/components/site-footer";
@@ -48,6 +48,8 @@ export const metadata: Metadata = {
   title: site.titel,
   description: site.beschreibung,
   applicationName: site.firma,
+  // Relativ: Next setzt daraus pro Route die absolute canonical-URL auf Basis von metadataBase.
+  alternates: { canonical: "./" },
   // Die Unterseiten bringen ihren eigenen Titel mit Suffix bereits mit;
   // Open Graph bekommt hier die globalen Defaults, das Bild kommt aus
   // app/opengraph-image.tsx.
@@ -85,6 +87,11 @@ const localBusiness = {
     addressCountry: "AT",
   },
   areaServed: ["AT", "DE"],
+};
+
+/** Browserleiste auf dem Handy in papier statt Standardweiß. */
+export const viewport: Viewport = {
+  themeColor: "#F7F6F3",
 };
 
 export default function RootLayout({
