@@ -18,6 +18,17 @@ export const kontakt = {
    * Die Werte selbst stehen in site.ts, hier nur die Überschrift.
    */
   direktLabel: "Oder direkt",
+  /**
+   * WhatsApp nach E14, Weg C: kein Versand ueber unseren Server, sondern ein
+   * wa.me-Link, der beim Besucher WhatsApp mit vorformuliertem Text oeffnet.
+   * Der Besucher schickt selbst ab. Nichts laeuft ueber Dritte, deshalb kein
+   * Datenschutzthema fuer die Seite.
+   */
+  whatsapp: {
+    label: "Per WhatsApp schreiben",
+    vorlage:
+      "Guten Tag Herr Overbeck, ich interessiere mich für Berufskleidung für unseren Betrieb. ",
+  },
 } as const;
 
 export const formular = {

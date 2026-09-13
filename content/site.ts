@@ -56,6 +56,8 @@ export const footer = {
     telefon: "+49 151 59 85 19 65",
     /** Ohne Leerzeichen, fuer den tel:-Link. */
     telefonRoh: "+4915159851965",
+    /** Dieselbe Nummer ohne Plus, fuer den wa.me-Link (E14, Weg C). */
+    whatsapp: "4915159851965",
     /** Postanschrift, zugleich Basis fuer das spaetere LocalBusiness-Schema. */
     strasse: "Dorfstraße 11",
     ort: "5102 Anthering",

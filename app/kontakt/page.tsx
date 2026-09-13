@@ -55,6 +55,16 @@ export default function KontaktPage() {
                   {footer.kontakt.email}
                 </a>
               </li>
+              <li>
+                <a
+                  href={`https://wa.me/${footer.kontakt.whatsapp}?text=${encodeURIComponent(kontakt.whatsapp.vorlage)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block py-3 font-body text-body-lg underline-offset-4 hover:underline hover:decoration-signal"
+                >
+                  {kontakt.whatsapp.label}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
