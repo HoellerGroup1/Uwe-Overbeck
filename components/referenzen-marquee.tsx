@@ -49,6 +49,13 @@ function ReferenzItem({ referenz }: { referenz: Referenz }) {
           height={referenz.hoehe}
           sizes="170px"
           /*
+            Kein Lazy-Loading: die Logos wandern per Transform in den
+            Viewport, und der Browser bemerkt das nicht zuverlaessig -- das
+            letzte Logo im Set erschien erst beim Hover, wenn die Animation
+            pausiert. Bei acht Dateien mit 10 bis 40 KB kostet eager nichts.
+          */
+          loading="eager"
+          /*
             Monochrom wie geplant. Die Deckkraft liegt bei 0.8 statt der
             ursprünglich vorgesehenen 0.55: mehrere der echten Logos haben
             feine helle Linien und verschwinden bei 0.55 fast vollständig.
