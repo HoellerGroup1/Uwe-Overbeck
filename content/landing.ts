@@ -96,6 +96,8 @@ export const tiles = {
 
 export type KatalogEintrag = {
   marke: string;
+  /** Partnerlogo, transparentes PNG, wird monochrom gezeigt. */
+  logo: { src: string; alt: string; breite: number; hoehe: number };
   buttonLabel: string;
   /** Fehlt die Datei, zeigt die Komponente `hinweisOffen` statt eines Links (E19-Muster). */
   datei?: string;
@@ -108,6 +110,12 @@ export type KatalogEintrag = {
 const katalogEintraege: KatalogEintrag[] = [
   {
     marke: "Greiff",
+    logo: {
+      src: "/img/brand/partner/greiff.png",
+      alt: "Greiff, since 1802",
+      breite: 447,
+      hoehe: 400,
+    },
     buttonLabel: "Greiff-Katalog herunterladen",
     datei: "/downloads/greiff-katalog.pdf",
     dateiname: "greiff-katalog.pdf",
@@ -115,6 +123,12 @@ const katalogEintraege: KatalogEintrag[] = [
   },
   {
     marke: "Hakro",
+    logo: {
+      src: "/img/brand/partner/hakro.png",
+      alt: "Hakro, hält seit 1969",
+      breite: 600,
+      hoehe: 254,
+    },
     buttonLabel: "Hakro-Katalog herunterladen",
     // Original 47 MB, per Ghostscript auf 90 dpi verkleinert. Text bleibt Vektor.
     datei: "/downloads/hakro-katalog.pdf",
@@ -123,10 +137,17 @@ const katalogEintraege: KatalogEintrag[] = [
   },
 ];
 
+/**
+ * Partnermarken und Kataloge in einer Sektion (E26). Uwes Wunsch: die beiden
+ * Lieferanten sichtbar machen und sagen, dass er seit Jahren mit ihnen
+ * arbeitet. "Seit Jahren" ist Marcels Angabe -- keine Jahreszahl behaupten,
+ * die niemand bestätigt hat.
+ */
 export const katalog = {
-  label: "Kataloge",
-  headline: "Das Sortiment zum Durchblättern.",
-  text: "Die aktuellen Kataloge beider Partnermarken als PDF. Sie laden sie direkt herunter, ohne Formular.",
+  label: "Partnermarken",
+  headline: "Seit Jahren mit denselben zwei Marken.",
+  text: "Uwe Overbeck arbeitet seit vielen Jahren mit Greiff und Hakro zusammen. Beide stehen für Material, das Waschzyklen aushält, und für Schnitte, die im Betrieb funktionieren. Deshalb gibt es hier keine dritte Marke.",
+  ueberleitung: "Das aktuelle Sortiment beider Marken als Katalog zum Herunterladen, ohne Formular.",
   eintraege: katalogEintraege,
 } as const;
 
