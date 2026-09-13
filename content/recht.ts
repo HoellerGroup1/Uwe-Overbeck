@@ -1,13 +1,16 @@
 /**
  * Impressum und Datenschutzerklärung.
  *
- * WICHTIG: Das ist eine Struktur mit Platzhaltern, kein geprüfter Rechtstext.
- * Alle Angaben in eckigen Klammern müssen ersetzt werden, und beide Texte
- * gehören vor dem Livegang juristisch geprüft. Siehe TODO.md, Punkt 4.
+ * Stand 13.09.: Einzelunternehmen ohne Firmenbucheintrag, Handelsgewerbe,
+ * BH Salzburg-Umgebung, keine UID (deshalb keine Zeile dafür -- sobald Uwe
+ * eine hat, unter Unternehmensdaten ergaenzen). Offen in eckigen Klammern:
+ * WKO-Fachgruppe und Fotograf des Portraits. Beide Texte sind kein
+ * geprüfter Rechtstext; vor dem Livegang prüfen lassen und ENTWURFS_HINWEIS
+ * entfernen.
  *
- * Aufbau orientiert sich an einem gewerblichen Auftritt in Österreich
- * (§ 5 ECG, § 25 MedienG, GewO) mit den in Deutschland üblichen Angaben
- * (§ 5 DDG) als Alternative. Nicht Zutreffendes streichen.
+ * Aufbau nach gewerblichem Auftritt in Österreich: § 5 ECG, § 25 MedienG,
+ * § 14 UGB, GewO 1994. Die EU-Plattform zur Online-Streitbeilegung wurde
+ * im Juli 2025 eingestellt, der frühere Absatz dazu ist deshalb raus.
  */
 
 export type RechtAbschnitt = {
@@ -28,12 +31,20 @@ export type Rechtstext = {
 };
 
 const ENTWURFS_HINWEIS =
-  "Entwurf. Dieser Text enthält Platzhalter und ist noch nicht juristisch geprüft. Vor dem Livegang ersetzen und prüfen lassen.";
+  "Entwurf. Einzelne Angaben fehlen noch, und der Text ist nicht juristisch geprüft.";
+
+/** Stammdaten wie in PROJEKT.md, Abschnitt 3. */
+const INHABER = "Uwe Overbeck";
+const FIRMA = "Overbeck Berufsmode";
+const ANSCHRIFT = "Dorfstraße 11, 5102 Anthering, Österreich";
+const EMAIL = "uwe@overbeck-berufsmode.at";
+const TELEFON = "+49 151 59 85 19 65";
+const STAND = "13. September 2026";
 
 export const impressum: Rechtstext = {
   meta: {
     titel: "Impressum — Overbeck Berufsmode",
-    beschreibung: "Impressum und Offenlegung.",
+    beschreibung: "Impressum und Offenlegung nach § 5 ECG und § 25 MedienG.",
   },
   label: "Rechtliches",
   headline: "Impressum",
@@ -42,49 +53,48 @@ export const impressum: Rechtstext = {
     {
       titel: "Diensteanbieter und Medieninhaber",
       eintraege: [
-        { label: "Firmenwortlaut", wert: "[Vollständiger Firmenwortlaut]" },
-        { label: "Rechtsform", wert: "[Rechtsform, z. B. Einzelunternehmen, GmbH]" },
-        { label: "Inhaber", wert: "[Vor- und Nachname]" },
-        { label: "Anschrift", wert: "[Straße und Hausnummer, PLZ Ort, Land]" },
+        { label: "Unternehmer", wert: INHABER },
+        { label: "Geschäftsbezeichnung", wert: FIRMA },
+        { label: "Rechtsform", wert: "Einzelunternehmen, nicht im Firmenbuch eingetragen" },
+        { label: "Anschrift", wert: ANSCHRIFT },
       ],
     },
     {
       titel: "Kontakt",
       eintraege: [
-        { label: "E-Mail", wert: "[E-Mail-Adresse]" },
-        { label: "Telefon", wert: "[Telefonnummer]" },
+        { label: "E-Mail", wert: EMAIL },
+        { label: "Telefon", wert: TELEFON },
       ],
     },
     {
       titel: "Unternehmensdaten",
       eintraege: [
-        { label: "UID-Nummer", wert: "[ATU… bzw. USt-IdNr. DE…]" },
-        { label: "Firmenbuchnummer", wert: "[FN … bzw. Handelsregister HRB …]" },
-        { label: "Firmenbuchgericht", wert: "[Gericht bzw. Registergericht]" },
-        { label: "Unternehmensgegenstand", wert: "[Kurzbeschreibung der Tätigkeit]" },
+        {
+          label: "Unternehmensgegenstand",
+          wert: "Handel mit und Beratung zu Berufskleidung für Hotellerie, Gastronomie und Firmen",
+        },
       ],
     },
     {
       titel: "Gewerberecht",
       eintraege: [
-        { label: "Gewerbe", wert: "[Genaue Gewerbeberechtigung]" },
-        { label: "Behörde", wert: "[Zuständige Gewerbe- bzw. Aufsichtsbehörde]" },
-        { label: "Kammer", wert: "[Kammerzugehörigkeit, z. B. WKO Landeskammer]" },
-        { label: "Berufsrecht", wert: "[Anwendbare Rechtsvorschriften, z. B. GewO 1994]" },
+        { label: "Gewerbe", wert: "Handelsgewerbe" },
+        { label: "Gewerbebehörde", wert: "Bezirkshauptmannschaft Salzburg-Umgebung" },
+        { label: "Kammer", wert: "Wirtschaftskammer Salzburg, [Fachgruppe/Landesgremium — klärt Uwe]" },
+        { label: "Berufsrecht", wert: "Gewerbeordnung 1994 (GewO)" },
       ],
       absaetze: [
-        "Die berufsrechtlichen Vorschriften sind unter [Fundstelle, z. B. ris.bka.gv.at] abrufbar.",
+        "Die Gewerbeordnung ist unter ris.bka.gv.at abrufbar.",
       ],
     },
     {
       titel: "Verantwortlich für den Inhalt",
-      absaetze: ["[Vor- und Nachname, Anschrift]"],
+      absaetze: [`${INHABER}, ${ANSCHRIFT}`],
     },
     {
-      titel: "Online-Streitbeilegung",
+      titel: "Streitbeilegung",
       absaetze: [
-        "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit. Verbraucherinnen und Verbraucher können diese für die Beilegung von Streitigkeiten nutzen.",
-        "Ich bin weder verpflichtet noch bereit, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen. [Prüfen und gegebenenfalls anpassen.]",
+        "Das Angebot richtet sich an Unternehmen. Ich bin weder verpflichtet noch bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
       ],
     },
     {
@@ -96,14 +106,20 @@ export const impressum: Rechtstext = {
     {
       titel: "Haftung für Links",
       absaetze: [
-        "Diese Seite enthält keine Verlinkungen auf fremde Websites. Sollten künftig externe Links ergänzt werden, gilt: für deren Inhalte ist der jeweilige Anbieter verantwortlich.",
+        "Der Link zu WhatsApp führt zu einem Dienst der WhatsApp Ireland Limited. Für dessen Inhalte und Datenverarbeitung ist der Anbieter verantwortlich. Weitere externe Links enthält diese Seite nicht.",
       ],
     },
     {
-      titel: "Urheberrecht",
+      titel: "Urheberrecht und Bildnachweise",
       absaetze: [
         "Texte, Bilder und Gestaltung dieser Seite sind urheberrechtlich geschützt. Eine Verwendung außerhalb der gesetzlich zulässigen Fälle bedarf meiner Zustimmung.",
-        "Bildnachweise: [Fotografinnen und Fotografen bzw. Bildquellen ergänzen].",
+        "Die Logos der Referenzbetriebe und der Partnermarken Greiff und Hakro werden mit deren Einverständnis gezeigt. Die Kataloge stehen mit Zustimmung von Greiff und Hakro zum Download.",
+      ],
+      liste: [
+        "Fotos Hotel und Gastronomie: IMLAUER Hotels & Restaurants; Pexels (Liliana Drew, cottonbro studio, Nadin Sh, Sóc Năng Động)",
+        "Fotos Firmen und Startseite: Greiff Mode GmbH & Co. KG, HAKRO GmbH",
+        "Portrait Uwe Overbeck: [Fotograf/in]",
+        "Schrift: Switzer, Indian Type Foundry (Fontshare), ITF Free Font License",
       ],
     },
   ],
@@ -124,42 +140,49 @@ export const datenschutz: Rechtstext = {
         "Verantwortlich für die Verarbeitung personenbezogener Daten auf dieser Website ist:",
       ],
       eintraege: [
-        { label: "Name", wert: "[Vollständiger Firmenwortlaut]" },
-        { label: "Anschrift", wert: "[Straße und Hausnummer, PLZ Ort, Land]" },
-        { label: "E-Mail", wert: "[E-Mail-Adresse]" },
-        { label: "Telefon", wert: "[Telefonnummer]" },
+        { label: "Name", wert: `${INHABER}, ${FIRMA}` },
+        { label: "Anschrift", wert: ANSCHRIFT },
+        { label: "E-Mail", wert: EMAIL },
+        { label: "Telefon", wert: TELEFON },
       ],
     },
     {
       titel: "Grundsatz",
       absaetze: [
-        "Diese Website kommt ohne Cookies, ohne Analysewerkzeuge und ohne Werbenetzwerke aus. Es werden keine Profile gebildet und keine Daten an Dritte verkauft.",
-        "Schriften werden vom eigenen Server ausgeliefert. Es findet kein Aufruf externer Anbieter statt, wenn Sie diese Seite öffnen.",
+        "Diese Website setzt keine Cookies und verwendet keine Analysewerkzeuge und keine Werbenetzwerke. Es werden keine Profile gebildet und keine Daten an Dritte verkauft. Deshalb gibt es auch keinen Cookie-Hinweis.",
+        "Schriften und Bilder werden vom eigenen Server ausgeliefert. Beim Öffnen der Seite wird kein externer Anbieter aufgerufen.",
       ],
     },
     {
       titel: "Hosting und Server-Logfiles",
       absaetze: [
-        "Die Website wird bei [Hosting-Anbieter, Anschrift] betrieben. Beim Aufruf werden technisch notwendige Daten verarbeitet, insbesondere IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, übertragene Datenmenge, Browsertyp und Betriebssystem.",
-        "Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Das berechtigte Interesse liegt im sicheren und störungsfreien Betrieb der Website. Die Speicherdauer beträgt [Dauer eintragen].",
-        "Mit dem Hosting-Anbieter besteht ein Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO.",
+        "Die Website wird bei Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA betrieben. Beim Aufruf werden technisch notwendige Daten verarbeitet: IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, übertragene Datenmenge, Browsertyp und Betriebssystem.",
+        "Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Das berechtigte Interesse liegt im sicheren und störungsfreien Betrieb der Website. Der Anbieter hält diese Logdaten nur kurzzeitig vor; ich selbst werte sie nicht aus.",
+        "Mit Vercel besteht ein Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO. Die Übermittlung in die USA ist über die EU-Standardvertragsklauseln abgesichert; die Auslieferung der Seite erfolgt über Server in der EU.",
       ],
     },
     {
       titel: "Anfragen über das Formular",
       absaetze: [
-        "Wenn Sie das Formular auf der Seite Kontakt nutzen, verarbeite ich die dort eingegebenen Daten: Name, Betrieb, Rolle, E-Mail-Adresse, optional Telefonnummer und Nachricht.",
-        "Zweck ist ausschließlich die Bearbeitung Ihrer Anfrage und die Kontaktaufnahme. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO für vorvertragliche Maßnahmen sowie Art. 6 Abs. 1 lit. a DSGVO auf Grundlage Ihrer Einwilligung.",
+        "Wenn Sie das Formular auf der Seite Kontakt nutzen, verarbeite ich die dort eingegebenen Daten: Name, Betrieb, Bereich, E-Mail-Adresse sowie optional Telefonnummer und Nachricht.",
+        "Zweck ist ausschließlich die Bearbeitung Ihrer Anfrage und die Kontaktaufnahme. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) und Art. 6 Abs. 1 lit. a DSGVO (Ihre Einwilligung über das Kontrollkästchen).",
         "Die Angabe ist freiwillig. Ohne Name, Betrieb und E-Mail-Adresse kann ich die Anfrage nicht bearbeiten.",
-        "Für den Versand der Formularnachricht setze ich den Dienst Resend (Plus Five Five, Inc., [Anschrift ergänzen]) als Auftragsverarbeiter ein. Dabei kann eine Übermittlung in die USA stattfinden, abgesichert über [Rechtsgrundlage der Übermittlung, z. B. EU-Standardvertragsklauseln oder EU-US Data Privacy Framework].",
-        "Ihre Anfrage wird gelöscht, sobald sie erledigt ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen, spätestens nach [Dauer eintragen].",
+        "Die Formularnachricht wird als E-Mail an mich zugestellt. Dafür setze ich den Dienst Resend (Resend, Inc., 2261 Market Street #5039, San Francisco, CA 94114, USA) als Auftragsverarbeiter ein. Die Übermittlung in die USA ist über die EU-Standardvertragsklauseln abgesichert.",
+        "Ihre Anfrage wird gelöscht, sobald sie erledigt ist. Entsteht daraus eine Geschäftsbeziehung, gelten die gesetzlichen Aufbewahrungsfristen von bis zu sieben Jahren.",
         "Zum Schutz vor automatisierten Einsendungen enthält das Formular ein verstecktes Feld und eine Begrenzung der Anzahl von Anfragen pro IP-Adresse. Dabei werden keine zusätzlichen personenbezogenen Daten dauerhaft gespeichert.",
+      ],
+    },
+    {
+      titel: "Kontakt per E-Mail, Telefon und WhatsApp",
+      absaetze: [
+        "Wenn Sie mich per E-Mail oder Telefon kontaktieren, verarbeite ich Ihre Angaben zur Bearbeitung der Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO.",
+        "Der WhatsApp-Link auf der Kontaktseite öffnet WhatsApp auf Ihrem Gerät mit einer vorformulierten Nachricht. Erst wenn Sie diese selbst absenden, werden Daten an WhatsApp übertragen. Anbieter ist WhatsApp Ireland Limited, 4 Grand Canal Square, Dublin 2, Irland. Für die Verarbeitung durch WhatsApp gilt deren Datenschutzerklärung. Beim bloßen Aufruf dieser Website fließen keine Daten an WhatsApp.",
       ],
     },
     {
       titel: "Katalog-Download",
       absaetze: [
-        "Der Katalog kann ohne Angabe von Daten heruntergeladen werden. Es findet keine Registrierung und keine Auswertung statt.",
+        "Die Kataloge können ohne Angabe von Daten heruntergeladen werden. Es findet keine Registrierung und keine Auswertung statt.",
       ],
     },
     {
@@ -181,13 +204,13 @@ export const datenschutz: Rechtstext = {
       titel: "Beschwerderecht",
       absaetze: [
         "Wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt, können Sie sich bei einer Aufsichtsbehörde beschweren.",
-        "Österreich: Österreichische Datenschutzbehörde, Barichgasse 40–42, 1030 Wien.",
-        "Deutschland: die für Ihren Wohnsitz zuständige Landesdatenschutzbehörde. [Zutreffendes behalten.]",
+        "Österreich: Österreichische Datenschutzbehörde, Barichgasse 40–42, 1030 Wien, dsb.gv.at.",
+        "Deutschland: die für Ihren Wohnsitz zuständige Landesdatenschutzbehörde.",
       ],
     },
     {
       titel: "Stand",
-      absaetze: ["[Datum der letzten Aktualisierung eintragen]"],
+      absaetze: [STAND],
     },
   ],
 };
