@@ -11,6 +11,10 @@ import { credibility } from "@/content/landing";
  * verteilen.
  *
  * Die Zahlen zählen hoch, sobald der Strip ins Bild kommt.
+ *
+ * Seit 13.09. in tinte und Bold (E25) statt in signal und Light -- Marcels
+ * Entscheidung. Damit ist der Strip die einzige Stelle der Seite mit einem
+ * fetten Schnitt; STYLE.md, Abschnitt 4 hält das fest.
  */
 
 /** Hairline links steht bei jeder Spalte außer der ersten. */
@@ -36,7 +40,7 @@ export function CredibilityStrip() {
               <dt className="mt-stack-sm font-body text-label-caps uppercase text-on-surface-variant">
                 {eintrag.label}
               </dt>
-              <dd className="font-display text-signal text-display-lg-mobile md:text-display-lg">
+              <dd className="font-display font-bold text-on-surface text-display-lg-mobile md:text-display-lg">
                 <HochzaehlZahl wert={eintrag.wert} suffix={eintrag.suffix} />
               </dd>
             </div>
