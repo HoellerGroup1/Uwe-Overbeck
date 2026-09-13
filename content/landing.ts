@@ -58,6 +58,10 @@ export const about = {
   },
 } as const;
 
+/**
+ * `fokus` in den Tiles: vertikale Bildposition in Prozent, gilt mobil im
+ * flachen 4:3-Ausschnitt; ab md Bildmitte. Siehe content/inspiration.ts.
+ */
 export const tiles = {
   label: "Bereiche",
   eintraege: [
@@ -68,6 +72,7 @@ export const tiles = {
       bild: {
         src: "/img/hotel/housekeeping-bett-zu-zweit.jpg",
         alt: "Zwei Housekeeping-Mitarbeiterinnen beziehen gemeinsam ein Bett",
+        fokus: 25,
       },
     },
     {
@@ -77,6 +82,7 @@ export const tiles = {
       bild: {
         src: "/img/gastro/kueche-zwei-koeche-am-herd.jpg",
         alt: "Zwei Köche in Schürzen arbeiten nebeneinander am Herd",
+        fokus: 15,
       },
     },
     {
@@ -89,6 +95,7 @@ export const tiles = {
       bild: {
         src: "/img/firmen/anzug-und-kostuem-empfang.jpg",
         alt: "Mitarbeiterin und Mitarbeiter in grauem Kostüm und Anzug",
+        fokus: 30,
       },
     },
   ],

@@ -19,11 +19,13 @@ export type Bild = {
    * Wohin der Zuschnitt auf Mobile verankert wird. Dort laufen alle Bilder im
    * Querformat, es geht also oben oder unten etwas verloren.
    *
-   * "oben"  — Standard. Die Hochformat-Aufnahmen haben die Köpfe im oberen
-   *           Drittel, mittig zugeschnitten bliebe nur der Rumpf übrig.
-   * "mitte" — wenn das Motiv in der Bildmitte sitzt.
+   * `fokus` ist die vertikale Position des Bildausschnitts in Prozent von
+   * oben (CSS object-position): 0 zeigt den oberen Rand, 50 die Mitte, 100
+   * den unteren Rand. Pro Motiv am Handy nachgesehen -- Köpfe und Kleidung
+   * müssen im Ausschnitt bleiben. Ab md gilt wieder die Bildmitte, dort ist
+   * der Ausschnitt hoch genug. Fehlt der Wert, gilt 50.
    */
-  fokus?: "oben" | "mitte";
+  fokus?: number;
 };
 
 export type EditorialBlock = {
@@ -38,7 +40,8 @@ export type InspirationsSeite = {
   hero: {
     label: string;
     headline: string;
-    bild: { src?: string; alt: string };
+    /** `fokus` wirkt im Hero auf allen Breiten, weil der Ausschnitt dort überall flach ist. */
+    bild: { src?: string; alt: string; fokus?: number };
   };
   bloecke: EditorialBlock[];
   abschluss: {
@@ -61,6 +64,8 @@ export const hotelSeite: InspirationsSeite = {
     bild: {
       src: "/img/hotel/housekeeping-bett-zu-zweit.jpg",
       alt: "Zwei Housekeeping-Mitarbeiterinnen beziehen gemeinsam ein Bett",
+      // 35: Gesicht sitzt am Desktop über der Headline, mobil bleiben beide Personen im Bild.
+      fokus: 35,
     },
   },
   bloecke: [
@@ -70,6 +75,7 @@ export const hotelSeite: InspirationsSeite = {
       bild: {
         src: "/img/hotel/rezeption-empfang-gast.jpg",
         alt: "Mitarbeiterin an der Rezeption begrüßt einen ankommenden Gast",
+        fokus: 50,
         verhaeltnis: "4/3",
       },
     },
@@ -79,10 +85,10 @@ export const hotelSeite: InspirationsSeite = {
       bild: {
         src: "/img/hotel/housekeeping-zimmer-herrichten.jpg",
         alt: "Housekeeping-Mitarbeiterin richtet ein Bett im Hotelzimmer her",
+        fokus: 50,
         verhaeltnis: "4/5",
         // Oberes Drittel ist nur Wand und Wandleuchte. Die Mitarbeiterin und
         // das Bett sitzen in der Bildmitte.
-        fokus: "mitte",
       },
     },
     {
@@ -91,6 +97,7 @@ export const hotelSeite: InspirationsSeite = {
       bild: {
         src: "/img/hotel/hotelzimmer-zwei-mitarbeiterinnen.jpg",
         alt: "Zwei Mitarbeiterinnen in dunkler Berufskleidung im Hotelzimmer",
+        fokus: 40,
         verhaeltnis: "4/5",
       },
     },
@@ -115,6 +122,7 @@ export const gastroSeite: InspirationsSeite = {
     bild: {
       src: "/img/gastro/kueche-zwei-koeche-am-herd.jpg",
       alt: "Zwei Köche in Schürzen arbeiten nebeneinander am Herd",
+      fokus: 30,
     },
   },
   bloecke: [
@@ -124,6 +132,7 @@ export const gastroSeite: InspirationsSeite = {
       bild: {
         src: "/img/gastro/tranchieren-am-gast.jpg",
         alt: "Koch tranchiert Schinken vor den Gästen im Restaurant",
+        fokus: 40,
         verhaeltnis: "4/5",
       },
     },
@@ -133,6 +142,7 @@ export const gastroSeite: InspirationsSeite = {
       bild: {
         src: "/img/gastro/koch-am-herd-mit-schuerze.jpg",
         alt: "Koch mit Schürze arbeitet am Herd in einer Restaurantküche",
+        fokus: 35,
         verhaeltnis: "4/5",
       },
     },
@@ -142,6 +152,7 @@ export const gastroSeite: InspirationsSeite = {
       bild: {
         src: "/img/gastro/koeche-schuerzen-nahaufnahme.jpg",
         alt: "Nahaufnahme zweier Köche in Schürzen bei der Arbeit",
+        fokus: 70,
         verhaeltnis: "4/5",
       },
     },
@@ -151,10 +162,10 @@ export const gastroSeite: InspirationsSeite = {
       bild: {
         src: "/img/gastro/service-mit-tablett.jpg",
         alt: "Servicemitarbeiter mit bedruckter Schürze trägt ein Tablett mit Getränken",
+        fokus: 50,
         verhaeltnis: "4/5",
         // Oben verankert bliebe nur Farn und Kopf übrig. Die bedruckte Schürze
         // ist hier aber der Punkt, deshalb mittig.
-        fokus: "mitte",
       },
     },
   ],
@@ -191,6 +202,7 @@ export const firmenSeite: InspirationsSeite = {
     bild: {
       src: "/img/firmen/team-im-buero-besprechung.jpg",
       alt: "Fünf Mitarbeitende in abgestimmter dunkelblauer Businesskleidung besprechen sich im Büro",
+      fokus: 40,
     },
   },
   bloecke: [
@@ -200,6 +212,7 @@ export const firmenSeite: InspirationsSeite = {
       bild: {
         src: "/img/firmen/blousons-team-casual.jpg",
         alt: "Zwei Mitarbeitende in dunkelblauen Blousons über Shirt und Hemd",
+        fokus: 30,
         verhaeltnis: "4/3",
       },
     },
@@ -209,6 +222,7 @@ export const firmenSeite: InspirationsSeite = {
       bild: {
         src: "/img/firmen/anzug-und-kostuem-empfang.jpg",
         alt: "Mitarbeiterin und Mitarbeiter in grauem Kostüm und Anzug",
+        fokus: 30,
         // Quelle nur 640 px breit -- 4/3 statt 4/5, damit nichts hochskaliert wird.
         verhaeltnis: "4/3",
       },
@@ -219,6 +233,7 @@ export const firmenSeite: InspirationsSeite = {
       bild: {
         src: "/img/firmen/hemd-und-bluse-hellblau.jpg",
         alt: "Hellblaues Hemd und Bluse Rücken an Rücken, Fläche für Stick oder Druck",
+        fokus: 30,
         // Quelle nur 640 px breit -- 4/3 statt 4/5, damit nichts hochskaliert wird.
         verhaeltnis: "4/3",
       },

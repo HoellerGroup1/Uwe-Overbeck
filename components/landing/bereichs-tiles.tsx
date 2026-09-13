@@ -28,9 +28,9 @@ export function BereichsTiles() {
                       alt={tile.bild.alt}
                       fill
                       sizes="(min-width: 768px) 33vw, 100vw"
-                      /* Siehe EditorialBlock: oben verankert, damit im
-                         Querformat die Köpfe im Bild bleiben. */
-                      className="img-zoom object-cover object-top bild-ton md:object-center"
+                      /* Siehe EditorialBlock: Fokus pro Motiv mobil, ab md Bildmitte. */
+                      style={{ "--fokus-y": `${tile.bild.fokus ?? 50}%` } as React.CSSProperties}
+                      className="img-zoom object-cover object-[50%_var(--fokus-y)] bild-ton md:object-center"
                     />
                   ) : (
                     <BildPlatzhalter hinweis="Bild folgt" />

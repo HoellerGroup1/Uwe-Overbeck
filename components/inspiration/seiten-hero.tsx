@@ -11,7 +11,7 @@ export function SeitenHero({
 }: {
   label: string;
   headline: string;
-  bild: { src?: string; alt: string };
+  bild: { src?: string; alt: string; fokus?: number };
 }) {
   return (
     <section className="relative isolate flex min-h-[52svh] items-end overflow-hidden md:min-h-[62svh]">
@@ -27,6 +27,8 @@ export function SeitenHero({
           fill
           priority
           sizes="100vw"
+          /* Hero ist auf jeder Breite flacher als das Bild -- der Fokus gilt überall. */
+          style={{ objectPosition: `50% ${bild.fokus ?? 50}%` }}
           className="object-cover bild-ton"
         />
       ) : (

@@ -16,11 +16,11 @@ const VERHAELTNIS_KLASSE = {
   "4/3": "aspect-4/3",
 } as const;
 
-/** Bildregie pro Motiv, siehe `fokus` in content/inspiration.ts. */
-const FOKUS_KLASSE = {
-  oben: "object-top md:object-center",
-  mitte: "object-center",
-} as const;
+/**
+ * Bildregie pro Motiv, siehe `fokus` in content/inspiration.ts. Der Wert
+ * kommt als CSS-Variable, die Klasse liest sie mobil aus; ab md Bildmitte.
+ */
+const FOKUS_KLASSE = "object-[50%_var(--fokus-y)] md:object-center";
 
 /**
  * Editorialer Bild/Text-Block. Ab Desktop wechselt die Bildseite von Block zu
@@ -50,7 +50,8 @@ export function EditorialBlock({
                 alt={block.bild.alt}
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
-                className={`object-cover bild-ton ${FOKUS_KLASSE[block.bild.fokus ?? "oben"]}`}
+                style={{ "--fokus-y": `${block.bild.fokus ?? 50}%` } as React.CSSProperties}
+                className={`object-cover bild-ton ${FOKUS_KLASSE}`}
               />
             ) : (
               <BildPlatzhalter hinweis="Bild folgt" />

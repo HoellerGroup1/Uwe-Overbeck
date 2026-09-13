@@ -149,9 +149,10 @@ Dabei kam das Feld `fokus` in `content/inspiration.ts` dazu: im Querformat geht
 oben oder unten etwas verloren, und ein pauschaler Zuschnitt trifft nicht jedes
 Motiv. Mittig fehlten den Hochformat-Aufnahmen die Köpfe, oben verankert
 verschwanden bei zwei Bildern die bedruckte Schürze und die arbeitende Person.
-Standard ist `"oben"`, `"mitte"` für `service-mit-tablett` und
-`housekeeping-zimmer-herrichten`. **Wer Bilder tauscht, muss den Zuschnitt am
-Handy einzeln nachsehen.**
+Seit 13.09. ist `fokus` eine Zahl (Prozent von oben, CSS object-position),
+pro Motiv gesetzt und am Handy nachgesehen; im Hero gilt der Wert auf allen
+Breiten, in Blöcken und Tiles nur mobil. **Wer Bilder tauscht, muss den
+Zuschnitt am Handy einzeln nachsehen.**
 
 ## Phase 3 — Trefferflächen ✔ (Commit e767a74)
 
