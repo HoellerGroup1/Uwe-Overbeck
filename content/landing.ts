@@ -105,6 +105,8 @@ export type KatalogEintrag = {
   marke: string;
   /** Partnerlogo, transparentes PNG, wird monochrom gezeigt. */
   logo: { src: string; alt: string; breite: number; hoehe: number };
+  /** Claim der Marke, von Uwe vorgegeben. Wird unter dem Logo gesetzt. */
+  claim: string;
   buttonLabel: string;
   /** Fehlt die Datei, zeigt die Komponente `hinweisOffen` statt eines Links (E19-Muster). */
   datei?: string;
@@ -123,6 +125,7 @@ const katalogEintraege: KatalogEintrag[] = [
       breite: 447,
       hoehe: 400,
     },
+    claim: "Greiff zieht an",
     buttonLabel: "Greiff-Katalog herunterladen",
     datei: "/downloads/greiff-katalog.pdf",
     dateiname: "greiff-katalog.pdf",
@@ -136,6 +139,7 @@ const katalogEintraege: KatalogEintrag[] = [
       breite: 600,
       hoehe: 254,
     },
+    claim: "Passt einfach",
     buttonLabel: "Hakro-Katalog herunterladen",
     // Original 47 MB, per Ghostscript auf 90 dpi verkleinert. Text bleibt Vektor.
     datei: "/downloads/hakro-katalog.pdf",

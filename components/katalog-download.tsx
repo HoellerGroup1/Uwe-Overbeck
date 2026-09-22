@@ -68,6 +68,11 @@ export function KatalogDownload() {
                       : "h-14 md:h-16"
                   }`}
                 />
+                {/* Claim der Marke, Uwes Vorgabe. Satz, keine Auszeichnung --
+                    deshalb gemischt und nicht in Versalien (STYLE.md 2). */}
+                <p className="mt-stack-sm font-body text-body-md text-on-surface-variant">
+                  {eintrag.claim}
+                </p>
                 {eintrag.datei ? (
                   <>
                     <a
