@@ -93,7 +93,7 @@ export const hotelSeite: InspirationsSeite = {
     },
     {
       headline: "Ein Kleidungskonzept für das ganze Haus.",
-      text: "Ich komme zu Ihnen, sehe mir Rezeption, Etage und Restaurant an und höre zu, wie Sie Ihr Haus verstehen. Daraus stelle ich ein Konzept zusammen, das alle Bereiche verbindet und jedem lässt, was er braucht. Vor der Bestellung probiert Ihr Team an. Was nicht sitzt, kommt nicht ins Haus.",
+      text: "Ich komme zu Ihnen, sehe mir Rezeption, Etage und Restaurant an und höre zu, wie Sie Ihr Haus verstehen. Daraus stelle ich ein Konzept zusammen, das alle Bereiche verbindet und jedem lässt, was er braucht. Vor der Bestellung probiert Ihr Team an.",
       bild: {
         src: "/img/hotel/hotelzimmer-zwei-mitarbeiterinnen.jpg",
         alt: "Zwei Mitarbeiterinnen in dunkler Berufskleidung im Hotelzimmer",
@@ -148,7 +148,7 @@ export const gastroSeite: InspirationsSeite = {
     },
     {
       headline: "Schick, und nach dem fünfzigsten Waschgang noch immer.",
-      text: "Fett, Wein und Sauce gehören zum Alltag. Ein Outfit, das nach zehn Wäschen ausbleicht oder die Form verliert, sieht billig aus, egal was es gekostet hat. Ich wähle Stoffe und Farben, die Industriewäsche aushalten, und rechne mit Ihnen durch, was ein Teil pro Schicht kostet statt pro Stück.",
+      text: "Fett, Wein und Sauce gehören zum Alltag. Ein Outfit, das nach zehn Wäschen ausbleicht oder die Form verliert, sieht billig aus, egal was es gekostet hat. Ich wähle Stoffe und Farben, die Industriewäsche aushalten.",
       bild: {
         src: "/img/gastro/koeche-schuerzen-nahaufnahme.jpg",
         alt: "Nahaufnahme zweier Köche in Schürzen bei der Arbeit",
