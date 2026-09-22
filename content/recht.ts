@@ -15,7 +15,9 @@
  * Die EU-Plattform zur Online-Streitbeilegung wurde am 20.07.2025
  * eingestellt, ein Hinweis darauf gehört nicht mehr ins Impressum.
  *
- * Offen in eckigen Klammern: USt-IdNr. und Fotograf des Portraits. Beide
+ * Offen in eckigen Klammern: nur noch die USt-IdNr. Das Portrait ist
+ * KI-generiert und im Bildnachweis als solches gekennzeichnet (Art. 50
+ * KI-VO, Transparenzpflicht seit 02.08.2026). Beide
  * Texte sind kein geprüfter Rechtstext; vor dem Livegang prüfen lassen und
  * ENTWURFS_HINWEIS entfernen.
  */
@@ -131,7 +133,7 @@ export const impressum: Rechtstext = {
       liste: [
         "Fotos Hotel und Gastronomie: IMLAUER Hotels & Restaurants; Pexels (Liliana Drew, cottonbro studio, Nadin Sh, Sóc Năng Động)",
         "Fotos Firmen und Startseite: Greiff Mode GmbH & Co. KG, HAKRO GmbH",
-        "Portrait Uwe Overbeck: [Fotograf/in]",
+        "Portrait Uwe Overbeck: mit künstlicher Intelligenz erstellt auf Grundlage einer privaten Aufnahme",
         "Schrift: Switzer, Indian Type Foundry (Fontshare), ITF Free Font License",
       ],
     },
