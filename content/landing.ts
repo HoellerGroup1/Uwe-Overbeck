@@ -30,7 +30,7 @@ export const hero = {
 export const credibility = {
   label: "In Zahlen",
   eintraege: [
-    { wert: 30, suffix: "+", label: "Jahre im Vertrieb" },
+    { wert: 35, suffix: "+", label: "Jahre im Vertrieb" },
     { wert: 89, suffix: "", label: "Betriebe ausgestattet" },
   ],
 } as const;
@@ -39,8 +39,8 @@ export const about = {
   label: "Zur Person",
   headline: "Ich sehe mir erst den Betrieb an, dann die Kleidung.",
   absaetze: [
-    "Seit über dreißig Jahren stelle ich Berufsmode für Hotels, Gastronomie und Firmen zusammen. Bevor ich etwas vorschlage, komme ich vorbei: Ich will Ihr Haus sehen, Ihr Konzept verstehen und wissen, wer sich in der aktuellen Kleidung nicht wohlfühlt.",
-    "Daraus entsteht ein Kleidungskonzept, das zu Ihrem Betrieb gehört wie die Einrichtung. Wenige Teile, gut geschnitten, in Farben, die zum Haus passen. Ein Auftritt, an dem man Ihr Team erkennt.",
+    "Seit über fünfunddreißig Jahren statte ich Hotels, Gastronomie und Firmen mit Berufsmode aus. Ich komme persönlich bei Ihnen vorbei und möchte Sie und Ihr Haus kennenlernen.",
+    "Daraus stellen wir ein Konzept zusammen und Sie bekommen die Muster direkt von mir geliefert. Mein Service – Ihre Zeit!",
   ],
   signatur: "Uwe Overbeck",
   /**
@@ -155,7 +155,7 @@ export const katalog = {
   // Ich-Perspektive wie auf der ganzen Seite: Uwe spricht, nicht ein Text
   // ueber Uwe. "Seit vielen Jahren" ist Marcels Angabe, keine Jahreszahl.
   headline: "Ich arbeite mit zwei Marken, seit Jahren mit denselben.",
-  text: "Greiff und Hakro beliefern mich seit vielen Jahren. Ich kenne ihre Schnitte, ihre Stoffe und was davon nach Jahren im Dienst noch gut aussieht. Eine dritte Marke brauche ich nicht.",
+  text: "Greiff und Hakro beliefern mich seit vielen Jahren. Ich kenne ihre Schnitte, ihre Stoffe und was davon nach Jahren im Dienst noch gut aussieht.",
   ueberleitung: "Die aktuellen Kataloge beider Marken laden Sie hier herunter, ohne Formular.",
   eintraege: katalogEintraege,
 } as const;
