@@ -31,7 +31,7 @@ export function MicroLabel({
 }: {
   children: ReactNode;
   className?: string;
-  as?: "p" | "h2" | "span";
+  as?: "p" | "h2" | "h3" | "span";
   id?: string;
 }) {
   return (

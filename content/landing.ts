@@ -41,6 +41,31 @@ export const about = {
     "Seit über fünfunddreißig Jahren statte ich Hotels, Gastronomie und Firmen mit Berufsmode aus. Ich komme persönlich bei Ihnen vorbei und möchte Sie und Ihr Haus kennenlernen.",
     "Daraus stellen wir ein Konzept zusammen und Sie bekommen die Muster direkt von mir geliefert. Mein Service – Ihre Zeit!",
   ],
+  /**
+   * Ablauf einer Zusammenarbeit, Uwes Vorgabe vom 11.10. Vier Schritte in
+   * seiner Reihenfolge: Gespräch, Muster, Anprobe, Bestellung.
+   */
+  ablauf: {
+    label: "So arbeiten wir zusammen",
+    schritte: [
+      {
+        titel: "Beratungsgespräch",
+        text: "Wir vereinbaren ein persönliches Gespräch, gern direkt bei Ihnen im Betrieb.",
+      },
+      {
+        titel: "Muster zur Ansicht",
+        text: "Ich bringe Ihnen kostenlose Muster vorbei, auf Wunsch schon mit Ihrem Logo veredelt.",
+      },
+      {
+        titel: "Anprobe",
+        text: "Ihre Mitarbeitenden probieren an, damit Größe und Passform für jeden stimmen.",
+      },
+      {
+        titel: "Bestellung",
+        text: "Danach bestellen wir die Kollektion für Ihr Team.",
+      },
+    ],
+  },
   signatur: "Uwe Overbeck",
   /**
    * Farbfassung, 1122×1402 (4:5). Die Schwarzweiß-Variante liegt daneben als

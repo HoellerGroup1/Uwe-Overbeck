@@ -46,6 +46,36 @@ export function About() {
             <p className="mt-stack-md font-display text-headline-md text-on-surface-variant">
               {about.signatur}
             </p>
+
+            {/*
+              Ablauf in derselben Form wie die Ledger-Zeilen der Seite:
+              Nummer in label-caps, Haarlinien zwischen den Schritten.
+              Ab sm zwei Spalten, damit der Block neben dem Portrait nicht
+              laenger wird als das Bild.
+            */}
+            <div className="mt-stack-lg">
+              <MicroLabel as="h3" className="text-on-surface-variant">
+                {about.ablauf.label}
+              </MicroLabel>
+              <ol className="mt-stack-sm grid grid-cols-1 border-t border-ash/40 sm:grid-cols-2 sm:gap-x-gutter">
+                {about.ablauf.schritte.map((schritt, i) => (
+                  <li
+                    key={schritt.titel}
+                    className="grid grid-cols-[2.5rem_1fr] border-b border-ash/40 py-stack-md"
+                  >
+                    <span className="pt-1.5 font-body text-label-caps text-on-surface-variant">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <p className="font-body text-body-lg text-on-surface">{schritt.titel}</p>
+                      <p className="mt-1 font-body text-body-md text-on-surface-variant">
+                        {schritt.text}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
         </div>
       </Container>
