@@ -58,8 +58,9 @@ export const about = {
 } as const;
 
 /**
- * `fokus` in den Tiles: vertikale Bildposition in Prozent, gilt mobil im
- * flachen 4:3-Ausschnitt; ab md Bildmitte. Siehe content/inspiration.ts.
+ * `fokus` in den Tiles: vertikale Bildposition in Prozent. Die Tiles sind
+ * auf jeder Breite 4:3, deshalb gilt derselbe Wert mobil und ab md.
+ * Siehe content/inspiration.ts.
  */
 export const tiles = {
   label: "Bereiche",
@@ -71,7 +72,7 @@ export const tiles = {
       bild: {
         src: "/img/hotel/drei-mitarbeitende-hotel-service.jpg",
         alt: "Drei Mitarbeitende in dunkelblauem Blazer, beiger Latzschürze und hellblauem Kasack",
-        fokus: 20,
+        fokus: 4,
       },
     },
     {
@@ -81,7 +82,7 @@ export const tiles = {
       bild: {
         src: "/img/gastro/kueche-zwei-koeche-am-herd.jpg",
         alt: "Zwei Köche in Schürzen arbeiten nebeneinander am Herd",
-        fokus: 15,
+        fokus: 0,
       },
     },
     {

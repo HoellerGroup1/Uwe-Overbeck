@@ -28,9 +28,9 @@ export function BereichsTiles() {
                       alt={tile.bild.alt}
                       fill
                       sizes="(min-width: 768px) 33vw, 100vw"
-                      /* Siehe EditorialBlock: Fokus pro Motiv mobil, ab md Bildmitte. */
+                      /* Tiles sind auf jeder Breite 4:3 -- ein Fokuswert gilt überall. */
                       style={{ "--fokus-y": `${tile.bild.fokus ?? 50}%` } as React.CSSProperties}
-                      className="img-zoom object-cover object-[50%_var(--fokus-y)] bild-ton md:object-center"
+                      className="img-zoom object-cover object-[50%_var(--fokus-y)] bild-ton"
                     />
                   ) : (
                     <BildPlatzhalter hinweis="Bild folgt" />

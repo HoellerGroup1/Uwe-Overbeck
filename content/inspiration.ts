@@ -16,16 +16,17 @@ export type Bild = {
   /** Wird auf ein festes Seitenverhältnis zugeschnitten. */
   verhaeltnis: "4/5" | "4/3";
   /**
-   * Wohin der Zuschnitt auf Mobile verankert wird. Dort laufen alle Bilder im
-   * Querformat, es geht also oben oder unten etwas verloren.
+   * Bildausschnitt, vertikal in Prozent von oben (CSS object-position):
+   * 0 zeigt den oberen Rand, 50 die Mitte, 100 den unteren Rand.
    *
-   * `fokus` ist die vertikale Position des Bildausschnitts in Prozent von
-   * oben (CSS object-position): 0 zeigt den oberen Rand, 50 die Mitte, 100
-   * den unteren Rand. Pro Motiv am Handy nachgesehen -- Köpfe und Kleidung
-   * müssen im Ausschnitt bleiben. Ab md gilt wieder die Bildmitte, dort ist
-   * der Ausschnitt hoch genug. Fehlt der Wert, gilt 50.
+   * `fokus` gilt mobil (Blöcke dort 4:3, Hero hochkant), `fokusDesktop` ab md
+   * (Blöcke 4:5 oder 4:3, Hero sehr flach). Beide Werte sind aus den
+   * gemessenen Kopfpositionen berechnet: oberster Kopf mit etwas Luft an der
+   * Oberkante, Kinn noch im Bild. Wer ein Bild tauscht, misst neu und prüft
+   * auf 390, 1024, 1440 und 1920 px. Fehlt fokusDesktop, gilt fokus.
    */
   fokus?: number;
+  fokusDesktop?: number;
 };
 
 export type EditorialBlock = {
@@ -40,8 +41,8 @@ export type InspirationsSeite = {
   hero: {
     label: string;
     headline: string;
-    /** `fokus` wirkt im Hero auf allen Breiten, weil der Ausschnitt dort überall flach ist. */
-    bild: { src?: string; alt: string; fokus?: number };
+    /** Hero: `fokus` mobil (fast quadratisch), `fokusDesktop` ab md (sehr flach). */
+    bild: { src?: string; alt: string; fokus?: number; fokusDesktop?: number };
   };
   bloecke: EditorialBlock[];
   abschluss: {
@@ -64,8 +65,8 @@ export const hotelSeite: InspirationsSeite = {
     bild: {
       src: "/img/hotel/rezeption-check-in-landhaus.jpg",
       alt: "Gast checkt an der Rezeption ein, das Team trägt graue Jacken mit Stehkragen und Westen",
-      // 15: alle Köpfe an der Rezeption bleiben im flachen Desktop-Ausschnitt.
-      fokus: 15,
+      fokus: 0,
+      fokusDesktop: 0,
     },
   },
   bloecke: [
@@ -76,6 +77,7 @@ export const hotelSeite: InspirationsSeite = {
         src: "/img/hotel/rezeption-empfang-gast.jpg",
         alt: "Mitarbeiterin an der Rezeption begrüßt einen ankommenden Gast",
         fokus: 50,
+        fokusDesktop: 50,
         verhaeltnis: "4/3",
       },
     },
@@ -85,7 +87,8 @@ export const hotelSeite: InspirationsSeite = {
       bild: {
         src: "/img/hotel/housekeeping-zimmer-herrichten.jpg",
         alt: "Housekeeping-Mitarbeiterin richtet ein Bett im Hotelzimmer her",
-        fokus: 50,
+        fokus: 78,
+        fokusDesktop: 50,
         verhaeltnis: "4/5",
         // Oberes Drittel ist nur Wand und Wandleuchte. Die Mitarbeiterin und
         // das Bett sitzen in der Bildmitte.
@@ -97,7 +100,8 @@ export const hotelSeite: InspirationsSeite = {
       bild: {
         src: "/img/hotel/hotelzimmer-zwei-mitarbeiterinnen.jpg",
         alt: "Zwei Mitarbeiterinnen in dunkler Berufskleidung im Hotelzimmer",
-        fokus: 40,
+        fokus: 32,
+        fokusDesktop: 50,
         verhaeltnis: "4/5",
       },
     },
@@ -122,7 +126,8 @@ export const gastroSeite: InspirationsSeite = {
     bild: {
       src: "/img/gastro/kueche-zwei-koeche-am-herd.jpg",
       alt: "Zwei Köche in Schürzen arbeiten nebeneinander am Herd",
-      fokus: 30,
+      fokus: 44,
+      fokusDesktop: 18,
     },
   },
   bloecke: [
@@ -132,7 +137,8 @@ export const gastroSeite: InspirationsSeite = {
       bild: {
         src: "/img/gastro/tranchieren-am-gast.jpg",
         alt: "Koch tranchiert Schinken vor den Gästen im Restaurant",
-        fokus: 40,
+        fokus: 10,
+        fokusDesktop: 20,
         verhaeltnis: "4/5",
       },
     },
@@ -142,7 +148,8 @@ export const gastroSeite: InspirationsSeite = {
       bild: {
         src: "/img/gastro/koch-am-herd-mit-schuerze.jpg",
         alt: "Koch mit Schürze arbeitet am Herd in einer Restaurantküche",
-        fokus: 35,
+        fokus: 22,
+        fokusDesktop: 50,
         verhaeltnis: "4/5",
       },
     },
@@ -152,7 +159,8 @@ export const gastroSeite: InspirationsSeite = {
       bild: {
         src: "/img/gastro/service-schuerzen-terrasse.jpg",
         alt: "Servicekraft und Kellner in grünen Schürzen in Jeansoptik auf einer Restaurantterrasse",
-        fokus: 40,
+        fokus: 32,
+        fokusDesktop: 50,
         verhaeltnis: "4/5",
       },
     },
@@ -190,7 +198,8 @@ export const firmenSeite: InspirationsSeite = {
     bild: {
       src: "/img/firmen/team-im-buero-besprechung.jpg",
       alt: "Fünf Mitarbeitende in abgestimmter dunkelblauer Businesskleidung besprechen sich im Büro",
-      fokus: 40,
+      fokus: 0,
+      fokusDesktop: 0,
     },
   },
   bloecke: [
@@ -200,7 +209,8 @@ export const firmenSeite: InspirationsSeite = {
       bild: {
         src: "/img/firmen/zwei-mitarbeiterinnen-hosenanzug.jpg",
         alt: "Zwei Mitarbeiterinnen in dunkelblauem Hosenanzug und weißem Shirt in einer Sitznische",
-        fokus: 50,
+        fokus: 55,
+        fokusDesktop: 50,
         verhaeltnis: "4/5",
       },
     },
@@ -210,7 +220,8 @@ export const firmenSeite: InspirationsSeite = {
       bild: {
         src: "/img/firmen/hemd-und-chino-casual.jpg",
         alt: "Mitarbeiter in hellblauem Hemd und beiger Chino sitzt in einer Fensternische",
-        fokus: 60,
+        fokus: 38,
+        fokusDesktop: 50,
         verhaeltnis: "4/5",
       },
     },
@@ -220,7 +231,8 @@ export const firmenSeite: InspirationsSeite = {
       bild: {
         src: "/img/firmen/grauer-anzug-buero.jpg",
         alt: "Mitarbeiter in grauem Anzug lehnt an einem Geländer im Büro",
-        fokus: 25,
+        fokus: 0,
+        fokusDesktop: 0,
         verhaeltnis: "4/5",
       },
     },

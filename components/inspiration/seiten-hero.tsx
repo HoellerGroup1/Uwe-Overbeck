@@ -11,7 +11,7 @@ export function SeitenHero({
 }: {
   label: string;
   headline: string;
-  bild: { src?: string; alt: string; fokus?: number };
+  bild: { src?: string; alt: string; fokus?: number; fokusDesktop?: number };
 }) {
   return (
     <section className="relative isolate flex min-h-[52svh] items-end overflow-hidden md:min-h-[62svh]">
@@ -27,9 +27,17 @@ export function SeitenHero({
           fill
           priority
           sizes="100vw"
-          /* Hero ist auf jeder Breite flacher als das Bild -- der Fokus gilt überall. */
-          style={{ objectPosition: `50% ${bild.fokus ?? 50}%` }}
-          className="object-cover bild-ton"
+          /*
+            Mobil ist der Hero fast quadratisch, ab md sehr flach (bis 1:2,9).
+            Deshalb zwei Werte, siehe content/inspiration.ts.
+          */
+          style={
+            {
+              "--fokus-y": `${bild.fokus ?? 50}%`,
+              "--fokus-y-md": `${bild.fokusDesktop ?? bild.fokus ?? 50}%`,
+            } as React.CSSProperties
+          }
+          className="object-cover bild-ton object-[50%_var(--fokus-y)] md:object-[50%_var(--fokus-y-md)]"
         />
       ) : (
         <div className="absolute inset-0">

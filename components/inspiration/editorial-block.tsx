@@ -17,10 +17,11 @@ const VERHAELTNIS_KLASSE = {
 } as const;
 
 /**
- * Bildregie pro Motiv, siehe `fokus` in content/inspiration.ts. Der Wert
- * kommt als CSS-Variable, die Klasse liest sie mobil aus; ab md Bildmitte.
+ * Bildregie pro Motiv, siehe `fokus` und `fokusDesktop` in
+ * content/inspiration.ts. Beide Werte kommen als CSS-Variablen.
  */
-const FOKUS_KLASSE = "object-[50%_var(--fokus-y)] md:object-center";
+const FOKUS_KLASSE =
+  "object-[50%_var(--fokus-y)] md:object-[50%_var(--fokus-y-md)]";
 
 /**
  * Editorialer Bild/Text-Block. Ab Desktop wechselt die Bildseite von Block zu
@@ -50,7 +51,12 @@ export function EditorialBlock({
                 alt={block.bild.alt}
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
-                style={{ "--fokus-y": `${block.bild.fokus ?? 50}%` } as React.CSSProperties}
+                style={
+                  {
+                    "--fokus-y": `${block.bild.fokus ?? 50}%`,
+                    "--fokus-y-md": `${block.bild.fokusDesktop ?? block.bild.fokus ?? 50}%`,
+                  } as React.CSSProperties
+                }
                 className={`object-cover bild-ton ${FOKUS_KLASSE}`}
               />
             ) : (
