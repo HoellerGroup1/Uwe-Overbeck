@@ -196,7 +196,7 @@ export const firmenSeite: InspirationsSeite = {
   bloecke: [
     {
       headline: "Einheitlich, ohne nach Uniform auszusehen.",
-      text: "Ein Team erkennt man an Farbe und Schnitt, lange bevor jemand das Logo liest. Moderne Berufsmode schafft das mit Teilen, die Ihre Leute auch nach Feierabend anbehalten würden: ein Blouson, ein gut geschnittenes Hemd, eine Hose, die sitzt. Wer sich darin wohlfühlt, trägt es mit Haltung. Das sieht der Kunde.",
+      text: "Ein Team erkennt man an Farbe und Schnitt, lange bevor jemand das Logo liest. Moderne Berufsmode schafft das mit Teilen, die Ihre Leute auch nach Feierabend anbehalten würden: ein Sakko, ein gutes Shirt, eine Hose, die sitzt. Wer sich darin wohlfühlt, trägt es mit Haltung. Das sieht der Kunde.",
       bild: {
         src: "/img/firmen/zwei-mitarbeiterinnen-hosenanzug.jpg",
         alt: "Zwei Mitarbeiterinnen in dunkelblauem Hosenanzug und weißem Shirt in einer Sitznische",
