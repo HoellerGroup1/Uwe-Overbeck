@@ -40,29 +40,35 @@ const securityHeaders = [
 ];
 
 /**
- * Bildauslieferung, Stand 11.10.
+ * Bildauslieferung, Stand 11.10. (zweiter Anlauf)
  *
- * - AVIF zuerst, WebP als Rueckfall: bei den koernigen Katalogfotos rund
- *   ein Drittel bis die Haelfte kleiner als WebP.
- * - Breiten passend zu den tatsaechlichen Darstellungsgroessen (gemessen
- *   auf 390-2560 px). Die Quellen sind maximal 2400 px breit, mehr braucht
- *   es nicht. Weniger Varianten heisst auch: mehr Treffer im Vercel-Cache.
- * - Qualitaet 70 statt 75: bei Fotos mit Bildton-Filter nicht sichtbar.
- * - 31 Tage Cache fuer umgerechnete Bilder. Ohne das rechnet Vercel jedes
- *   Bild nach wenigen Stunden neu -- genau dieser erste Aufruf ist langsam.
- *   Wer ein Bild tauscht, gibt ihm einen neuen Dateinamen.
+ * Fotos werden NICHT mehr von Vercel umgerechnet. `npm run bilder` erzeugt
+ * fertige WebP-Varianten in public/v, der Loader in lib/bild-loader.ts
+ * waehlt pro Breite die passende Datei. Die liegen direkt im CDN und kommen
+ * auch beim allerersten Aufruf ohne Rechenzeit.
+ *
+ * deviceSizes muss zu BREITEN in scripts/bilder-varianten.mjs passen.
  */
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
-    formats: ["image/avif", "image/webp"],
+    loader: "custom",
+    loaderFile: "./lib/bild-loader.ts",
     deviceSizes: [640, 828, 1080, 1280, 1600, 1920, 2400],
     imageSizes: [128, 256, 384],
-    qualities: [70],
-    minimumCacheTTL: 2678400,
   },
   async headers() {
-    return [{ source: "/(.*)", headers: securityHeaders }];
+    return [
+      { source: "/(.*)", headers: securityHeaders },
+      // Fertige Bildvarianten: eine Woche im Browser-Cache, danach im
+      // Hintergrund aktualisieren. Neue Fotos bekommen einen neuen Namen.
+      {
+        source: "/v/:pfad*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=604800, stale-while-revalidate=86400" },
+        ],
+      },
+    ];
   },
 };
 
