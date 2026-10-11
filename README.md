@@ -10,7 +10,7 @@ persönliche Beratungsgespräche.
 - Next.js 16 (App Router, TypeScript)
 - Tailwind CSS v4
 - next/font/local — Switzer als einziges Schriftsystem, selbst ausgeliefert
-- Resend für den Versand der Formularanfragen
+- Formspree für den Versand der Formularanfragen (eine Variable: `FORMSPREE_FORM_ID`, Empfänger im Formspree-Konto)
 - Zod für die Validierung
 
 Bewusst **nicht** enthalten: Component-Library, Framer Motion, Analytics,
