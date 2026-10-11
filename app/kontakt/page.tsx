@@ -15,7 +15,8 @@ const DIREKT_LINK =
 
 /**
  * Reihenfolge ist die Hierarchie: WhatsApp zuerst, dann Telefon und Mail,
- * dann der Ablauf, rechts das Formular als schriftlicher Weg. Der einzige
+ * rechts das Formular als schriftlicher Weg. Der Ablauf ("So läuft es") ist
+ * am 11.10. auf Uwes Wunsch entfallen. Der einzige
  * gefuellte Button der Seite ist der WhatsApp-Button, die einzige rote Kante
  * sitzt ueber ihm -- STYLE.md erlaubt signal als CTA-Kante.
  *
@@ -79,29 +80,11 @@ export default function KontaktPage() {
               </li>
             </ul>
           </div>
-
-          {/* Ablauf */}
-          <div className="mt-stack-lg max-w-[46ch]">
-            <MicroLabel as="h2" className="text-on-surface-variant">
-              {kontakt.ablaufLabel}
-            </MicroLabel>
-            <ol className="mt-stack-sm border-t border-ash/40">
-              {kontakt.bullets.map((bullet, i) => (
-                <li
-                  key={bullet}
-                  className="grid grid-cols-[2.5rem_1fr] border-b border-ash/40 py-stack-md font-body text-body-lg text-on-surface-variant"
-                >
-                  <span className="font-body text-label-caps text-on-surface-variant pt-1">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span>{bullet}</span>
-                </li>
-              ))}
-            </ol>
-          </div>
         </div>
 
-        <div className="md:col-span-5 md:col-start-8">
+        {/* Mobil trennt eine Haarlinie das Formular von den Direktwegen,
+            ab md steht es in der eigenen Spalte. */}
+        <div className="border-t border-ash/40 pt-stack-md md:col-span-5 md:col-start-8 md:border-t-0 md:pt-0">
           <AnfrageFormular />
         </div>
       </div>

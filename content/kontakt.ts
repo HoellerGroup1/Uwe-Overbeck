@@ -21,12 +21,6 @@ export const kontakt = {
   },
   /** Telefon und Mail als zweiter Weg, die Werte stehen in site.ts. */
   direktLabel: "Oder anrufen, oder mailen",
-  ablaufLabel: "So läuft es",
-  bullets: [
-    "Ich frage nach Bereichen, Größen und Wäsche.",
-    "Sie sagen mir, woran es bei der aktuellen Kleidung hakt.",
-    "Danach bekommen Sie einen Vorschlag. Entscheiden können Sie in Ruhe.",
-  ],
 } as const;
 
 export const formular = {

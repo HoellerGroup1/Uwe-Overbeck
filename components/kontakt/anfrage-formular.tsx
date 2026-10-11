@@ -18,8 +18,13 @@ const START: FormularStatus = { status: "idle" };
   die Begrenzung von Bedienelementen verlangt. Deshalb hier on-surface-variant.
   Hairlines zwischen Sektionen bleiben ash — die sind rein dekorativ.
 */
+/*
+  Kompakt seit 11.10.: body-md statt body-lg, weniger Innenabstand, Felder ab
+  sm paarweise nebeneinander. min-h-11 haelt die Trefferflaeche bei 44 px.
+  text-base (16 px) bleibt Pflicht, sonst zoomt iOS beim Fokus hinein.
+*/
 const FELD_BASIS =
-  "w-full border-0 border-b border-on-surface-variant bg-transparent pt-2 pb-3 font-body text-body-lg text-on-surface outline-none focus:border-on-surface";
+  "min-h-11 w-full border-0 border-b border-on-surface-variant bg-transparent py-2 font-body text-body-md text-on-surface outline-none focus:border-on-surface";
 
 function Label({ htmlFor, children }: { htmlFor: string; children: React.ReactNode }) {
   return (
@@ -96,7 +101,7 @@ export function AnfrageFormular() {
         </p>
       )}
 
-      <form key={formKey} action={action} noValidate className="mt-stack-lg">
+      <form key={formKey} action={action} noValidate className="mt-stack-md">
         {/* Honeypot. Aus dem Blickfeld und aus der Tabreihenfolge genommen. */}
         <div aria-hidden="true" className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden">
           <label htmlFor={HONEYPOT_FELD}>Webseite</label>
@@ -109,7 +114,12 @@ export function AnfrageFormular() {
           />
         </div>
 
-        <div className="space-y-stack-lg">
+        {/*
+          Ab sm zwei Spalten: Name | Betrieb, E-Mail | Telefon. Bereich,
+          Nachricht und Zustimmung laufen ueber die volle Breite. Die
+          Quellreihenfolge bleibt die Lesereihenfolge.
+        */}
+        <div className="grid grid-cols-1 gap-x-gutter gap-y-stack-md sm:grid-cols-2">
           <div>
             <Label htmlFor="name">
               {felder.name.label}
@@ -125,7 +135,7 @@ export function AnfrageFormular() {
               defaultValue={werte.name ?? ""}
               aria-invalid={fehler.name ? true : undefined}
               aria-describedby={fehler.name ? "name-fehler" : undefined}
-              className={`mt-stack-sm ${FELD_BASIS}`}
+              className={`mt-1 ${FELD_BASIS}`}
             />
             <Fehler id="name-fehler" text={fehler.name} />
           </div>
@@ -145,30 +155,9 @@ export function AnfrageFormular() {
               defaultValue={werte.betrieb ?? ""}
               aria-invalid={fehler.betrieb ? true : undefined}
               aria-describedby={fehler.betrieb ? "betrieb-fehler" : undefined}
-              className={`mt-stack-sm ${FELD_BASIS}`}
+              className={`mt-1 ${FELD_BASIS}`}
             />
             <Fehler id="betrieb-fehler" text={fehler.betrieb} />
-          </div>
-
-          <div>
-            <Label htmlFor="rolle">{felder.rolle.label}</Label>
-            <select
-              ref={rolleRef}
-              id="rolle"
-              name="rolle"
-              defaultValue={werte.rolle ?? ""}
-              aria-invalid={fehler.rolle ? true : undefined}
-              aria-describedby={fehler.rolle ? "rolle-fehler" : undefined}
-              className={`mt-stack-sm appearance-none ${FELD_BASIS}`}
-            >
-              <option value="">Bitte wählen</option>
-              {felder.rolle.optionen.map((option) => (
-                <option key={option.wert} value={option.wert}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-            <Fehler id="rolle-fehler" text={fehler.rolle} />
           </div>
 
           <div>
@@ -186,7 +175,7 @@ export function AnfrageFormular() {
               defaultValue={werte.email ?? ""}
               aria-invalid={fehler.email ? true : undefined}
               aria-describedby={fehler.email ? "email-fehler" : undefined}
-              className={`mt-stack-sm ${FELD_BASIS}`}
+              className={`mt-1 ${FELD_BASIS}`}
             />
             <Fehler id="email-fehler" text={fehler.email} />
           </div>
@@ -202,27 +191,48 @@ export function AnfrageFormular() {
               defaultValue={werte.telefon ?? ""}
               aria-invalid={fehler.telefon ? true : undefined}
               aria-describedby={fehler.telefon ? "telefon-fehler" : undefined}
-              className={`mt-stack-sm ${FELD_BASIS}`}
+              className={`mt-1 ${FELD_BASIS}`}
             />
             <Fehler id="telefon-fehler" text={fehler.telefon} />
           </div>
 
-          <div>
+          <div className="sm:col-span-2">
+            <Label htmlFor="rolle">{felder.rolle.label}</Label>
+            <select
+              ref={rolleRef}
+              id="rolle"
+              name="rolle"
+              defaultValue={werte.rolle ?? ""}
+              aria-invalid={fehler.rolle ? true : undefined}
+              aria-describedby={fehler.rolle ? "rolle-fehler" : undefined}
+              className={`mt-1 appearance-none ${FELD_BASIS}`}
+            >
+              <option value="">Bitte wählen</option>
+              {felder.rolle.optionen.map((option) => (
+                <option key={option.wert} value={option.wert}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+            <Fehler id="rolle-fehler" text={fehler.rolle} />
+          </div>
+
+          <div className="sm:col-span-2">
             <Label htmlFor="nachricht">{felder.nachricht.label}</Label>
             <textarea
               id="nachricht"
               name="nachricht"
-              rows={4}
+              rows={3}
               maxLength={4000}
               defaultValue={werte.nachricht ?? ""}
               aria-invalid={fehler.nachricht ? true : undefined}
               aria-describedby={fehler.nachricht ? "nachricht-fehler" : undefined}
-              className={`mt-stack-sm resize-y ${FELD_BASIS}`}
+              className={`mt-1 resize-y ${FELD_BASIS}`}
             />
             <Fehler id="nachricht-fehler" text={fehler.nachricht} />
           </div>
 
-          <div>
+          <div className="sm:col-span-2">
             {/*
               Die Checkbox war 16×16 px und damit klar unter den 24 px, die
               WCAG 2.5.8 verlangt — jetzt 24×24. Das eigentliche Ziel ist aber
@@ -260,17 +270,18 @@ export function AnfrageFormular() {
           </div>
         </div>
 
-        <p className="mt-stack-md font-body text-label-caps uppercase text-on-surface-variant">
-          {formular.pflichtHinweis}
-        </p>
-
-        <button
-          type="submit"
-          disabled={laeuft}
-          className={`mt-stack-md ${BUTTON_KLASSE} disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent disabled:hover:text-primary`}
-        >
-          {laeuft ? formular.absendenLaeuft : formular.absenden}
-        </button>
+        <div className="mt-stack-md flex flex-col items-start gap-stack-sm sm:flex-row sm:items-center sm:justify-between">
+          <button
+            type="submit"
+            disabled={laeuft}
+            className={`${BUTTON_KLASSE} disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent disabled:hover:text-primary`}
+          >
+            {laeuft ? formular.absendenLaeuft : formular.absenden}
+          </button>
+          <p className="font-body text-label-caps uppercase text-on-surface-variant">
+            {formular.pflichtHinweis}
+          </p>
+        </div>
       </form>
     </div>
   );
