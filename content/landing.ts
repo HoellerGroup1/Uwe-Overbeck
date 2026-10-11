@@ -54,7 +54,7 @@ export const about = {
       },
       {
         titel: "Muster zur Ansicht",
-        text: "Ich bringe Ihnen kostenlose Muster vorbei, auf Wunsch schon mit Ihrem Logo veredelt.",
+        text: "Ich bringe Ihnen kostenlose Muster vorbei. Dabei besprechen wir auch, wie Ihr Logo veredelt wird.",
       },
       {
         titel: "Anprobe",
