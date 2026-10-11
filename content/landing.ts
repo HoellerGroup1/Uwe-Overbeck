@@ -82,7 +82,7 @@ export const tiles = {
       bild: {
         src: "/img/gastro/kueche-zwei-koeche-am-herd.jpg",
         alt: "Zwei Köche in Schürzen arbeiten nebeneinander am Herd",
-        fokus: 0,
+        fokus: 25,
       },
     },
     {
