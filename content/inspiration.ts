@@ -166,7 +166,7 @@ export const gastroSeite: InspirationsSeite = {
 };
 
 /**
- * ENTWURF — von Uwe gegenzulesen.
+ * Von Uwe gegengelesen und freigegeben.
  *
  * Das Segment "Firmen" kam erst im Gespräch dazu (E8), Uwes einziges genanntes
  * Beispiel ist das Marionettentheater. Die Texte unten beschreiben deshalb,

@@ -2,8 +2,7 @@
  * Texte der Landingpage.
  *
  * Sämtliche Zahlen, Referenznamen und Hotelnamen aus dem Stitch-Entwurf waren
- * erfunden und sind entfernt. Wo Werte fehlen, steht ein sichtbarer
- * Platzhalter `[ ]`. Siehe TODO.md.
+ * erfunden und sind entfernt. Alle Werte sind heute von Uwe bestätigt.
  */
 
 export const hero = {
