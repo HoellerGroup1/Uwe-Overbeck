@@ -27,7 +27,7 @@ export function BereichsTiles() {
                       src={tile.bild.src}
                       alt={tile.bild.alt}
                       fill
-                      sizes="(min-width: 768px) 33vw, 100vw"
+                      sizes="(min-width: 768px) 30vw, 100vw"
                       /* Tiles sind auf jeder Breite 4:3 -- ein Fokuswert gilt überall. */
                       style={{ "--fokus-y": `${tile.bild.fokus ?? 50}%` } as React.CSSProperties}
                       className="img-zoom object-cover object-[50%_var(--fokus-y)] bild-ton"

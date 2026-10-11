@@ -15,7 +15,7 @@ export function About() {
                 alt={about.portrait.alt}
                 width={about.portrait.breite}
                 height={about.portrait.hoehe}
-                sizes="(min-width: 768px) 33vw, 100vw"
+                sizes="(min-width: 768px) 29vw, 100vw"
                 className="w-full border border-ash/40 object-cover bild-ton"
               />
             ) : (

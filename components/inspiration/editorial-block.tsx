@@ -50,7 +50,7 @@ export function EditorialBlock({
                 src={block.bild.src}
                 alt={block.bild.alt}
                 fill
-                sizes="(min-width: 768px) 50vw, 100vw"
+                sizes="(min-width: 768px) 44vw, 100vw"
                 style={
                   {
                     "--fokus-y": `${block.bild.fokus ?? 50}%`,
