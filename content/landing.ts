@@ -70,9 +70,9 @@ export const tiles = {
       titel: "Rezeption, Etage, Service",
       href: "/hotel",
       bild: {
-        src: "/img/hotel/housekeeping-bett-zu-zweit.jpg",
-        alt: "Zwei Housekeeping-Mitarbeiterinnen beziehen gemeinsam ein Bett",
-        fokus: 25,
+        src: "/img/hotel/drei-mitarbeitende-hotel-service.jpg",
+        alt: "Drei Mitarbeitende in dunkelblauem Blazer, beiger Latzschürze und hellblauem Kasack",
+        fokus: 20,
       },
     },
     {
@@ -93,9 +93,9 @@ export const tiles = {
       titel: "Empfang, Büro, Lager",
       href: "/firmen",
       bild: {
-        src: "/img/firmen/anzug-und-kostuem-empfang.jpg",
-        alt: "Mitarbeiterin und Mitarbeiter in grauem Kostüm und Anzug",
-        fokus: 30,
+        src: "/img/firmen/team-loftbuero-dunkelblau.jpg",
+        alt: "Team in abgestimmter dunkelblauer Businesskleidung in einem Loftbüro",
+        fokus: 40,
       },
     },
   ],

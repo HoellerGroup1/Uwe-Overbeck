@@ -131,7 +131,7 @@ export const impressum: Rechtstext = {
         "Die Logos der Referenzbetriebe und der Partnermarken Greiff und Hakro werden mit deren Einverständnis gezeigt. Die Kataloge stehen mit Zustimmung von Greiff und Hakro zum Download.",
       ],
       liste: [
-        "Fotos Hotel und Gastronomie: IMLAUER Hotels & Restaurants; Pexels (Liliana Drew, cottonbro studio, Nadin Sh, Sóc Năng Động)",
+        "Fotos Hotel und Gastronomie: IMLAUER Hotels & Restaurants; Greiff Mode GmbH & Co. KG; Pexels (cottonbro studio, Nadin Sh)",
         "Fotos Firmen und Startseite: Greiff Mode GmbH & Co. KG, HAKRO GmbH",
         "Portrait Uwe Overbeck: mit künstlicher Intelligenz erstellt auf Grundlage einer privaten Aufnahme",
         "Schrift: Switzer, Indian Type Foundry (Fontshare), ITF Free Font License",

@@ -62,10 +62,10 @@ export const hotelSeite: InspirationsSeite = {
     label: "Hotel & Housekeeping",
     headline: "Ihr Haus hat einen Stil. Ihr Team trägt ihn.",
     bild: {
-      src: "/img/hotel/housekeeping-bett-zu-zweit.jpg",
-      alt: "Zwei Housekeeping-Mitarbeiterinnen beziehen gemeinsam ein Bett",
-      // 35: Gesicht sitzt am Desktop über der Headline, mobil bleiben beide Personen im Bild.
-      fokus: 35,
+      src: "/img/hotel/rezeption-check-in-landhaus.jpg",
+      alt: "Gast checkt an der Rezeption ein, das Team trägt graue Jacken mit Stehkragen und Westen",
+      // 15: alle Köpfe an der Rezeption bleiben im flachen Desktop-Ausschnitt.
+      fokus: 15,
     },
   },
   bloecke: [
@@ -150,9 +150,9 @@ export const gastroSeite: InspirationsSeite = {
       headline: "Schick, und nach dem fünfzigsten Waschgang noch immer.",
       text: "Fett, Wein und Sauce gehören zum Alltag. Ein Outfit, das nach zehn Wäschen ausbleicht oder die Form verliert, sieht billig aus, egal was es gekostet hat. Ich wähle Stoffe und Farben, die Industriewäsche aushalten.",
       bild: {
-        src: "/img/gastro/koeche-schuerzen-nahaufnahme.jpg",
-        alt: "Nahaufnahme zweier Köche in Schürzen bei der Arbeit",
-        fokus: 70,
+        src: "/img/gastro/service-schuerzen-terrasse.jpg",
+        alt: "Servicekraft und Kellner in grünen Schürzen in Jeansoptik auf einer Restaurantterrasse",
+        fokus: 40,
         verhaeltnis: "4/5",
       },
     },
@@ -198,32 +198,30 @@ export const firmenSeite: InspirationsSeite = {
       headline: "Einheitlich, ohne nach Uniform auszusehen.",
       text: "Ein Team erkennt man an Farbe und Schnitt, lange bevor jemand das Logo liest. Moderne Berufsmode schafft das mit Teilen, die Ihre Leute auch nach Feierabend anbehalten würden: ein Blouson, ein gut geschnittenes Hemd, eine Hose, die sitzt. Wer sich darin wohlfühlt, trägt es mit Haltung. Das sieht der Kunde.",
       bild: {
-        src: "/img/firmen/blousons-team-casual.jpg",
-        alt: "Zwei Mitarbeitende in dunkelblauen Blousons über Shirt und Hemd",
-        fokus: 30,
-        verhaeltnis: "4/3",
+        src: "/img/firmen/zwei-mitarbeiterinnen-hosenanzug.jpg",
+        alt: "Zwei Mitarbeiterinnen in dunkelblauem Hosenanzug und weißem Shirt in einer Sitznische",
+        fokus: 50,
+        verhaeltnis: "4/5",
       },
     },
     {
       headline: "Vom Empfang bis zum Lager ein Konzept.",
       text: "Am Empfang zählt der Auftritt, im Lager die Bewegungsfreiheit, im Büro beides ein bisschen. Ein gutes Kleidungskonzept verbindet diese Arbeitsplätze über eine gemeinsame Farbwelt und gibt jedem Bereich die Teile, die er braucht. Ich sehe mir Ihre Abläufe vor Ort an und stelle das Konzept mit Ihnen zusammen.",
       bild: {
-        src: "/img/firmen/anzug-und-kostuem-empfang.jpg",
-        alt: "Mitarbeiterin und Mitarbeiter in grauem Kostüm und Anzug",
-        fokus: 30,
-        // Quelle nur 640 px breit -- 4/3 statt 4/5, damit nichts hochskaliert wird.
-        verhaeltnis: "4/3",
+        src: "/img/firmen/hemd-und-chino-casual.jpg",
+        alt: "Mitarbeiter in hellblauem Hemd und beiger Chino sitzt in einer Fensternische",
+        fokus: 60,
+        verhaeltnis: "4/5",
       },
     },
     {
       headline: "Das Logo gehört zum Outfit, nicht drauf.",
       text: "Ob Stick oder Druck, Ton in Ton oder als Akzent: Die Veredelung entscheidet mit, ob ein Hemd nach Marke aussieht oder nach Werbegeschenk. Ich zeige Ihnen, was zu Ihrem Material und Ihrer Farbwelt passt, und wähle eine Technik, die auch nach dem fünfzigsten Waschgang noch sauber aussieht.",
       bild: {
-        src: "/img/firmen/hemd-und-bluse-hellblau.jpg",
-        alt: "Hellblaues Hemd und Bluse Rücken an Rücken, Fläche für Stick oder Druck",
-        fokus: 30,
-        // Quelle nur 640 px breit -- 4/3 statt 4/5, damit nichts hochskaliert wird.
-        verhaeltnis: "4/3",
+        src: "/img/firmen/grauer-anzug-buero.jpg",
+        alt: "Mitarbeiter in grauem Anzug lehnt an einem Geländer im Büro",
+        fokus: 25,
+        verhaeltnis: "4/5",
       },
     },
   ],
