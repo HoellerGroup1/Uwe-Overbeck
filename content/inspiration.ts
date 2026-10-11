@@ -126,8 +126,8 @@ export const gastroSeite: InspirationsSeite = {
     bild: {
       src: "/img/gastro/kueche-zwei-koeche-am-herd.jpg",
       alt: "Zwei Köche in Schürzen arbeiten nebeneinander am Herd",
-      fokus: 44,
-      fokusDesktop: 18,
+      fokus: 30,
+      fokusDesktop: 30,
     },
   },
   bloecke: [
