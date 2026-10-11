@@ -15,11 +15,11 @@
  * Die EU-Plattform zur Online-Streitbeilegung wurde am 20.07.2025
  * eingestellt, ein Hinweis darauf gehört nicht mehr ins Impressum.
  *
- * Offen in eckigen Klammern: nur noch die USt-IdNr. Das Portrait ist
- * KI-generiert und im Bildnachweis als solches gekennzeichnet (Art. 50
- * KI-VO, Transparenzpflicht seit 02.08.2026). Beide
- * Texte sind kein geprüfter Rechtstext; vor dem Livegang prüfen lassen und
- * ENTWURFS_HINWEIS entfernen.
+ * Stand 11.10.: alle Angaben vollständig (USt-IdNr., IHK Nord Westfalen,
+ * Händler -- von Uwe über Steuerberater/Anwalt bestätigt), Entwurfshinweis
+ * entfernt. Das Portrait ist KI-generiert und im Bildnachweis als solches
+ * gekennzeichnet (Art. 50 KI-VO, Transparenzpflicht seit 02.08.2026).
+ * Die rechtliche Verantwortung für diese Texte liegt bei Uwe (E28).
  */
 
 export type RechtAbschnitt = {
@@ -34,13 +34,8 @@ export type Rechtstext = {
   meta: { titel: string; beschreibung: string };
   label: string;
   headline: string;
-  /** Wird oben als Warnhinweis ausgegeben und muss vor dem Launch weg. */
-  entwurfsHinweis: string;
   abschnitte: RechtAbschnitt[];
 };
-
-const ENTWURFS_HINWEIS =
-  "Entwurf. Einzelne Angaben fehlen noch, und der Text ist nicht juristisch geprüft.";
 
 /**
  * Stammdaten wie in PROJEKT.md, Abschnitt 3.
@@ -55,7 +50,7 @@ const FIRMA = "Overbeck Berufsmode";
 const ANSCHRIFT = "Altenrheiner Straße 97, 48429 Rheine, Deutschland";
 const EMAIL = "uwe@overbeck-berufsmode.at";
 const TELEFON = "+49 151 59 85 19 65";
-const STAND = "22. September 2026";
+const STAND = "11. Oktober 2026";
 
 export const impressum: Rechtstext = {
   meta: {
@@ -64,7 +59,6 @@ export const impressum: Rechtstext = {
   },
   label: "Rechtliches",
   headline: "Impressum",
-  entwurfsHinweis: ENTWURFS_HINWEIS,
   abschnitte: [
     {
       titel: "Diensteanbieter und Medieninhaber",
@@ -89,12 +83,12 @@ export const impressum: Rechtstext = {
       titel: "Unternehmensdaten",
       eintraege: [
         {
-          label: "Unternehmensgegenstand",
-          wert: "Handel mit und Beratung zu Berufskleidung für Hotellerie, Gastronomie und Firmen",
+          label: "Tätigkeit",
+          wert: "Händler — Handel mit und Beratung zu Berufskleidung für Hotellerie, Gastronomie und Firmen",
         },
         {
           label: "Umsatzsteuer-ID",
-          wert: "[USt-IdNr. nach § 27a UStG — trägt Uwe nach, falls vorhanden]",
+          wert: "DE265749018 (nach § 27a UStG)",
         },
         { label: "Kammer", wert: "Industrie- und Handelskammer Nord Westfalen" },
       ],
@@ -147,7 +141,6 @@ export const datenschutz: Rechtstext = {
   },
   label: "Rechtliches",
   headline: "Datenschutz",
-  entwurfsHinweis: ENTWURFS_HINWEIS,
   abschnitte: [
     {
       titel: "Verantwortlicher",

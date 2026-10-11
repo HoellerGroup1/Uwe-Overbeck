@@ -16,11 +16,6 @@ export function RechtSeite({ text }: { text: Rechtstext }) {
             {text.headline}
           </h1>
 
-          {/* TODO(Marcel): Hinweis entfernen, sobald der Text geprüft ist. */}
-          <p className="mt-stack-md border-l-2 border-error pl-gutter font-body text-body-md text-error">
-            {text.entwurfsHinweis}
-          </p>
-
           <div className="mt-stack-lg max-w-[68ch] border-t border-ash/40">
             {text.abschnitte.map((abschnitt) => (
               <section
