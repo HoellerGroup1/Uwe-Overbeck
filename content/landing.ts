@@ -29,7 +29,7 @@ export const hero = {
 export const credibility = {
   label: "In Zahlen",
   eintraege: [
-    { wert: 35, suffix: "+", label: "Jahre im Vertrieb" },
+    { wert: 35, suffix: "", label: "Jahre im Vertrieb" },
     { wert: 89, suffix: "", label: "Betriebe ausgestattet" },
   ],
 } as const;
