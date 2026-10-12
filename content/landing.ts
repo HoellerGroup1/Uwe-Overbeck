@@ -152,9 +152,10 @@ const katalogEintraege: KatalogEintrag[] = [
     },
     claim: "Greiff zieht an",
     buttonLabel: "Greiff-Katalog herunterladen",
+    // Katalog 2025 von greiff.de, Original 53 MB, per Ghostscript auf 72 dpi verkleinert. Text bleibt Vektor.
     datei: "/downloads/greiff-katalog.pdf",
     dateiname: "greiff-katalog.pdf",
-    dateihinweis: "PDF, 2,1 MB",
+    dateihinweis: "PDF, 14,2 MB",
   },
   {
     marke: "Hakro",
