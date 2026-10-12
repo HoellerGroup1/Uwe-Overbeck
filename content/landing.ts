@@ -145,10 +145,10 @@ const katalogEintraege: KatalogEintrag[] = [
   {
     marke: "Greiff",
     logo: {
-      src: "/img/brand/partner/greiff.png",
-      alt: "Greiff, since 1802",
-      breite: 447,
-      hoehe: 400,
+      src: "/img/brand/partner/greiff-2026.png",
+      alt: "Greiff",
+      breite: 592,
+      hoehe: 472,
     },
     claim: "Greiff zieht an",
     buttonLabel: "Greiff-Katalog herunterladen",
